@@ -1,0 +1,19 @@
+.nav {
+  padding-top: 20px;
+}
+.nav-bar {
+  padding: 10px 0;
+  background-color: #fff;
+  &__item {
+    display: inline-block;
+    padding-left: 10px;
+  }
+  &__link {
+    transition: color $transition;
+    cursor: text;
+    &:hover:not([disabled]) {
+      color: $accent;
+      cursor: pointer;
+    }
+  }
+}

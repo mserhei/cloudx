@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $Roboto;
+  font-size: 14px;
+  color: $black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #f5f6fb;
+}
+footer {
+  margin-top: auto;
+}
+img,
+a {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: none;
+  cursor: pointer;
+}
+main {
+  position: relative;
+}
+.container {
+  position: relative;
+  width: 100%;
+  padding: 0 25px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.backdrop {
+  display: flex;
+  position: fixed;
+  z-index: 21;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: $overlay;
+  opacity: 0;
+  transition: opacity $transition;
+  &.opened {
+    opacity: 1;
+    & .backdrop__modal {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__modal {
+    position: relative;
+    padding: 55px 20px 60px;
+    width: 290px;
+    margin: auto;
+    background-color: $white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+
+    transform: scale(0.8);
+    transition: opacity $transition, transform $transition;
+    &.opened {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @media screen and (min-width: $tablet) {
+      padding: 55px 55px 60px;
+      width: 725px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 55px 105px 60px;
+      width: 860px;
+    }
+  }
+}
+.scrollbar-measure {
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
+}
+#root {
+  background: #e5e5e5;
+  height: 100%;
+  width: 100%;
+}
+%flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%button {
+  border: 1px solid $bg-grey;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: $bg-grey;
+}
+%button-main {
+  @extend %button;
+  background: $accent;
+  color: $white;
+}
+%anchor {
+  @extend %flex-container;
+  font-weight: normal;
+  color: $dim;
+  transition: color $transition, transform $transition;
+  height: 100%;
+  width: 100%;
+  &:hover,
+  &:focus,
+  &.coloured {
+    color: $white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    & ~ span {
+      color: $black;
+    }
+  }
+  &:active:not([disabled]) {
+    color: $accent;
+    transform: translate(1px, 2px);
+  }
+}

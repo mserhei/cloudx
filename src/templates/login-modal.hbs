@@ -1,0 +1,20 @@
+<div class="backdrop" data-close>
+    <div class="authorization-modal backdrop__modal">
+        <button class="authorization-close-button icon-btn"><span data-close
+                class="material-icons">clear</span></button>
+        <h3 class="authorization-modal-header">Введите логин и пароль</h3>
+        <form action="authorization" class="authorization-form">
+            <input type="email" name="email" class="authorization-input" id="authorization-modal-email"
+                placeholder="E-mail">
+            <p class="error-message email-error"></p>
+            <input type="password" name="password" class="authorization-input" id="authorization-modal-password"
+                placeholder="Password">
+            <p class="error-message password-error"></p>
+            <div class="authorization-button-container"><button type="submit"
+                    class="authorization-modal-login authorization-button" disabled>Войти</button>
+                <button type="submit" class="authorization-modal-register authorization-button "
+                    disabled>Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</div>

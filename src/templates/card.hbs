@@ -1,0 +1,11 @@
+<div class="container">
+    <section class="nav">
+        <ul class="nav-bar">
+            {{#each this}}
+            <li class="nav-bar__item"><a class="nav-bar__link" href="&#47{{rout}}" data-id="{{@key}}"
+                    id="id_rout_0{{@key}}" {{#if home}}disabled{{/if}}>{{title}}&#47;</a>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+</div>
