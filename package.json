@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://git.hs-r.dev/cloud-devs/cloud-1.0/npmissues"
   },
-  "homepage": "http://titoffroma.github.io/nstdservers/index.html",
+  "homepage": "https://cloud-devs.git.hs-r.dev.io/cloud-1.0/",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
