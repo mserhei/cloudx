@@ -1,18 +1,16 @@
-image: node:latest
-
-cache:
-  paths:
-    - node_modules/
+image: node:4.2.2
 
 pages:
-  stage: deploy
-  tags:
-    - pages
+  cache:
+    paths:
+      - node_modules/
+
   script:
+    - npm install hexo-cli -g
     - npm install
-    - npm run build
+    - hexo deploy
   artifacts:
     paths:
-      - build/
+      - public
   only:
     - master
