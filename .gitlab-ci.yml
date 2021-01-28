@@ -4,15 +4,15 @@ cache:
   paths:
     - node_modules/
 
-
 pages:
   stage: deploy
+  tags:
+    - pages
   script:
-  - npm install
-  - webpack --env.mode production --config ./webpack/config.js
+    - npm install
+    - webpack --env.mode production --config ./webpack/config.js
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
-
+    - master
