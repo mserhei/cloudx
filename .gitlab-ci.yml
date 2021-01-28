@@ -10,7 +10,7 @@ pages:
     - pages
   script:
     - npm install
-    - npm run build
+    - npm run deploy
   artifacts:
     paths:
       - public
