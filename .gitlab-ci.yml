@@ -8,6 +8,7 @@ cache:
 pages:
   stage: deploy
   script:
+  - npm install
   - webpack --env.mode production --config ./webpack/config.js
   artifacts:
     paths:
