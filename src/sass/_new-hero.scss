@@ -1,0 +1,113 @@
+#hero_section {
+  position: relative;
+  height: 800px;
+}
+
+.new-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  &__article {
+    position: relative;
+    z-index: 2;
+  }
+  &__header {
+    &-main {
+      font-weight: $blackfont;
+      font-size: 60px;
+      text-transform: uppercase;
+      display: inline-block;
+      @media screen and (min-width: $tablet) {
+        font-size: 90px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 130px;
+      }
+    }
+    &-style {
+      font-weight: $bold;
+      font-size: 100px;
+      @media screen and (min-width: $tablet) {
+        font-size: 170px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 240px;
+      }
+      -webkit-text-stroke-width: 2px;
+      color: transparent;
+      text-transform: uppercase;
+      text-shadow: 0 0 1px black;
+      display: inline-block;
+      background-image: linear-gradient(
+        211.28deg,
+        #3a1eea -1.48%,
+        #9b51e0 15.5%,
+        #c58490 40.2%,
+        #f8c031 76.79%,
+        rgba(155, 81, 224, 0) 129.16%
+      );
+      background-clip: text;
+    }
+  }
+  &__text {
+    font-size: 14px;
+    font-weight: $normal;
+    width: 80%;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 17px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 20px;
+    }
+  }
+  &__server {
+    position: relative;
+    z-index: 0;
+    flex-shrink: 0;
+    width: 240px;
+    height: 240px;
+    background: center / cover url('../img/servers1@0.5x.png') no-repeat;
+    @media screen and (min-width: $tablet) {
+      width: 320px;
+      height: 320px;
+      background: center / cover url('../img/servers1@1x.png') no-repeat;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 400px;
+      height: 400px;
+      background: center / cover url('../img/servers1@2x.png') no-repeat;
+    }
+  }
+  &__planet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+        closest-side circle at 60% 60%,
+        transparent,
+        black
+      ),
+      center / cover url('../img/planet@0.5x.jpg') no-repeat;
+    @media screen and (min-width: $tablet) {
+      background: radial-gradient(
+          closest-side circle at 60% 60%,
+          transparent,
+          black
+        ),
+        center / cover url('../img/planet@1x.jpg') no-repeat;
+    }
+    @media screen and (min-width: $desktop) {
+      background: radial-gradient(
+          closest-side circle at 60% 60%,
+          transparent,
+          black
+        ),
+        center / cover url('../img/planet@2x.jpg') no-repeat;
+    }
+    clip-path: circle(50%);
+  }
+}

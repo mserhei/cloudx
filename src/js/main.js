@@ -7,13 +7,18 @@ import listenFocusout from './events/focusoutListener';
 import listenFocusin from './events/focusinListener';
 import listenSubmit from './events/submitListener';
 import listenKeyDown from './events/keyDownListener';
+import listenScroll from './events/scrollListener';
 import { movePad } from './events/scrollListener';
 
 var debounce = require('debounce');
 
 const rootRel = document.getElementById('root');
 
-rootRel.addEventListener('scroll', debounce(movePad, 10));
+rootRel.addEventListener('scroll', movePad);
+
+const rootCont = document.getElementById('root-content');
+
+rootCont.addEventListener('scroll', listenScroll);
 
 document.addEventListener('click', listenClicks);
 document.addEventListener('swiped', listenSwipes);
