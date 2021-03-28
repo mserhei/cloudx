@@ -1,28 +1,104 @@
-.container.header {
-  background: $main-purple;
+.header {
+  @extend %flex-container;
+  background-image: $header-gr;
+  backdrop-filter: blur(10px);
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+  height: 40px;
+  @media screen and (min-width: $tablet) {
+    min-height: 100px;
+  }
 }
 .page-header,
 .navigation,
 .logo,
 .navigation__list,
+.navigation__list-group,
 .authorization {
   @extend %flex-container;
 }
 .nav-wrapper {
   width: 100%;
+  min-height: 100%;
+}
+.logo {
+  display: flex;
+  margin-left: 15px;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+  &--tablet {
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+  }
 }
 .logo__image {
-  fill: #fff;
+  pointer-events: none;
+  height: 30px;
+  object-fit: contain;
+  transform: translate(-200px, -200px) rotate(45deg);
+  // transition: transform 500ms ease-out;
+  animation: flyOut 1s ease-in;
+  @media screen and (min-width: $tablet) {
+    height: 40px;
+  }
 }
+@keyframes flyOut {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scaleX(-1);
+  }
+  10% {
+    transform: rotate(45deg) scaleX(-1);
+  }
+  90% {
+    transform: translate(-200px, -200px) scaleX(-1);
+  }
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translate(-200px, -200px) scaleX(1);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+.header__video {
+  @media screen and (max-width: $tablet - 1) {
+    display: none;
+  }
+}
+.logo__image.in {
+  // transform: translate(0, 0) rotate(0deg);
+  // transition: transform 1s ease-out 1ms;
+  animation: flyIn 1s ease-in forwards;
+}
+.logo__home {
+  background: center / contain no-repeat url('../img/rocket\ logo\ shadow.png');
+}
+
 .navigation {
   justify-content: space-between;
   &__list {
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 12px;
+    @media screen and (min-width: 980px) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 22px;
+    }
   }
   &__item {
     @extend %flex-container;
     padding: 10px;
-    height: 50px;
+    height: 40px;
     position: relative;
     & .accent {
       position: absolute;
@@ -37,30 +113,158 @@
   &__rout {
     color: inherit;
     &--hover {
+      @extend %flex-container;
       @extend %anchor;
       position: absolute;
+      bottom: 2px;
       &[disabled] {
         cursor: text;
       }
-      &.coloured ~ .accent {
-        background: $accent;
-        width: 100%;
-      }
     }
   }
+  &__opts {
+    @extend %flex-container;
+  }
+}
+.coloured ~ .accent {
+  background: $accent;
+  width: 100%;
+  transition: width $transition;
 }
 
 .authorization {
   justify-content: space-between;
+  padding-right: 20px;
   &__list {
     justify-content: space-around;
   }
   &__item {
     @extend %flex-container;
+    position: relative;
     height: fit-content;
-    padding: 10px;
-    &:not(:last-child) {
+    padding: 10px 0;
+    &:nth-child(2) {
+      padding: 10px 20px;
+    }
+  }
+  &__rout {
+    @extend %button-purple;
+    img {
+      pointer-events: none;
+    }
+  }
+}
+
+.language {
+  @extend %flex-container;
+  &__select {
+    appearance: none;
+    padding: 0;
+    background: transparent;
+    option {
+      display: block;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      background: $accent;
+      color: $white;
+      &[selected] {
+        font-weight: $bold;
+      }
+      &:hover {
+        background: $main-purple;
+      }
+    }
+    span {
       @extend %button-main;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
+}
+
+.burger {
+  margin-right: 15px;
+  margin-left: 30px;
+  &__menu {
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    position: relative;
+    .material-icons {
+      position: absolute;
+      color: $white;
+      transition: color $transition, opacity $transition;
+      pointer-events: none;
+    }
+    &:hover .material-icons {
+      color: $accent;
+    }
+    .closed {
+      opacity: 0;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+ul.navigation__list#id_nav {
+  @media screen and (max-width: $tablet - 1) {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    background-image: $header-gr;
+    background-size: cover;
+    z-index: 10;
+    opacity: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: opacity $slider, transform $slider, padding-top $slider 500ms;
+    &.open {
+      padding-top: 50px;
+      opacity: 0.95;
+      transform: scaleY(1);
+      .navigation__rout {
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.8)
+      }
+    }
+    #id_nav-group {
+      flex-direction: column;
+    }
+  }
+  @media screen and (min-width: $phone) {
+    margin: 0 auto;
+  }
+}
+#id_nav-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#header {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  position: relative;
+}
+#id_nav_list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-right: auto;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    & > :nth-child(1) {
+      margin-right: auto;
+    }
+  }
+  @media screen and (max-width: $tablet - 1) {
+    & > :nth-child(1) {
+      order: 2;
     }
   }
 }

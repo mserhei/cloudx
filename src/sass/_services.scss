@@ -1,0 +1,239 @@
+#timer2 {
+  flex-wrap: wrap;
+  // @media screen and (min-width: $phone) {
+  //   flex-wrap: nowrap;
+  // }
+  .field {
+    margin-bottom: 10px;
+  }
+  .label {
+    background: none;
+    color: rgb(171, 178, 199);
+  }
+}
+#services {
+  color: #fff;
+  background: $overlay;
+  .cardset__pic {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    object-position: center center;
+    filter: grayscale(100%);
+    transform: scale(0.8);
+  }
+}
+.services {
+  &__table {
+    @extend %flex-container;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border-radius: 16px;
+    margin: 0 auto;
+    background: $overlay-light;
+    height: 100%;
+    transition: width $transition;
+  }
+  &__aside {
+    position: sticky;
+    top: 40px;
+    width: 100px;
+    height: fit-content;
+    padding-top: 20px;
+    @media screen and (min-width: $phone) {
+      width: 200px;
+    }
+    @media screen and (min-width: $tablet) {
+      top: 100px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 300px;
+    }
+  }
+  &__tabs {
+    height: 100%;
+  }
+  &__tab-item {
+    height: 50px;
+    font-size: 12px;
+    @media screen and (min-width: $tablet) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 20px;
+    }
+    @extend %flex-container;
+    justify-content: flex-start;
+    .tab-title {
+      @extend %anchor;
+      display: inline-block;
+      padding-left: 10px;
+      @media screen and (min-width: $tablet) {
+        padding-left: 20px;
+      }
+      @media screen and (min-width: $desktop) {
+        padding-left: 30px;
+      }
+      padding-right: 5px;
+      height: auto;
+      cursor: pointer;
+    }
+    .tab-accent {
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      transition: width $transition;
+    }
+    &.current {
+      background: $overlay-light;
+      .tab-accent {
+        background: $accent;
+        width: 4px;
+      }
+    }
+  }
+  &__main {
+    @extend %flex-container;
+    width: calc(100% - 100px);
+    @media screen and (min-width: $tablet) {
+      width: calc(100% - 200px);
+    }
+    @media screen and (min-width: $desktop) {
+      width: calc(100% - 300px);
+    }
+    width: 100%;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 16px 16px 0;
+    transition: height .7s ease-out;
+    background: $stroke-grey;
+  }
+  &__tab-list {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    @media screen and (min-width: $tablet) {
+      padding: 20px;
+    }
+    min-height: 350px;
+    // background: $stroke-grey;
+    color: $overlay;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @include Cardset-Responsive(0, 10px, 10px, 1);
+    @include Cardset-Responsive($tablet, 10px, 10px, 2);
+    @include Cardset-Responsive($desktop, 10px, 10px, 3);
+    transform: translateX(-1400px);
+    transition: opacity .7s ease-out, transform .7s ease-out;
+    &.active {
+      z-index: 1;
+      width: 100%;
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity .7s ease-out, transform .7s ease-out;
+    }
+  }
+  &__card {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 8px;
+    background: $white;
+    box-shadow: $text-shade;
+    @extend %flex-container;
+    flex-direction: column;
+    height: 360px;
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      height: 200px;
+    }
+    @media screen and (min-width: $tablet) {
+      height: 250px;
+    }
+    // @media screen and (min-width: 900px) {
+    //   height: 200px;
+    // }
+    &:before {
+      border-radius: 50% 0 0 50%/75% 0 0 75%;
+      right: 0;
+      top: 50%;
+      left: auto;
+      height: 150%;
+      width: 0;
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 0;
+      transition: 0.2s width 0.1s ease-out, opacity 0.2s ease-out;
+      opacity: 0;
+      transform: translateY(-50%);
+      background: $purple-secondary;
+    }
+    &:hover {
+      color: #fff;
+      transition: color 0.5s ease-in;
+      &:before {
+        transition: width 0.5s ease-in;
+        width: 300%;
+        opacity: 1;
+      }
+      .services__image {
+        transform: translateY(-10px);
+        filter: drop-shadow(2px 14px 4px $accent);
+      }
+      .services__description {
+        color: #fff;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    max-height: 200px;
+    @media screen and (min-width: 600px) {
+      width: 40%;
+    }
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    background-size: contain;
+    transition: transform $transition, filter $transition;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 2px 4px $main-purple);
+  }
+  &__story {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    @media screen and (min-width: 600px) {
+      width: 60%;
+    }
+    display: flex;
+    height: 100%;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: default;
+    text-align: center;
+  }
+  &__description {
+    color: $dark-grey;
+    margin-bottom: auto;
+    font-size: 12px;
+    cursor: default;
+  }
+  &__button {
+    @extend %button-main;
+    align-self: flex-end;
+  }
+}

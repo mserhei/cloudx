@@ -18,7 +18,7 @@ module.exports = env => ({
         use: ['babel-loader'],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|mp4|webm)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -46,7 +46,7 @@ module.exports = env => ({
         ],
       },
       {
-        test: /\.(ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(txt|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
@@ -58,12 +58,32 @@ module.exports = env => ({
         ],
       },
       {
+        test: /\.(pdf)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[path][name].[ext]',
+              mimetype: 'application/pdf',
+              outputPath: 'files/',
+            },
+          },
+        ],
+      },
+      {
         test: /\.html$/,
         use: 'html-loader',
       },
       {
         test: /\.hbs$/,
-        use: 'handlebars-loader',
+        use: [
+          {
+            loader: 'handlebars-loader',
+            options: {
+              inlineRequires: /img/,
+            },
+          },
+        ],
       },
     ],
   },

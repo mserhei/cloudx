@@ -1,0 +1,266 @@
+{
+  "ru": {
+    "about-us": [
+      {
+        "title": "Rocket S",
+        "subTitle": "Лучшие показатели производительности и быстродействия",
+        "definitions": [
+          {
+            "definition": " — это современный сервис аренды вычислительных мощностей и систем хранения данных для создания собственной виртуальной инфраструктуры."
+          }
+        ],
+        "story": [
+          {
+            "story-title": "Команда",
+            "story-text": "Наша проектная команда состоит из опытных специалистов, успешно реализовавших сложные инфраструктурные решения для ведущих компаний в сфере торговли, логистики, банкинга, сервисных услуг, производства. Мы готовы делиться своей экспертизой, поэтому оказываем консультационную поддержку, а также помогаем с аудитом ИТ-инфраструктуры заказчика и миграцией в облако.",
+            "story-subtext": "Наши специалисты технической поддержки круглосуточно решают возникающие у клиентов вопросы."
+          },
+          {
+            "story-title": "Инфраструктура",
+            "story-text": "Облако Rocket S создано с использованием трех платформ виртуализации на базе собственного оборудования Cisco и Huawei, размещенного в надежном ЦОДе класса Tier3.",
+            "story-subtext": "Три платформы виртуализации – Huawei, Red Hat, VMware – позволяют каждому клиенту получить решение, наиболее соответствующее заданным требованиям к инфраструктуре."
+          }
+        ],
+        "goods": [
+          {
+            "image": "/img/cloud1.png",
+            "goods-title": "VMware",
+            "goods-list": [
+              {
+                "text": "встроенное шифрование виртуальных машин"
+              },
+              {
+                "text": "широкий инструментарий по конвертации физических хостов в виртуальные"
+              },
+              {
+                "text": "управление серверами, сетью и СХД из одной policy-based платформы"
+              },
+              {
+                "text": "возможность online миграции виртуальных машин между дата-центрами и облачными провайдерами"
+              },
+              {
+                "text": "широкая поддержка оборудования от разных вендоров"
+              }
+            ]
+          },
+          {
+            "image": "/img/cloud2.png",
+            "goods-title": "Huawei",
+            "goods-list": [
+              {
+                "text": "web-портал с доступом в виртуальный дата-центр (vDC) для гибкого управления ресурс-пулами виртуальных машин"
+              },
+              {
+                "text": "встроенный eBackup сервис"
+              },
+              {
+                "text": "гибкое управление как виртуальными сервисами, так и физическими(BareMetal) серверами"
+              },
+              {
+                "text": "развитый функционал сетевой виртуализации (ELB, VFW, SG, VPC, VPN)"
+              },
+              {
+                "text": "автоматическое масштабирование при высокой нагрузке на сервисы (Auto Scaling) при достижении описанных заранее метрик"
+              },
+              {
+                "text": "гетерогенная виртуализация: VRM, SDN control, KVM, Vmware"
+              }
+            ]
+          },
+          {
+            "image": "/img/cloud3.png",
+            "goods-title": "Red Hat",
+            "goods-list": [
+              {
+                "text": "возможность управления из одного web-интерфейса виртуальными машинами KVM, VMware ESXi, MS HYPER-V (при условии имеющейся конвергентной инфраструктуры)"
+              },
+              {
+                "text": "быстрое получение новых «фич» от open-source сообщества"
+              },
+              {
+                "text": "автоматизированный апгрейд"
+              },
+              {
+                "text": "предсказуемо взаимодействует с программно-конфигурируемыми платформами"
+              },
+              {
+                "text": "широкая поддержка оборудования от разных вендоров"
+              }
+            ]
+          }
+        ],
+        "QandA": [
+          {
+            "q": "Как подключить или протестировать услуги Rocket S?",
+            "a1": "Для получения доступа к услугам Rocket S",
+            "link1": "оставьте заявку",
+            "href1": "",
+            "data1": "data-modal",
+            "data1text": 1,
+            "data2": "data-select",
+            "data2text": 1
+          },
+          {
+            "q": "Сколько стоит Rocket S?",
+            "a1": "Рассчитать стоимость Rocket S можно при помощи",
+            "link1": "online-калькулятора",
+            "href1": "/online-calc?lang=ru",
+            "data1": "id",
+            "data1text": "id_rout_3-2",
+            "a2": "либо связавшись с нами через",
+            "link2": "форму обратной связи",
+            "href2": ""
+          }
+        ],
+        "files": [
+          {
+            "path": "/files/terms-clouds.pdf",
+            "name": "Порядок предоставления услуг по тарифному плану «Rocket S»",
+            "size": "334.2 КБ"
+          },
+          {
+            "path": "/files/terms-veeam.pdf",
+            "name": "Порядок предоставления услуг Veeam",
+            "size": "319.7 КБ"
+          },
+          {
+            "path": "/files/terms-SPLA.pdf",
+            "name": "Порядок предоставления услуг Microsoft SPLA",
+            "size": "529.0 КБ"
+          }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "about-us": [
+      {
+        "title": "Rocket S",
+        "subTitle": "Best performance and speed rates",
+        "definitions": [
+          {
+            "definition": " — is a modern computing power and data storage systems rent service to create your own virtual infrastructure."
+          }
+        ],
+        "story": [
+          {
+            "story-title": "Our Team",
+            "story-text": "The team of our project consists of experienced professionals who have successfully implemented complex infrastructure solutions for leading companies in the field of trade, logistics, banking, services and manufacturing. We are ready to share our expertise, therefore we provide consulting support, as well as help with the audit of the customer's IT infrastructure and migration to the cloud.",
+            "story-subtext": "Our technical support specialists resolve questions arising from customers around the clock."
+          },
+          {
+            "story-title": "Infrastructure",
+            "story-text": "Rocket S is created using three virtualization platforms based on Cisco and Huawei's own equipment, located in a reliable Tier3 data center.",
+            "story-subtext": "Three virtualization platforms - Huawei, Red Hat, VMware - allow each customer to get the solution that best meets the given infrastructure requirements."
+          }
+        ],
+        "goods": [
+          {
+            "image": "/img/cloud1.png",
+            "goods-title": "VMware",
+            "goods-list": [
+              {
+                "text": "built-in virtual machine encryption"
+              },
+              {
+                "text": "a wide range of tools for converting physical hosts to virtual"
+              },
+              {
+                "text": "server, network and storage management from one policy-based platform"
+              },
+              {
+                "text": "the possibility of online migration of virtual machines between data centers and cloud providers"
+              },
+              {
+                "text": "wide support for equipment from different vendors"
+              }
+            ]
+          },
+          {
+            "image": "/img/cloud2.png",
+            "goods-title": "Huawei",
+            "goods-list": [
+              {
+                "text": "web portal with access to a virtual data center (vDC) for flexible management of resource pools of virtual machines"
+              },
+              {
+                "text": "built-in eBackup service"
+              },
+              {
+                "text": "flexible management of both virtual services and physical (BareMetal) servers"
+              },
+              {
+                "text": "advanced network virtualization functionality (ELB, VFW, SG, VPC, VPN)"
+              },
+              {
+                "text": "automatic scaling at high load on services (Auto Scaling) when the metrics described in advance are achieved"
+              },
+              {
+                "text": "heterogeneous virtualization: VRM, SDN control, KVM, Vmware"
+              }
+            ]
+          },
+          {
+            "image": "/img/cloud3.png",
+            "goods-title": "Red Hat",
+            "goods-list": [
+              {
+                "text": "the ability to manage virtual machines KVM, VMware ESXi, MS HYPER-V from a single web interface (if a converged infrastructure exists)"
+              },
+              {
+                "text": "quick receipt of new features from the open-source community"
+              },
+              {
+                "text": "automated upgrade"
+              },
+              {
+                "text": "interacts with software-defined platforms in a predictable way"
+              },
+              {
+                "text": "wide support for equipment from different vendors"
+              }
+            ]
+          }
+        ],
+        "QandA": [
+          {
+            "q": "How to connect or test Rocket S services?",
+            "a1": "To get access to Rocket S services",
+            "link1": "leave a request",
+            "href1": "",
+            "data1": "data-modal",
+            "data1text": 0
+          },
+          {
+            "q": "How much do Rocket S services cost?",
+            "a1": "You can calculate the cost of services using",
+            "link1": "online calculator",
+            "href1": "/online-calc?lang=ru",
+            "data1": "id",
+            "data1text": "id_rout_3-2",
+            "a2": "or by contacting us through",
+            "link2": "the feedback form",
+            "href2": ""
+          }
+        ],
+        "files": [
+          {
+            "path": "/files/terms-clouds.pdf",
+            "name": "The Procedure for the provision of services under the tariff plan \"Rocket S\"",
+            "size": "334.2 КB"
+          },
+          {
+            "path": "/files/terms-veeam.pdf",
+            "name": "Veeam services provision Procedure",
+            "size": "319.7 КB"
+          },
+          {
+            "path": "/files/terms-SPLA.pdf",
+            "name": "Procedure for the provision of Microsoft SPLA services",
+            "size": "529.0 КB"
+          }
+        ]
+      }
+    ]
+  }
+}

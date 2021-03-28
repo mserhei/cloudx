@@ -1,0 +1,32 @@
+{{#each statistics}}
+    <div id="statistics">
+        <div class="wave">
+            <div class="wave__spark two">
+            </div>
+            <div class="wave__spark">
+                <div class="wave__spark--accent"></div>
+            </div>
+        </div>
+        <section class="container present">
+            <h2 class="main-header">{{title}}</h2>
+            <article class="statistics" id="id_statistics">
+                <h3 class="section__header">{{subTitle}}</h3>
+                <div class="statistics__wrapper">
+                    <ul class="statistics__list">
+                        {{#each stats}}
+                            <li class="statistics__listitem">
+                                <span class="statistics__value">{{value}}</span>
+                                <span class="statistics__name">{{name}}</span>
+                                <span class="statistics__line"></span>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <div class="statistics__circle" id="id_circle">
+                        <div class="speed" id="speed">0 %</div>
+                        {{> ./circle}}
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+{{/each}}

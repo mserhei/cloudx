@@ -1,0 +1,76 @@
+{
+  "ru": {
+    "lang": "ru",
+    "langName": "Russian",
+    "Lang": "RU",
+    "optionLang": [{ "lang": "en", "langName": "English", "Lang": "EN" }],
+    "navLinks": [
+      {
+        "href": "about-us",
+        "id": 2,
+        "text": "О нас"
+      },
+      {
+        "href": "",
+        "hash": "#services",
+        "id": 12,
+        "text": "Услуги"
+      },
+      {
+        "href": "online-calc",
+        "id": 3,
+        "text": "Онлайн-калькулятор"
+      },
+      {
+        "href": "for-partners",
+        "id": 4,
+        "text": "Партнерам"
+      },
+      {
+        "href": "contacts",
+        "id": 5,
+        "text": "Контакты"
+      }
+    ],
+    "Cab": "Мой кабинет",
+    "login": "Войти",
+    "register": "Зарегистрироваться"
+  },
+  "en": {
+    "lang": "en",
+    "langName": "English",
+    "Lang": "EN",
+    "optionLang": [{ "lang": "ru", "langName": "Russian", "Lang": "RU" }],
+    "navLinks": [
+      {
+        "href": "about-us",
+        "id": 2,
+        "text": "About us"
+      },
+      {
+        "href": "",
+        "hash": "#services",
+        "id": 6,
+        "text": "Services"
+      },
+      {
+        "href": "online-calc",
+        "id": 3,
+        "text": "Online Calculator"
+      },
+      {
+        "href": "for-partners",
+        "id": 4,
+        "text": "For Partners"
+      },
+      {
+        "href": "contacts",
+        "id": 5,
+        "text": "Contacts"
+      }
+    ],
+    "Cab": "My Cabinet",
+    "login": "Login",
+    "register": "Register"
+  }
+}

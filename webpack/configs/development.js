@@ -20,6 +20,7 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: './rocket.png',
       template: './index.html',
     }),
   ],

@@ -1,0 +1,25 @@
+.scroll-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: $overlay-light;
+  opacity: 0;
+  transition: opacity $slider, transform $transition;
+  z-index: 9;
+  padding: 0 4px;
+  width: 10px;
+  transform: translateX(10px);
+  @media screen and (max-width: $tablet - 1) {
+    right: 10px;
+    display: none;
+  }
+}
+.scroll-pad {
+  position: absolute;
+  width: 2px;
+  height: 0px;
+  transition: height $slider;
+  border-radius: 4px;
+  background: $accent;
+}

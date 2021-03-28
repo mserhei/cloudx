@@ -1,0 +1,40 @@
+{{#each services}}
+    <div id="services">
+        <section class="container present services">
+            <h2 class="main-header" id="services__header">{{title}}</h2>
+            <div class="services__table">
+                <div class="services__aside">
+                    <ul class="services__tabs">
+                        {{#each tabs}}
+                            <li class="services__tab-item {{#if @first}}current{{/if}}"><span
+                                    class="tab-accent"></span><span class="tab-title"
+                                    data-service={{@index}}>{{tab-item}}</span></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="services__main">
+                    {{#each tabs}}
+                        <ul class="services__tab-list {{#if @first}}active{{/if}}" data-service="{{@index}}">
+                            {{#each serviceList}}
+                                <li class="services__card"
+                                    style="position: relative;{{#if timerid}}height: 400px;width: 500px;{{/if}}">
+                                    {{#if timerid}}
+                                        {{> ./timer}}
+                                    {{else}}
+                                        <img class="services__image" src="" alt={{title}} loading="lazy" />
+                                        <article class="services__story">
+                                            <h2 class="services__title">{{title}}</h2>
+                                            <p class="services__description">{{description}}</p>
+                                            <a href="{{href}}" class="services__button"
+                                                {{#if id}}id={{id}}{{/if}}>{{@root.services.[0].button}}</a>
+                                        </article>
+                                    {{/if}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+    </div>
+{{/each}}

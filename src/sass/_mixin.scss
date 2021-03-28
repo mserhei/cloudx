@@ -1,7 +1,7 @@
 /* 
 Вариант использования миксина 
 
-ul {
+.cardset__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -38,37 +38,22 @@ ul {
       }
     }
   } @else {
-    @if ($Screen-width < $desktop and $Screen-width >= $tablet) {
-      @media screen and (min-width: #{$Screen-width}), screen and (min-width: $phone) and (orientation: landscape) {
-        & > li {
-          width: calc((100% - #{$margin-in-row}) / #{$Columns});
-          &:nth-child(n) {
-            margin-right: $Margin-right;
-            margin-bottom: $Margin-bottom;
-          }
-          &:nth-child(#{$Columns}n) {
-            margin-right: 0px;
-          }
-          &:nth-last-child(-n + #{$Columns}) {
-            margin-bottom: 0px;
-          }
+    @media screen and (min-width: #{$Screen-width}) {
+      & > li {
+        width: calc((100% - #{$margin-in-row}) / #{$Columns});
+        &:nth-child(n) {
+          margin-right: $Margin-right;
+          margin-bottom: $Margin-bottom;
         }
+        &:nth-child(#{$Columns}n) {
+          margin-right: 0px;
+        }
+        &:nth-last-child(-n + #{$Columns}) {
+          margin-bottom: 0px;
+        }
+         &:last-child {
+        margin-right: 0px;
       }
-    } @else {
-      @media screen and (min-width: #{$Screen-width}) {
-        & > li {
-          width: calc((100% - #{$margin-in-row}) / #{$Columns});
-          &:nth-child(n) {
-            margin-right: $Margin-right;
-            margin-bottom: $Margin-bottom;
-          }
-          &:nth-child(#{$Columns}n) {
-            margin-right: 0px;
-          }
-          &:nth-last-child(-n + #{$Columns}) {
-            margin-bottom: 0px;
-          }
-        }
       }
     }
   }

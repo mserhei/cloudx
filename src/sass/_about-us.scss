@@ -1,0 +1,272 @@
+#about-us {
+  background: $overlay-light;
+  padding-top: 10px;
+  margin-top: -10px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 30px;
+    margin-top: -30px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 50px;
+    margin-top: -50px;
+  }
+
+  .container {
+    padding-top: 0;
+  }
+}
+
+.about-us {
+  &__main {
+    background: $overlay;
+    border-radius: 16px;
+    padding: 40px;
+    transform: translateX(-100px);
+    opacity: 0;
+    color: #fff;
+    font-family: $Montserrat;
+    font-weight: $normal;
+  }
+  &__header {
+    font-family: $Roboto;
+    color: $accent;
+    font-size: 36px;
+    @media screen and (min-width: $tablet) {
+      font-size: 46px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 56px;
+    }
+  }
+  &__paragraf {
+    font-size: 18px;
+    line-height: 1.3em;
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 22px;
+    }
+    &.main {
+      line-height: 2em;
+      font-size: 22px;
+      margin-bottom: 40px;
+      @media screen and (min-width: $tablet) {
+        font-size: 26px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 28px;
+      }
+    }
+  }
+  &__definition {
+    color: $accent;
+  }
+  &__story {
+    background: $stroke-grey;
+    height: 100%;
+    border-radius: 12px;
+    padding: 20px;
+    color: $main-purple;
+    font-size: 18px;
+    line-height: 1.3em;
+    max-width: 900px;
+    @media screen and (min-width: $tablet) {
+      padding: 40px;
+      font-size: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 22px;
+    }
+    &-header {
+      color: $accent;
+    }
+    &-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      @include Cardset-Responsive($phone, 20px, 20px, 1);
+      @include Cardset-Responsive($tablet, 30px, 30px, 2);
+    }
+  }
+  &__goods {
+    background-color: $overlay-light;
+    padding: 20px;
+    height: 100%;
+    color: $white;
+    font-size: 18px;
+    line-height: 1.3em;
+    border-radius: 16px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+      padding: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 22px;
+      padding: 40px;
+    }
+    &:hover .about-us__goods-image {
+      transform: scale(1.2);
+    }
+    &-flex {
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 16px;
+      @include Cardset-Responsive($phone, 20px, 20px, 1);
+      @include Cardset-Responsive($tablet, 30px, 30px, 2);
+      @include Cardset-Responsive($desktop, 30px, 10px, 3);
+
+      & > li:nth-child(2) {
+        @media screen and (max-width: $desktop - 1) {
+          margin-bottom: 30px;
+        }
+      }
+
+      & > li:nth-child(3) {
+        @media screen and (max-width: $desktop - 1) {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+  &__goods-header {
+    display: inline-block;
+  }
+  &__goods-image {
+    display: inline-block;
+    height: 40px;
+    filter: drop-shadow(0 0 26px white);
+    margin-right: 20px;
+    @media screen and (min-width: $tablet) {
+      height: 60px;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 80px;
+    }
+    width: auto;
+    object-fit: contain;
+    transition: transform $transition;
+  }
+  &__goods-listitem {
+    list-style-position: inside;
+    list-style-image: linear-gradient($accent, $accent);
+    margin-bottom: 10px;
+  }
+  &__question {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+    }
+    background: $overlay;
+    border-radius: 16px;
+    padding: 20px;
+    @media screen and (min-width: $tablet) {
+      padding: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+      padding: 40px;
+    }
+    &-list {
+      margin-bottom: 20px;
+      @media screen and (min-width: $desktop) {
+        margin-bottom: 0;
+        margin-right: 80px;
+      }
+    }
+    &-item {
+      @extend %flex-container;
+      justify-content: flex-start;
+      color: $accent;
+      line-height: 2em;
+      font-size: 18px;
+      margin-bottom: 20px;
+      @media screen and (min-width: $tablet) {
+        font-size: 20px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 22px;
+      }
+      &-answer {
+        padding-left: 30px;
+        margin-bottom: 30px;
+        color: $white;
+        font-size: 16px;
+        font-weight: $light;
+        @media screen and (min-width: $tablet) {
+          font-size: 18px;
+        }
+        @media screen and (min-width: $desktop) {
+          font-size: 20px;
+        }
+      }
+      .material-icons {
+        font-size: 24px;
+        line-height: 1.3em;
+        @media screen and (min-width: $tablet) {
+          font-size: 28px;
+        }
+        @media screen and (min-width: $desktop) {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+  &__link {
+    display: inline;
+    font-weight: $bold;
+    &:hover,
+    &:focus {
+      text-shadow: 0 0 10px $accent;
+    }
+  }
+  &__file-listitem:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  &__file-listitem {
+    transition: transform $transition;
+  }
+  &__file-listitem:hover {
+    transform: translate(-10px);
+  }
+  &__file-list {
+    align-self: flex-end;
+    @media screen and (min-width: $desktop) {
+      align-self: flex-start;
+    }
+  }
+  &__file-link {
+    @extend %anchor;
+    @extend %flex-container;
+    justify-content: flex-start;
+    width: auto;
+    .material-icons {
+      margin-bottom: 10px;
+    }
+    &-flex {
+      pointer-events: none;
+      width: 60px;
+      flex-shrink: 0;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+  &__file {
+    font-size: 12px;
+    &-title {
+      pointer-events: none;
+    }
+  }
+}
+.present .about-us__main {
+  transform: translateX(0);
+  transition: transform $transition, opacity $transition;
+  opacity: 1;
+}

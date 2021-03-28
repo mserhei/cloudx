@@ -5,12 +5,14 @@
 body {
   font-family: $Roboto;
   font-size: 14px;
+  font-display: swap;
   color: $black;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #f5f6fb;
+  background: $main-purple;
+  overflow: hidden;
 }
 footer {
   margin-top: auto;
@@ -38,9 +40,56 @@ main {
 .container {
   position: relative;
   width: 100%;
-  padding: 0 25px;
+  padding: 5px;
+  margin: 0 auto;
+  transform-origin: top left;
+  &:not(#header) {
+    transform: scale(0.5) translate(-100px, 50px);
+    opacity: 0;
+  }
+  transition: transform $slider, opacity $slider;
+  @media screen and (min-width: $phone) {
+    max-width: 600px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: 25px;
+    max-width: 1100px;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: 1600px;
+    padding: 40px;
+  }
 }
-.visually-hidden {
+
+article > .main-header {
+  padding: 30px;
+}
+section.container {
+  padding: 10px;
+  @media screen and (min-width: $tablet) {
+    padding: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 30px;
+  }
+  @media screen and (min-width: 0px) {
+    padding-top: 0;
+  }
+  & > .main-header {
+    padding: 30px;
+  }
+
+  &:not(#header).present {
+    transition: transform $slider, opacity $slider;
+    transform: scale(1) translate(0);
+    opacity: 1;
+    .main-header {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+%visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -50,20 +99,36 @@ main {
   border: 0;
   clip: rect(0 0 0 0);
 }
-
+.visually-hidden {
+  @extend %visually-hidden;
+}
+.main-modal {
+  position: relative;
+  border-radius: 12px;
+  margin: auto;
+  background-color: $white;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transform: scale(0.8);
+  transition: opacity $slider, transform $slider;
+}
 .backdrop {
   display: flex;
   position: fixed;
   z-index: 21;
   width: 100%;
   height: 100%;
+  padding: 60px 6px;
   overflow-y: auto;
   background: $overlay;
   opacity: 0;
-  transition: opacity $transition;
+  transition: opacity $slider;
   &.opened {
     opacity: 1;
-    & .backdrop__modal {
+    & .backdrop__modal,
+    & .main-modal {
       opacity: 1;
       transform: scale(1);
     }
@@ -71,6 +136,7 @@ main {
 
   &__modal {
     position: relative;
+    border-radius: 12px;
     padding: 55px 20px 60px;
     width: 290px;
     margin: auto;
@@ -79,23 +145,37 @@ main {
     font-style: normal;
     font-weight: 500;
     letter-spacing: 0.02em;
-
     transform: scale(0.8);
-    transition: opacity $transition, transform $transition;
-    &.opened {
-      opacity: 1;
-      transform: scale(1);
-    }
-
+    transition: opacity $slider, transform $slider;
     @media screen and (min-width: $tablet) {
       padding: 55px 55px 60px;
-      width: 725px;
+      width: 500px;
     }
-
     @media screen and (min-width: $desktop) {
       padding: 55px 105px 60px;
-      width: 860px;
+      width: 600px;
     }
+  }
+  .backdrop.burger {
+    & .backdrop__modal {
+      padding: 0px;
+      width: 300px;
+    }
+  }
+}
+.close-button {
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  right: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  color: $white;
+  line-height: 1em;
+  transition: transform $transition, background-color $transition;
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
   }
 }
 .scrollbar-measure {
@@ -106,9 +186,72 @@ main {
   top: -9999px;
 }
 #root {
-  background: #e5e5e5;
+  position: relative;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5e5;
+  background-image: $root-bg;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   width: 100%;
+  overflow-x: hidden;
+}
+#root-content {
+  padding-top: 40px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+  }
+}
+.main__home {
+  padding-top: 10px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 50px;
+  }
+}
+.main-header {
+  font-family: $Montserrat;
+  text-align: center;
+  color: $white;
+  text-shadow: $text-shade;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  opacity: 0.5;
+  transform: translateX(100px);
+  transition: transform $slider 250ms, opacity $slider 500ms;
+  @media screen and (min-width: $tablet) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 42px;
+  }
+}
+.header__video {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+.section__header {
+  background: $overlay;
+  display: inline-block;
+  border-radius: 8px;
+  color: $accent;
+  font-size: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
 }
 %flex-container {
   display: flex;
@@ -116,28 +259,52 @@ main {
   align-items: center;
 }
 %button {
+  background: $main-purple;
   border: 1px solid $bg-grey;
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: 4px 10px;
   color: $bg-grey;
 }
 %button-main {
   @extend %button;
   background: $accent;
   color: $white;
+  &:hover,
+  &:focus {
+    color: $white;
+    font-weight: bold;
+    border: 1px solid $accent;
+    outline: none;
+  }
+  &:active {
+    background: $overlay;
+  }
+}
+%button-purple {
+  @extend %button;
+  border-color: $purple-accent;
+  background: $purple-btn;
+  color: $white;
+  &:hover,
+  &:focus {
+    border-color: $purple-btn;
+    background: $purple-accent;
+  }
+  &:active {
+    background: $main-purple;
+  }
 }
 %anchor {
-  @extend %flex-container;
   font-weight: normal;
   color: $dim;
-  transition: color $transition, transform $transition;
+  transition: color $slider, transform $slider;
   height: 100%;
   width: 100%;
   &:hover,
   &:focus,
   &.coloured {
     color: $white;
-    font-weight: bold;
+    text-shadow: $text-shade;
     border: none;
     outline: none;
     & ~ span {
@@ -147,5 +314,27 @@ main {
   &:active:not([disabled]) {
     color: $accent;
     transform: translate(1px, 2px);
+    transition: none;
+  }
+}
+%input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid $main-purple-bg;
+  border-radius: 10px;
+  padding-left: 15px;
+  &:focus {
+    border-color: $main-purple-gr;
+    border-bottom-color: $main-purple;
+    background: $main-purple-bg;
+    outline: none;
+  }
+  &.valid {
+    background: rgb(232, 240, 254);
+    border-bottom-color: aquamarine;
+  }
+  &.invalid {
+    background: $main-red-light;
+    border-bottom-color: $main-red;
   }
 }

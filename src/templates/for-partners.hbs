@@ -1,0 +1,50 @@
+<div id="partners">
+    <section class="container present">
+        <h1 class="main-header">{{title}}</h1>
+        <div class="partners-flex">
+            <div class="partners__bg">
+                <div class="partners__indicators">
+                    <ul class="partners__indicators-list">
+                        {{#each indicators}}
+                            <li class="partners__indicators-listitem">
+
+                                <div class="partners__indicators-title">{{title}}</div>
+                                <div class="partners__indicators-wrapper">
+                                    <div class="partners__indicators-measure {{image}}"></div>
+                                    <div class="partners__indicators-value {{image}}"></div>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="partners__image-wrapper">
+                    <div class="globe-container">
+                        <div class="globe">
+                            <div class="globe-sphere"></div>
+                            <div class="globe-worldmap">
+                                <div class="globe-worldmap-front static"></div>
+                            </div>
+                            <div class="globe-inner-shadow"></div>
+                        </div>
+                        <div class="partners__rocket-wrapper">
+                            <div class="partners__rocket-wrapper inner">
+                                <div class="partners__rocket"></div>
+                                <div class="partners__rocket secondary"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="partners__story">
+                {{#each story}}
+                    <p class="partners__text">{{text}} {{#if href}}
+                            <a href="mailto:{{href}}" class="partners__mail">{{href}}</a>
+                        {{/if}}
+                    </p>
+                {{/each}}
+                <a href="" class="partners__button" data-select="3" data-modal="1">{{button}}</a>
+            </div>
+        </div>
+    </section>
+</div>

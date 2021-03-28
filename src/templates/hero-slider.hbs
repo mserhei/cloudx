@@ -1,0 +1,48 @@
+<div id="hero_slider">
+    <section class="container present">
+        <h1 class="visually-hidden" id="hero-header">Why Us</h1>
+        <div class="hero-slider" role="slider" aria-labelledby="hero-header" id="slider">
+            <div class="hero-slider__controls-aside">
+                <a class="hero-slider__controls-button aside" data-slide id="slider_left0" role="button"
+                    aria-pressed="false">
+                    <i class="icon material-icons">chevron_left</i>
+                </a>
+            </div>
+            <div class="hero-slider__content">
+                {{#each heroSlider}}
+                    <div class="hero-slider__slide {{#if @first}}active{{/if}}">
+                        <article class="hero-slider__article {{class}}">
+                            <h2 class="main-header" role="header">{{title}}</h2>
+                            <div class="hero-slider__article-container">
+                                <h3 class="hero-slider__section-header section__header" role="header">{{subTitle}}
+                                </h3>
+                                <ul class="hero-slider__section-list">
+                                    {{#each list}}
+                                        <li class="hero-slider__section-listitem">{{listitem}}</li>
+                                    {{/each}}
+                                </ul>
+                                {{#if order}}{{> ./order-button}}{{/if}}
+                            </div>
+                        </article>
+                    </div>
+                {{/each}}
+                <div class="hero-slider__controls controls" aria-controls="slider" data-controls="slider">
+                    <a class="hero-slider__controls-button" data-slide id="slider_left" role="button"
+                        aria-pressed="false">
+                        <i class="icon material-icons">chevron_left</i>
+                    </a>
+                    <a class="hero-slider__controls-button" data-slide id="slider_right" role="button"
+                        aria-pressed="false">
+                        <i class="icon material-icons">chevron_right</i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-slider__controls-aside">
+                <a class="hero-slider__controls-button aside" data-slide id="slider_right0" role="button"
+                    aria-pressed="false">
+                    <i class="icon material-icons">chevron_right</i>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>

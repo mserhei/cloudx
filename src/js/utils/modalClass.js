@@ -1,7 +1,9 @@
 import { measureAndFixScroll } from './preloader';
-import authorize from '../../templates/login-modal.hbs';
+import { renderModal } from '../pages/loginModal';
+import { renderFeedback } from '../pages/feedbackModal';
+import { renderOrder } from '../pages/calc';
 
-const hbsFunctions = [authorize];
+const hbsFunctions = [renderModal, renderFeedback, renderOrder];
 
 class Modal {
   constructor(functions) {
@@ -10,6 +12,9 @@ class Modal {
     this.onEscapeCloseModal = this.onEscapeCloseModal.bind(this);
     this.onClickCloseModal = this.onClickCloseModal.bind(this);
     this.scroll = '';
+  }
+  get isScrolled() {
+    return document.body.offsetHeight === document.body.scrollHeight;
   }
   get oldScroll() {
     return measureAndFixScroll();
@@ -20,15 +25,16 @@ class Modal {
     const markup = await this.functions[index](event);
     if (!markup) return;
     event.preventDefault();
-    document.body.insertAdjacentHTML('afterbegin', markup);
+    document.body.insertAdjacentHTML('beforeend', markup);
     const modalRef = document.querySelector('div[data-close]');
     setTimeout(() => {
       modalRef.classList.add('opened');
     }, 100);
-    this.scroll = this.oldScroll;
-    document.body.style.overflow = 'hidden';
     modalRef.addEventListener('click', this.onClickCloseModal);
     window.addEventListener('keydown', this.onEscapeCloseModal);
+    if (this.isScrolled) return;
+    this.scroll = this.oldScroll;
+    document.body.style.overflow = 'hidden';
   }
   closeModal() {
     const backdrop = document.querySelector('div[data-close]');
@@ -37,8 +43,13 @@ class Modal {
     backdrop.classList.remove('opened');
     setTimeout(() => {
       backdrop.remove();
-      document.body.style.overflowY = 'scroll';
+      if (this.isScrolled) return;
+      document.body.style.overflowY = 'auto';
       document.body.style.paddingRight = this.scroll;
+      const header = document.querySelector('.header');
+      if (getComputedStyle(header).position === 'fixed') {
+        header.style.paddingRight = this.scroll;
+      }
     }, 500);
   }
   onEscapeCloseModal(event) {

@@ -4,6 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
 }
 :root {
   -moz-tab-size: 4;
@@ -55,6 +59,16 @@ sub {
 }
 sup {
   top: -0.5em;
+}
+input,
+input:before,
+input:after,
+textarea {
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
 }
 button,
 input,

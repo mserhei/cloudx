@@ -1,0 +1,114 @@
+{
+  "ru": {
+    "title": "Контакты",
+    "contacts-center": [
+      {
+        "image": "/img/contacts1.svg",
+        "title": "Контактный центр",
+        "tel": "7992",
+        "time": "Круглосуточно"
+      },
+      {
+        "image": "/img/contacts2.svg",
+        "title": "Отдел продаж",
+        "mail": "sales@rockets.by",
+        "time": "9:00−18:00"
+      },
+      {
+        "image": "/img/contacts3.svg",
+        "title": "Служба технической поддержки",
+        "mail": "support@rockets.by",
+        "time": "Круглосуточно"
+      }
+    ],
+    "question": "Есть вопрос?",
+    "questions": [
+      {
+        "title": "Прокомментирует для СМИ пресс-служба",
+        "mail": "press@rockets.by"
+      },
+      {
+        "title": "Рассмотрит ваше резюме HR-служба",
+        "mail": "personal@rockets.by"
+      },
+      {
+        "title": "По любым другим вопросам",
+        "mail": "info@rockets.by"
+      }
+    ],
+    "button": "Написать",
+    "image": "",
+    "contacts": [
+      {
+        "icon": "location_on",
+        "title": "Минск, пр-т Победителей, 1",
+        "link": "https://yandex.ru/maps/-/CCUQy4fDtB"
+      },
+      {
+        "icon": "mail",
+        "title": "220004, Республика Беларусь, Минск, проспект Победителей, 1"
+      },
+      {
+        "icon": "public",
+        "title": "www.rockets.by",
+        "link": "www.rockets.by"
+      }
+    ]
+  },
+  "en": {
+    "title": "Contacts",
+    "contacts-center": [
+      {
+        "image": "/img/contacts1.svg",
+        "title": "Contact Center",
+        "tel": "7992",
+        "time": "24/7"
+      },
+      {
+        "image": "/img/contacts2.svg",
+        "title": "Sales Department",
+        "mail": "sales@rockets.by",
+        "time": "9:00−18:00"
+      },
+      {
+        "image": "/img/contacts3.svg",
+        "title": "Technical support service",
+        "mail": "support@rockets.by",
+        "time": "24/7"
+      }
+    ],
+    "question": "Do you have a question?",
+    "questions": [
+      {
+        "title": "The press service will comment for the media",
+        "mail": "press@rockets.by"
+      },
+      {
+        "title": "HR department will review your resume",
+        "mail": "personal@rockets.by"
+      },
+      {
+        "title": "For any other questions",
+        "mail": "info@rockets.by"
+      }
+    ],
+    "button": "Wright",
+    "image": "",
+    "contacts": [
+      {
+        "icon": "location_on",
+        "title": "Minsk, Pobeditelei Av., 1",
+        "link": "https://yandex.ru/maps/-/CCUQy4fDtB"
+      },
+      {
+        "icon": "mail",
+        "title": "220004, Republic of Belarus, Minsk, Pobeditelei Avenue, 1"
+      },
+      {
+        "icon": "public",
+        "title": "www.rockets.by",
+        "link": "www.rockets.by"
+      }
+    ]
+  }
+}
