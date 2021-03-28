@@ -6,12 +6,12 @@ body {
   font-family: $Inter;
   font-size: 14px;
   font-display: swap;
-  color: $black;
+  color: $main-text;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: $main-purple;
+  background: $black;
   overflow: hidden;
 }
 footer {
@@ -56,7 +56,7 @@ main {
     max-width: 1100px;
   }
   @media screen and (min-width: $desktop) {
-    max-width: 1600px;
+    max-width: 1280px;
     padding: 40px;
   }
 }
@@ -190,11 +190,11 @@ section.container {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #e5e5e5;
-  background-image: $root-bg;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  // background-color: #e5e5e5;
+  // background-image: $root-bg;
+  // background-size: cover;
+  // background-position: center;
+  // background-attachment: fixed;
   width: 100%;
   overflow-x: hidden;
 }
@@ -265,6 +265,28 @@ section.container {
   padding: 4px 10px;
   color: $bg-grey;
 }
+%button-major {
+  background: transparent;
+  border: 1px solid $main-text;
+  color: $main-text;
+  background: transparent;
+  font-weight: $blackfont;
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  transition: color $transition, border-color $transition;
+  filter: drop-shadow(0 0 2px rgb(20, 2, 46));
+  @extend %flex-container;
+  &:hover,
+  &:focus {
+    color: $white;
+    border: 1px solid $accent;
+    outline: none;
+  }
+  &:active {
+    background: $overlay;
+  }
+}
 %button-main {
   @extend %button;
   background: $accent;
@@ -295,8 +317,8 @@ section.container {
   }
 }
 %anchor {
-  font-weight: normal;
-  color: $dim;
+  text-transform: uppercase;
+  font-weight: $light;
   transition: color $slider, transform $slider;
   height: 100%;
   width: 100%;
@@ -313,7 +335,7 @@ section.container {
   }
   &:active:not([disabled]) {
     color: $accent;
-    transform: translate(1px, 2px);
+    transform: scale(0.98);
     transition: none;
   }
 }

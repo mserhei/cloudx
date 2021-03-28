@@ -2,12 +2,20 @@
     <li class="visually-hidden" role="navigation" aria-labelledby="id_rout_6">
         <a href="/cabinet?lang={{lang}}" class="navigation__rout" id="id_rout_6">{{Cab}}</a>
     </li>
+    <li class="language" label="Language">
+        <p class="language__select" name="language" id="id_language" class="language-select">
+            {{#each optionLang}}
+                <span data-lang="{{lang}}" aria-label="English">
+                    {{Lang}}
+                </span>
+            {{/each}}
+        </p>
+    </li>
     <li>
         <ul class="authorization">
             <li class="authorization__item" role="navigation" aria-labelledby="id_login">
                 <a href="" role="button" aria-label="login button" class="authorization__rout" id="id_login"
-                    data-modal="0"><img src="../img/login.svg" alt="login button"
-                        class="authorization__rout-login" /></a>
+                    data-modal="0">{{login}}</a>
             </li>
         </ul>
     </li>
@@ -23,13 +31,4 @@
             {{/each}}
         </select>
     </li> --}}
-    <li class="language" label="Language">
-        <p class="language__select" name="language" id="id_language" class="language-select">
-            {{#each optionLang}}
-                <span data-lang="{{lang}}" aria-label="English">
-                    {{Lang}}
-                </span>
-            {{/each}}
-        </p>
-    </li>
 </ul>
