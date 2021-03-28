@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  font-family: $Roboto;
+  font-family: $Inter;
   font-size: 14px;
   font-display: swap;
   color: $black;
@@ -107,7 +107,7 @@ section.container {
   border-radius: 12px;
   margin: auto;
   background-color: $white;
-  font-family: Roboto;
+  font-family: $Inter;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -141,7 +141,7 @@ section.container {
     width: 290px;
     margin: auto;
     background-color: $white;
-    font-family: Roboto;
+    font-family: $Inter;
     font-style: normal;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -214,7 +214,7 @@ section.container {
   }
 }
 .main-header {
-  font-family: $Montserrat;
+  font-family: $Inter;
   text-align: center;
   color: $white;
   text-shadow: $text-shade;

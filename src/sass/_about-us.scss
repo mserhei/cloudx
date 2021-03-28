@@ -24,11 +24,9 @@
     transform: translateX(-100px);
     opacity: 0;
     color: #fff;
-    font-family: $Montserrat;
     font-weight: $normal;
   }
   &__header {
-    font-family: $Roboto;
     color: $accent;
     font-size: 36px;
     @media screen and (min-width: $tablet) {
