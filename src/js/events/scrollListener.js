@@ -70,7 +70,7 @@ function movePad(event) {
   const server = document.querySelector('.new-hero__server');
   if (header) {
     if (-y < 400) {
-      header.style.transform = `translateY(${-y * 0.9}px)`;
+      header.style.transform = `translateY(${-y * 1.1}px)`;
       header.style.opacity = `${(1 + y / 400).toFixed(1)}`;
       planet.style.transform = `scale(${(1 - y / 800).toFixed(1)}) rotate(${(
         1 -

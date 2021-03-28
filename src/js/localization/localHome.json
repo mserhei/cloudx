@@ -3,7 +3,8 @@
     "hero": {
       "title": "rocket",
       "title-style": "s",
-      "text": "Cовременный сервис аренды вычислительных мощностей и систем хранения данных для создания собственной виртуальной инфраструктуры"
+      "text": "Cовременный сервис аренды вычислительных мощностей и систем хранения данных для создания собственной виртуальной инфраструктуры",
+      "button": "получить доступ"
     },
     "heroSlider": [
       {
@@ -372,6 +373,12 @@
     ]
   },
   "en": {
+    "hero": {
+      "title": "rocket",
+      "title-style": "s",
+      "text": "A modern computing power and data storage systems rent service to create your own virtual infrastructure",
+      "button": "get access"
+    },
     "heroSlider": [
       {
         "class": "one",

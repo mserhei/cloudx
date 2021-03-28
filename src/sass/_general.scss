@@ -11,15 +11,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: linear-gradient(to top, black, black), url('../img/stars@0.5x.jpg');
+  background-image: linear-gradient(to top, black, black),
+    url('../img/stars@0.5x.jpg');
   @media screen and (min-width: $tablet) {
-    background-image: linear-gradient(to top, black, black), url('../img/stars@1x.jpg');
+    background-image: linear-gradient(to top, black, black),
+      url('../img/stars@1x.jpg');
   }
   @media screen and (min-width: $desktop) {
-    background-image: linear-gradient(to top, black, black), url('../img/stars@2x.jpg');
+    background-image: linear-gradient(to top, black, black),
+      url('../img/stars@2x.jpg');
   }
   background-attachment: fixed;
-  background-size: contain; 
+  background-size: contain;
   // background-repeat: no-repeat;
   background-blend-mode: soft-light;
   overflow: hidden;
@@ -276,20 +279,19 @@ section.container {
   color: $bg-grey;
 }
 %button-major {
-  background: transparent;
   border: 1px solid $main-text;
   color: $main-text;
   background: transparent;
   font-weight: $blackfont;
   cursor: pointer;
-  width: 80px;
+  padding: 0 15px;
+  width: fit-content;
   height: 40px;
   transition: color $transition, border-color $transition;
   filter: drop-shadow(0 0 2px rgb(20, 2, 46));
   @extend %flex-container;
   &:hover,
   &:focus {
-    color: $white;
     border: 1px solid $accent;
     outline: none;
   }
