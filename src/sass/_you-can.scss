@@ -1,0 +1,123 @@
+#you_can {
+  max-width: inherit;
+  box-sizing: border-box;
+  &>.container.present {
+    width: 100%;
+  }
+}
+.you-can {
+  margin: 0 auto;
+  @extend %flex-container;
+  &__content {
+    @extend %flex-container;
+      flex-direction: column;
+      align-items: flex-start;
+    @media screen and (min-width: $phone) {
+      flex-direction: column;
+    }
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+  &__block-title {
+    width: 100%;
+    @media screen and (min-width: $tablet) {
+      width: 20%;
+    }
+    color: #E0E0E0;
+    font-size: 14px;
+    line-height: 17px;
+    p {
+      font-weight: 500;
+    }
+    span {
+      font-weight: 300;
+    }
+  }
+  &__content-title {
+    margin-top: 20px;
+    width: 100%;
+    @media screen and (min-width: $tablet) {
+      margin-top: 0px;
+      width: 30%;
+    }
+    p {
+      font-size: 20px;
+      line-height: 24px;
+      @media screen and (min-width: $tablet) {
+        font-size: 48px;
+        line-height: 58px;
+      }
+      font-weight: 800;
+      color: #F2F2F2;
+    }
+  }
+  &__advantages {
+    width: 100%;
+    margin-top: 20px;
+    @media screen and (min-width: $tablet) {
+      margin-top: 0px;
+      width: 50%;
+    }
+  }
+  &__advantage {
+    position: relative;
+    padding: 0px 0px 30px 0px;
+    width: 100%;
+    @media screen and (min-width: $phone) {
+      width: 45%;
+    }
+    @media screen and (min-width: $tablet) {
+      padding: 0px 0px 50px 50px;
+    }
+    display: inline-block;
+    vertical-align: top;
+
+    &__circle {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 20px;
+      height: 20px;
+      @media screen and (min-width: $tablet) {
+        top: 0px;
+        left: 50px;
+        width: 40px;
+        height: 40px;
+      }
+      border-radius: 50%;
+      border: 0.5px solid #BDBDBD;
+      transition: all .5s ease;
+      &:hover {
+        top: -1px;
+        left: 1px;
+        border: 1px solid #fff;
+        @media screen and (min-width: $tablet) {
+          top: -1px;
+          left: 51px;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 18px;
+      padding-top: 0px;
+      padding-left: 30px;
+      @media screen and (min-width: $phone) {
+        font-size: 16px;
+        line-height: 19px;
+        padding-top: 30px;
+        padding-left: 0px;
+      }
+      @media screen and (min-width: $tablet) {
+        font-size: 16px;
+        line-height: 19px;
+        padding-top: 60px;
+      }
+      color: #F2F2F2;
+    }
+  }
+}
+
+

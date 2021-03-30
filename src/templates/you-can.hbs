@@ -1,0 +1,23 @@
+<div id="you_can">
+  <section class="container present">
+      <div class="you-can__content">
+        {{#each youCan}}
+          <div class="you-can__block-title">
+            <p>01</p>
+            <span>{{title}}</span>
+          </div>
+          <div class="you-can__content-title">
+            <p>{{subTitle}}</p>
+          </div>
+          <div class="you-can__advantages">
+            {{#each list}}
+              <div class="you-can__advantage">
+                <div class="you-can__advantage__circle"></div>
+                <div class="you-can__advantage__title">{{listitem}}</div>
+              </div>
+            {{/each}}
+          </div>
+        {{/each}}
+      </div>
+  </section>
+</div>

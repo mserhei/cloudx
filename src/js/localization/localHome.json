@@ -6,6 +6,23 @@
       "text": "Cовременный сервис аренды вычислительных мощностей и систем хранения данных для создания собственной виртуальной инфраструктуры",
       "button": "получить доступ"
     },
+    "youCan": [
+      {
+        "title": "Почему Rocket S?",
+        "subTitle": "С Rocket S вы сможете:",
+        "list": [
+          { "listitem": "снизить затраты на ИТ-инфраструктуру до 60%" },
+          {
+            "listitem": "платить только за то, чем пользуетесь, по модели pay-as-you-go"
+          },
+          {
+            "listitem": "больше не беспокоиться об уязвимостях ваших серверов"
+          },
+          { "listitem": "получить комплексное решение: IaaS и каналы связи" },
+          { "listitem": "бесплатно протестировать возможности Rocket S" }
+        ]
+      }
+    ],
     "heroSlider": [
       {
         "class": "one",
@@ -379,6 +396,31 @@
       "text": "A modern computing power and data storage systems rent service to create your own virtual infrastructure",
       "button": "get access"
     },
+    "youCan": [
+      {
+        "title": "Why Rocket S?",
+        "subTitle": "With Rocket S you will manage to:",
+        "list": [
+          { "listitem": "reduce expances on IT-structure up to 60%" },
+          {
+            "listitem": "pay only for that you use, according to pay-as-you-go model"
+          },
+          {
+            "listitem": "not to warry anymore about vulnerabilities of your servers"
+          },
+          {
+            "listitem": "obtain a complex solution: IaaS and conection channels"
+          },
+          { "listitem": "test  Rocket S facilities for free" }
+        ],
+        "order": [
+          {
+            "buttonTitle": "leave your order for a free test period!",
+            "buttonText": "Get consultation"
+          }
+        ]
+      }
+    ],
     "heroSlider": [
       {
         "class": "one",
