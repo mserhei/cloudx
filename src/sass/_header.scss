@@ -117,7 +117,8 @@
   &__rout {
     color: transparent;
     text-transform: uppercase;
-    text-shadow: -1px -1px 2px rgb(20, 2, 46), 0 0 2px rgb(20, 2, 46), 0 0 12px rgb(20, 2, 46);
+    text-shadow: -1px -1px 2px rgb(20, 2, 46), 0 0 2px rgb(20, 2, 46),
+      0 0 12px rgb(20, 2, 46);
     &--hover {
       @extend %flex-container;
       @extend %anchor;
@@ -223,7 +224,7 @@ ul.navigation__list#id_nav {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    top: 40px;
+    top: 50px;
     left: 0;
     background-image: $header-gr;
     background-size: cover;
@@ -237,7 +238,7 @@ ul.navigation__list#id_nav {
       opacity: 0.95;
       transform: scaleY(1);
       .navigation__rout {
-        text-shadow: 0 0 8px rgba(0, 0, 0, 0.8)
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
       }
     }
     #id_nav-group {
