@@ -372,3 +372,34 @@ section.container {
     border-bottom-color: $main-red;
   }
 }
+
+.block-title {
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    width: 20%;
+  }
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 17px;
+  p {
+    font-weight: 500;
+  }
+  span {
+    font-weight: 300;
+  }
+}
+
+.content-title {
+  margin-top: 20px;
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    margin-top: 0px;
+    width: 30%;
+    font-size: 48px;
+    line-height: 58px;
+  }
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #f2f2f2;
+}

@@ -1,23 +1,27 @@
 <div id="you_can">
   <section class="container present">
-      <div class="you-can__content">
-        {{#each youCan}}
-          <div class="you-can__block-title">
+    <div class="you-can__content">
+      {{#each youCan}}
+        <article>
+          <h2 class="block-title">
             <p>01</p>
             <span>{{title}}</span>
-          </div>
-          <div class="you-can__content-title">
-            <p>{{subTitle}}</p>
-          </div>
-          <div class="you-can__advantages">
+          </h2>
+          <h3 class="content-title">
+            {{subTitle}}
+          </h3>
+          <ul class="you-can__advantages">
             {{#each list}}
-              <div class="you-can__advantage">
-                <img src="../img/rings1.svg" class="you-can__advantage__circle"></img>
+              <li class="you-can__advantage circle-wrapper">
+                <div class="circle-wrapper--div">
+                  <div class="you-can__advantage__circle"></div>
+                </div>
                 <div class="you-can__advantage__title">{{listitem}}</div>
-              </div>
+              </li>
             {{/each}}
-          </div>
-        {{/each}}
-      </div>
+          </ul>
+        </article>
+      {{/each}}
+    </div>
   </section>
 </div>

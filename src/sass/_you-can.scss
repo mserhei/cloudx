@@ -1,55 +1,31 @@
 #you_can {
-  max-width: inherit;
-  box-sizing: border-box;
-  &>.container.present {
+  width: 100%;
+  & > .container.present {
     width: 100%;
   }
 }
+
+%lil-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #bdbdbd;
+  transition: transform $slider;
+}
+
 .you-can {
   margin: 0 auto;
   @extend %flex-container;
   &__content {
     @extend %flex-container;
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
     @media screen and (min-width: $phone) {
       flex-direction: column;
     }
     @media screen and (min-width: $tablet) {
       flex-direction: row;
-    }
-  }
-  &__block-title {
-    width: 100%;
-    @media screen and (min-width: $tablet) {
-      width: 20%;
-    }
-    color: #E0E0E0;
-    font-size: 14px;
-    line-height: 17px;
-    p {
-      font-weight: 500;
-    }
-    span {
-      font-weight: 300;
-    }
-  }
-  &__content-title {
-    margin-top: 20px;
-    width: 100%;
-    @media screen and (min-width: $tablet) {
-      margin-top: 0px;
-      width: 30%;
-    }
-    p {
-      font-size: 20px;
-      line-height: 24px;
-      @media screen and (min-width: $tablet) {
-        font-size: 48px;
-        line-height: 58px;
-      }
-      font-weight: 800;
-      color: #F2F2F2;
     }
   }
   &__advantages {
@@ -72,14 +48,57 @@
     }
     display: inline-block;
     vertical-align: top;
+    &:hover &__circle:after {
+      transform: translate(4px, -4px);
+    }
+    &:hover &__circle:before {
+      transform: translate(-4px, 4px);
+    }
 
     &__circle {
-      display: none;
-      @media screen and (min-width: $tablet) {
-        display: block;
+      position: relative;
+      @extend %lil-circle;
+      &:after {
+        content: '';
+        @extend %lil-circle;
         position: absolute;
-        top: 0px;
-        left: 30px;
+        top: -4px;
+        right: -4px;
+        transition-delay: 100ms;
+      }
+      &:before {
+        content: '';
+        @extend %lil-circle;
+        position: absolute;
+        bottom: -4px;
+        left: -4px;
+      }
+    }
+    &.circle-wrapper {
+      &:nth-child(1) > .circle-wrapper--div {
+        filter: drop-shadow(0 4px 2px rgba(243, 171, 31, 0.5))
+          drop-shadow(0 4px 10px rgba(243, 171, 31, 0.5))
+          drop-shadow(0 4px 20px rgba(243, 171, 31, 0.5));
+      }
+      &:nth-child(2) > .circle-wrapper--div {
+        filter: drop-shadow(0 4px 2px rgba(31, 103, 243, 0.5))
+          drop-shadow(0 4px 10px rgba(31, 103, 243, 0.5))
+          drop-shadow(0 4px 20px rgba(31, 103, 243, 0.5));
+      }
+      &:nth-child(3) > .circle-wrapper--div {
+        filter: drop-shadow(0 4px 2px rgba(243, 31, 31, 0.5))
+          drop-shadow(0 4px 10px rgba(243, 31, 31, 0.5))
+          drop-shadow(0 4px 20px rgba(243, 31, 31, 0.5));
+      }
+      &:nth-child(4) > .circle-wrapper--div {
+        filter: drop-shadow(0 4px 2px rgba(243, 31, 171, 0.5))
+          drop-shadow(0 4px 10px rgba(243, 31, 171, 0.5))
+          drop-shadow(0 4px 20px rgba(243, 31, 171, 0.5));
+      }
+      &:nth-child(5) > .circle-wrapper--div {
+        filter: drop-shadow(0 4px 2px rgba(255, 255, 255, 0.5))
+          drop-shadow(0 4px 10px rgba(255, 255, 255, 0.5))
+          drop-shadow(0 4px 20px rgba(255, 255, 255, 0.5));
       }
     }
 
@@ -99,9 +118,7 @@
         line-height: 19px;
         padding-top: 70px;
       }
-      color: #F2F2F2;
+      color: #f2f2f2;
     }
   }
 }
-
-
