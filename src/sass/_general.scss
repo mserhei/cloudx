@@ -376,7 +376,8 @@ section.container {
 .block-title {
   width: 100%;
   @media screen and (min-width: $tablet) {
-    width: 20%;
+    width: 18%;
+    margin-right: 2%;
   }
   color: #e0e0e0;
   font-size: 14px;
@@ -392,14 +393,19 @@ section.container {
 .content-title {
   margin-top: 20px;
   width: 100%;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 800;
+  color: #f2f2f2;
+  @media screen and (min-width: $phone) {
+    font-size: 40px;
+    line-height: 48px;
+  }
   @media screen and (min-width: $tablet) {
     margin-top: 0px;
-    width: 30%;
+    width: 28%;
+    margin-right: 2%;
     font-size: 48px;
     line-height: 58px;
   }
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 800;
-  color: #f2f2f2;
 }
