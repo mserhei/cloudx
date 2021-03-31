@@ -1,6 +1,21 @@
 <div id="hero_slider">
     <section class="container present">
-        <h2 class="visually-hidden" id="hero-header">Why Us</h2>
+
+      {{#each services}}
+        <div class="hero-slider__head">
+          <h2 class="block-title">
+            <p>02</p>
+            <span>{{title}}</span>
+          </h2>
+          <ul class="hero-slider__list">
+              {{#each tabs}}
+                <li class="hero-slider__listItem">
+                  <a href="#">{{tab-item}}</a>
+                </li>
+              {{/each}}
+          </ul>
+        </div>
+
         <div class="hero-slider" role="slider" aria-labelledby="hero-header" id="slider">
             <div class="hero-slider__controls-aside">
                 <a class="hero-slider__controls-button aside" data-slide id="slider_left0" role="button"
@@ -8,21 +23,22 @@
                     <i class="icon material-icons">chevron_left</i>
                 </a>
             </div>
+
             <div class="hero-slider__content">
-                {{#each heroSlider}}
+                {{#each tabs}}
                     <div class="hero-slider__slide {{#if @first}}active{{/if}}">
                         <article class="hero-slider__article {{class}}">
-                            {{!-- <h2 class="main-header" role="header">{{title}}</h2>
+                            {{!-- <h2 class="main-header" role="header">{{tab-item}}</h2> --}}
                             <div class="hero-slider__article-container">
-                                <h3 class="hero-slider__section-header section__header" role="header">{{subTitle}}
+                                <h3 class="hero-slider__section-header section__header" role="header">{{tab-item}}
                                 </h3>
                                 <ul class="hero-slider__section-list">
-                                    {{#each list}}
-                                        <li class="hero-slider__section-listitem">{{listitem}}</li>
+                                    {{#each serviceList}}
+                                        <li class="hero-slider__section-listitem">{{title}}</li>
                                     {{/each}}
                                 </ul>
                                 {{#if order}}{{> ./order-button}}{{/if}}
-                            </div> --}}
+                            </div>
                         </article>
                     </div>
                 {{/each}}
@@ -44,5 +60,6 @@
                 </a>
             </div>
         </div>
+      {{/each}}
     </section>
 </div>

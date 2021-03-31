@@ -1,4 +1,5 @@
 #hero_slider {
+  width: 100%;
   padding-bottom: 140px;
   @media screen and (min-width: $tablet) {
     padding-bottom: 190px;
@@ -12,6 +13,40 @@
     max-width: initial;
   }
 }
+
+.hero-slider {
+  &__head {
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:flex-start;
+
+    @media screen and (min-width: $phone) {
+      max-width: 600px;
+    }
+    @media screen and (min-width: $tablet) {
+      padding: 25px;
+      max-width: 1100px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: 1280px;
+      padding: 40px;
+    }
+
+  }
+
+  &__listItem {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 51px;
+    margin-right: 43px;
+  }
+}
+
 .hero-slider {
   position: relative;
   height: 570px;
