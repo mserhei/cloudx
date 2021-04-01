@@ -7,35 +7,15 @@
   @media screen and (min-width: $desktop) {
     padding-bottom: 240px;
   }
-  & > .container.present {
-    width: 100%;
-    padding: 0 0 40px;
-    max-width: initial;
-  }
 }
 
 .hero-slider {
   &__head {
     width: 100%;
-    margin: 0 auto;
-
     display: flex;
-    flex-direction:row;
-    justify-content:flex-start;
-    align-items:flex-start;
-
-    @media screen and (min-width: $phone) {
-      max-width: 600px;
-    }
-    @media screen and (min-width: $tablet) {
-      padding: 25px;
-      max-width: 1100px;
-    }
-    @media screen and (min-width: $desktop) {
-      max-width: 1280px;
-      padding: 40px;
-    }
-
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   &__listItem {
@@ -339,6 +319,28 @@
     &.active {
       background: $accent;
       height: 20px;
+    }
+  }
+  &__service-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.1);
+    background-image: linear-gradient(
+      to right,
+      #53bdf1 50%,
+      #53bdf1 50%,
+      red 95%,
+      transparent
+    );
+    background-size: 0px;
+    background-repeat: no-repeat;
+    transition: background-size $transition, color $transition;
+    background-clip: text;
+    &:hover {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    &.active {
+      background-size: 200%;
+      transition: background-size $slider;
     }
   }
 }

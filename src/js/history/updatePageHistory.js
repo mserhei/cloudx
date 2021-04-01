@@ -46,8 +46,8 @@ async function fun1() {
   const module = await drawHome();
   module.renderIndicators();
   module.drawImages();
-  slider.start();
-  swiper.start();
+  // slider.start();
+  // swiper.start();
 }
 
 async function fun2() {

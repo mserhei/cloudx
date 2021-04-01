@@ -1,7 +1,11 @@
 #you_can {
   width: 100%;
-  & > .container.present {
-    width: 100%;
+  padding-bottom: 80px;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 120px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 180px;
   }
 }
 
@@ -29,7 +33,7 @@
 
   &__content {
     @extend %flex-container;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -63,16 +67,16 @@
       &:nth-of-type(2) {
         margin-top: 0px;
       }
-      &:nth-of-type(2n+1) {
+      &:nth-of-type(2n + 1) {
         margin-right: 5%;
       }
     }
 
     &:hover &__circle:after {
-      transform: translate(4px, -4px);
+      transform: translate(0) scale(1.1);
     }
     &:hover &__circle:before {
-      transform: translate(-4px, 4px);
+      transform: translate(0) scale(0.9);
     }
 
     &__circle {
@@ -82,51 +86,39 @@
         content: '';
         @extend %lil-circle;
         position: absolute;
-        top: -4px;
-        right: -4px;
+        top: -1px;
+        right: -1px;
+        transform: translate(4px, -4px) scale(1.1);
         transition-delay: 100ms;
       }
       &:before {
         content: '';
         @extend %lil-circle;
         position: absolute;
-        bottom: -4px;
-        left: -4px;
+        top: -1px;
+        right: -1px;
+        transform: translate(-4px, 4px) scale(0.9);
       }
       margin-right: 20px;
       @media screen and (min-width: $phone) {
         margin-right: 0px;
       }
     }
-
     &.circle-wrapper {
-      &:nth-child(1) > .circle-wrapper--div {
-        filter: drop-shadow(0 4px 2px rgba(243, 171, 31, 0.5))
-          drop-shadow(0 4px 10px rgba(243, 171, 31, 0.5))
-          drop-shadow(0 4px 20px rgba(243, 171, 31, 0.5));
-      }
-      &:nth-child(2) > .circle-wrapper--div {
-        filter: drop-shadow(0 4px 2px rgba(31, 103, 243, 0.5))
-          drop-shadow(0 4px 10px rgba(31, 103, 243, 0.5))
-          drop-shadow(0 4px 20px rgba(31, 103, 243, 0.5));
-      }
-      &:nth-child(3) > .circle-wrapper--div {
-        filter: drop-shadow(0 4px 2px rgba(243, 31, 31, 0.5))
-          drop-shadow(0 4px 10px rgba(243, 31, 31, 0.5))
-          drop-shadow(0 4px 20px rgba(243, 31, 31, 0.5));
-      }
-      &:nth-child(4) > .circle-wrapper--div {
-        filter: drop-shadow(0 4px 2px rgba(243, 31, 171, 0.5))
-          drop-shadow(0 4px 10px rgba(243, 31, 171, 0.5))
-          drop-shadow(0 4px 20px rgba(243, 31, 171, 0.5));
-      }
-      &:nth-child(5) > .circle-wrapper--div {
-        filter: drop-shadow(0 4px 2px rgba(255, 255, 255, 0.5))
-          drop-shadow(0 4px 10px rgba(255, 255, 255, 0.5))
-          drop-shadow(0 4px 20px rgba(255, 255, 255, 0.5));
+      $circle-colors: rgba(243, 171, 31, 0.5), rgba(31, 103, 243, 0.5),
+        rgba(243, 31, 31, 0.5), rgba(243, 31, 171, 0.5),
+        rgba(255, 255, 255, 0.5);
+      $i: 0;
+
+      @each $color in $circle-colors {
+        $i: $i + 1;
+        &:nth-child(#{$i}) > .circle-wrapper--div {
+          filter: drop-shadow(0 4px 2px #{$color})
+            drop-shadow(0 4px 10px #{$color})
+            drop-shadow(0 4px 20px #{$color});
+        }
       }
     }
-
     &__title {
       font-size: 14px;
       line-height: 18px;

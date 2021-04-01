@@ -78,6 +78,9 @@ function movePad(event) {
       ).toFixed(1)}deg)`;
       server.style.transform = `translate(${-y}px, ${-y * 1.5}px)`;
       server.style.opacity = `${(1 + y / 400).toFixed(1)}`;
+    } else {
+      header.style.opacity = '0';
+      server.style.opacity = '0';
     }
   }
 }
