@@ -6,6 +6,8 @@ import { lang } from '../history/mainHistory';
 import { changeLangPath } from './changeListener';
 import { load, save, remove } from '../utils/storage';
 import { resizeServices } from '../utils/preload';
+import localDataHome from '../localization/localHome.json';
+import renderSlide from '../../templates/hero-slider-slide.hbs';
 
 export default function listenClicks(event) {
   if (event.target.classList.contains('social__link'))
@@ -93,6 +95,12 @@ export default function listenClicks(event) {
     );
     serviceLinksRefs.forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
+
+    const slideWrapRef = document.querySelector('.hero-slider__content');
+    const index = event.target.dataset.slide;
+    slideWrapRef.innerHTML = renderSlide(
+      localDataHome[lang.name]['services-new'][0].tabs[index],
+    );
   }
 }
 function render(e) {

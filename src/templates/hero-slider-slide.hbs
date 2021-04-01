@@ -1,17 +1,27 @@
-{{#each tabs}}
-    <div class="hero-slider__slide {{#if @first}}active{{/if}}">
+{{#each service}}
+    <div class="hero-slider__slide {{#if @first}}left active{{/if}}">
         <article class="hero-slider__article {{class}}">
-            {{!-- <h2 class="main-header" role="header">{{tab-item}}</h2> --}}
-            <div class="hero-slider__article-container">
-                <h3 class="hero-slider__section-header section__header" role="header">{{tab-item}}
-                </h3>
-                <ul class="hero-slider__section-list">
-                    {{#each serviceList}}
-                        <li class="hero-slider__section-listitem">{{title}}</li>
-                    {{/each}}
-                </ul>
-                {{#if order}}{{> ./order-button}}{{/if}}
-            </div>
+            <ul class="hero-slider__srevice-list">
+                {{#each service-item}}
+                    <li class="hero-slider__srevice-listitem">
+                        <a href="{{href}}" class="hero-slider__link">
+                            <div class="hero-slider__image"></div>
+                            <div class="hero-slider__text-wrapper">
+                                <h4 class="hero-slider__text-title">{{title}}</h4>
+                                <p class="hero-slider__text">{{description}}</p>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
         </article>
     </div>
 {{/each}}
+<div class="hero-slider__controls controls" aria-controls="slider" data-controls="slider">
+    <a class="hero-slider__controls-button" data-slide id="slider_left" role="button" aria-pressed="false">
+        <i class="icon material-icons">chevron_left</i>
+    </a>
+    <a class="hero-slider__controls-button" data-slide id="slider_right" role="button" aria-pressed="false">
+        <i class="icon material-icons">chevron_right</i>
+    </a>
+</div>

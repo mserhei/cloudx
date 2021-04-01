@@ -1,7 +1,7 @@
 <div id="hero_slider">
     <section class="container present">
 
-        {{#each services}}
+        {{#each services-new}}
             <div class="hero-slider__head">
                 <h2 class="block-title">
                     <p>02</p>
@@ -11,7 +11,7 @@
                     {{#each tabs}}
                         <li class="hero-slider__listItem" style="position: relative;">
                             <a class="hero-slider__service-link{{#if @first}} active{{/if}}" href=""
-                                data-service-slide="{{@index}}">{{tab-item}}</a>
+                                data-slide="{{@index}}">{{tab-item}}</a>
                         </li>
                     {{/each}}
                 </ul>
@@ -28,35 +28,9 @@
                 <div class="hero-slider__content">
                     {{#each tabs}}
                         {{#if @first}}
-                            <div class="hero-slider__slide active">
-                                <article class="hero-slider__article {{class}}">
-                                    {{!-- <h2 class="main-header" role="header">{{tab-item}}</h2> --}}
-                                    <div class="hero-slider__article-container">
-                                        <h3 class="hero-slider__section-header section__header" role="header">
-                                            {{tab-item}}
-                                        </h3>
-                                        <ul class="hero-slider__section-list">
-                                            {{#each serviceList}}
-                                                <li class="hero-slider__section-listitem">{{title}}</li>
-                                            {{/each}}
-                                        </ul>
-                                        {{#if order}}{{> ./order-button}}{{/if}}
-                                    </div>
-                                </article>
-                            </div>
+                            {{> ./hero-slider-slide}}
                         {{/if}}
                     {{/each}}
-
-                    <div class="hero-slider__controls controls" aria-controls="slider" data-controls="slider">
-                        <a class="hero-slider__controls-button" data-slide id="slider_left" role="button"
-                            aria-pressed="false">
-                            <i class="icon material-icons">chevron_left</i>
-                        </a>
-                        <a class="hero-slider__controls-button" data-slide id="slider_right" role="button"
-                            aria-pressed="false">
-                            <i class="icon material-icons">chevron_right</i>
-                        </a>
-                    </div>
                 </div>
                 <div class="hero-slider__controls-aside">
                     <a class="hero-slider__controls-button aside" data-slide id="slider_right0" role="button"

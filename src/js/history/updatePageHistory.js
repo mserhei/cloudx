@@ -43,11 +43,12 @@ const rootRef = document.getElementById('root-content');
 async function fun1() {
   updateHeader();
   rootRef.innerHTML = renderHome(localDataHome[lang.name]);
+
   const module = await drawHome();
   module.renderIndicators();
   module.drawImages();
-  // slider.start();
-  // swiper.start();
+  slider.start();
+  swiper.start();
 }
 
 async function fun2() {
