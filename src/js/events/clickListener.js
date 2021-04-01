@@ -86,6 +86,14 @@ export default function listenClicks(event) {
         forms[i].classList.toggle('active');
       });
   }
+  if (event.target.classList.contains('hero-slider__service-link')) {
+    event.preventDefault();
+    const serviceLinksRefs = document.querySelectorAll(
+      '.hero-slider__service-link',
+    );
+    serviceLinksRefs.forEach(el => el.classList.remove('active'));
+    event.target.classList.add('active');
+  }
 }
 function render(e) {
   if (e.target.hasAttribute('disabled')) return;

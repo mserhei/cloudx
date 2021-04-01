@@ -10,7 +10,8 @@
                 <ul class="hero-slider__list">
                     {{#each tabs}}
                         <li class="hero-slider__listItem" style="position: relative;">
-                            <a class="hero-slider__service-link{{#if @first}} active{{/if}}" href="#">{{tab-item}}</a>
+                            <a class="hero-slider__service-link{{#if @first}} active{{/if}}" href=""
+                                data-service-slide="{{@index}}">{{tab-item}}</a>
                         </li>
                     {{/each}}
                 </ul>

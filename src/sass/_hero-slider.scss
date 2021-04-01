@@ -328,14 +328,14 @@
       to right,
       #53bdf1 50%,
       #53bdf1 50%,
-      red 95%,
+      rgb(176, 73, 255) 95%,
       transparent
     );
     background-size: 0px;
     background-repeat: no-repeat;
     transition: background-size $transition, color $transition;
     background-clip: text;
-    &:hover {
+    &:not(.active):hover {
       color: rgba(255, 255, 255, 0.4);
     }
     &.active {
