@@ -90,6 +90,7 @@ export default function listenClicks(event) {
         forms[i].classList.toggle('active');
       });
   }
+  let timer;
   if (event.target.classList.contains('hero-slider__service-link')) {
     event.preventDefault();
     const serviceLinksRefs = document.querySelectorAll(
@@ -97,13 +98,20 @@ export default function listenClicks(event) {
     );
     serviceLinksRefs.forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
+    clearInterval(timer);
 
     const slideWrapRef = document.querySelector('.hero-slider__content');
     const index = event.target.dataset.slide;
-    slideWrapRef.innerHTML = renderSlide(
-      localDataHome[lang.name]['services-new'][0].tabs[index],
-    );
-    udateSlider();
+    slideWrapRef.style.opacity = '0';
+    slideWrapRef.style.transform = 'scale(0.5)';
+    timer = setTimeout(() => {
+      slideWrapRef.innerHTML = renderSlide(
+        localDataHome[lang.name]['services-new'][0].tabs[index],
+      );
+      slideWrapRef.style.opacity = '1';
+      slideWrapRef.style.transform = 'scale(1)';
+      udateSlider();
+    }, 650);
   }
 }
 

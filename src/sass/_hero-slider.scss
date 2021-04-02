@@ -103,6 +103,13 @@
       height: 480px;
       max-width: 1100px;
     }
+    transition: opacity $slider, transform $slider;
+    &.disabled {
+      opacity: 0;
+    }
+    &.active {
+      opacity: 1;
+    }
   }
   .order {
     @extend %flex-container;
