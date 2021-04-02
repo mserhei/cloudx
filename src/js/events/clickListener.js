@@ -9,6 +9,8 @@ import { resizeServices } from '../utils/preload';
 import localDataHome from '../localization/localHome.json';
 import renderSlide from '../../templates/hero-slider-slide.hbs';
 
+const drawHome = () => import('../pages/home');
+
 export default function listenClicks(event) {
   if (event.target.classList.contains('social__link'))
     return event.preventDefault();
@@ -101,8 +103,17 @@ export default function listenClicks(event) {
     slideWrapRef.innerHTML = renderSlide(
       localDataHome[lang.name]['services-new'][0].tabs[index],
     );
+    udateSlider();
   }
 }
+
+async function udateSlider() {
+  const module = await drawHome();
+  slider.end();
+  module.renderIndicators('slider', '.hero-slider__slide');
+  slider.start();
+}
+
 function render(e) {
   if (e.target.hasAttribute('disabled')) return;
   if (e.target.hasAttribute('data-id')) clearAccent();

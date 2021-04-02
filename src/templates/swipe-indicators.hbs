@@ -1,6 +1,4 @@
-<div class="hero-slider__indicators">
-    {{#each this}}
-        <div class="{{class}} hero-slider__indicator{{#if @first}} active{{/if}}" aria-label="slide #{{@index}} shown">
-        </div>
-    {{/each}}
-</div>
+{{#each this}}
+    <div class="{{className}} hero-slider__indicator{{#if @first}} active{{/if}}" aria-label="slide #{{@index}} shown">
+    </div>
+{{/each}}

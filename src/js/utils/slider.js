@@ -1,6 +1,5 @@
 class Slider {
   constructor() {
-    this.active = 0;
     this.next = 1;
     this.timer = null;
     this.set = false;
@@ -28,8 +27,16 @@ class Slider {
   get indicators() {
     return document.querySelector('.hero-slider__indicators');
   }
-  start() {
-    if (this.timer) return;
+  start(onThis) {
+    // if (this.timer) return;
+    if (!onThis) {
+      this.active = this.slides.length - 1;
+      this.next = 1;
+    }
+    if (this.slides.length <= 1) {
+      const arr = [this.left, this.right, this.left0, this.right0];
+      arr.map(el => el.setAttribute('disabled', ''));
+    }
     this.changeSlides();
     this.timer = setInterval(() => {
       if (this.slider && this.set) {
@@ -38,23 +45,25 @@ class Slider {
     }, this.interval);
   }
   end() {
+    clearInterval(this.timer);
     if (this.set) {
-      clearInterval(this.timer);
       this.timer = null;
     }
     this.set = false;
   }
   changeSlides() {
-    if (!this.slider || this.slides.length <= 1) {
+    if (!this.slider) {
       return this.end();
     }
+    if (this.slides.length <= 1) return;
     this.set = true;
     const direction = this.forward ? 'right' : 'left';
     const other = this.forward ? 'left' : 'right';
     if (!this.indicators.children.length || !this.slides.length) return;
     this.slides.forEach((slide, index) => {
       slide.classList.remove('active', 'left', 'right');
-      slide.classList.add(direction);
+      if (this.slides.length === 2) slide.classList.add(other);
+      else slide.classList.add(direction);
       this.indicators.children[index].classList.remove('active');
     });
     if (this.forward) {
@@ -78,7 +87,7 @@ class Slider {
   }
   changeSlidesOnEvent(event) {
     event.preventDefault();
-    if (!this.slides.length) return;
+    if (this.slides.length <= 1) return;
     if (this.timer) {
       if (
         event.target === this.left ||

@@ -52,18 +52,14 @@ function drawImages() {
   });
 }
 
-function renderIndicators() {
-  const slide1 = document.getElementById('slider');
-  const slide2 = document.getElementById('advantages');
-  let arr = Array.from(slide1.querySelectorAll('.hero-slider__slide'));
-  let markup = indicators(arr);
-  slide1.insertAdjacentHTML('beforeend', markup);
-  arr = Array.from(slide2.querySelectorAll('.cardset__list-item')).map(el => {
-    return { class: 'advantage' };
+function renderIndicators(id, selector, className = null, perSlide = 1) {
+  const slide = document.getElementById(id);
+  let arr = Array.from(slide.querySelectorAll(selector)).map(() => {
+    if (className) return { className };
   });
-  arr.length = Math.ceil(arr.length / 2);
-  markup = indicators(arr);
-  slide2.insertAdjacentHTML('beforeend', markup);
+  arr.length = Math.ceil(arr.length / perSlide);
+  let markup = indicators(arr);
+  slide.querySelector('.hero-slider__indicators').innerHTML = markup;
 }
 
 export { drawImages, renderIndicators };

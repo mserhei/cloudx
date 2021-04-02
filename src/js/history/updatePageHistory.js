@@ -45,7 +45,9 @@ async function fun1() {
   rootRef.innerHTML = renderHome(localDataHome[lang.name]);
 
   const module = await drawHome();
-  module.renderIndicators();
+  //slider , .hero-slider__slide   //advantages, .cardset__list-item
+  module.renderIndicators('slider', '.hero-slider__slide');
+  module.renderIndicators('advantages', '.cardset__list-item', 'advantage', 2);
   module.drawImages();
   slider.start();
   swiper.start();

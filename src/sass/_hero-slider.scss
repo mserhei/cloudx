@@ -38,9 +38,6 @@
     border: 1px solid #fff;
     width: 31%;
     margin-right: 2%;
-
-
-
   }
 
   &__link {
@@ -57,7 +54,6 @@
   }
 
   &__text-wrapper {
-
     width: 50%;
   }
 
@@ -65,7 +61,7 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
-    color: #518AE0;
+    color: #518ae0;
   }
 
   &__text {
@@ -73,10 +69,8 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 22px;
-    color: #F2F2F2;
+    color: #f2f2f2;
   }
-
-
 }
 
 .hero-slider {
@@ -259,46 +253,52 @@
         &:not(:last-child) {
           margin-right: 20px;
         }
-        &::before {
-          content: '';
-          position: absolute;
-          height: 42px;
-          width: 42px;
-          border-radius: 50%;
-          will-change: opacity, transform;
-          opacity: 1;
-          transform: scale(1);
-          transition: transform $transition, opacity $transition;
-          background: $main-purple;
-        }
-        &:hover {
-          transform: scale(1.1);
+        &:not([disabled]) {
           &::before {
-            transform: scale(0);
-            opacity: 0;
-          }
-        }
-        &:active {
-          transform: scale(1.2);
-          &::after {
             content: '';
             position: absolute;
-            height: 40px;
-            width: 40px;
-            transform: scale(0.9);
+            height: 42px;
+            width: 42px;
             border-radius: 50%;
+            will-change: opacity, transform;
+            opacity: 1;
+            transform: scale(1);
+            transition: transform $transition, opacity $transition;
             background: $main-purple;
           }
-        }
-        & .icon {
-          font-size: 34px;
-          color: $white;
-          will-change: opacity, transform;
-          transition: transform $transition, opacity $transition;
           &:hover {
-            transform: scale(1.5);
-            opacity: 0.8;
+            transform: scale(1.1);
+            &::before {
+              transform: scale(0);
+              opacity: 0;
+            }
           }
+          &:active {
+            transform: scale(1.2);
+            &::after {
+              content: '';
+              position: absolute;
+              height: 40px;
+              width: 40px;
+              transform: scale(0.9);
+              border-radius: 50%;
+              background: $main-purple;
+            }
+          }
+          & .icon {
+            font-size: 34px;
+            color: $white;
+            will-change: opacity, transform;
+            transition: transform $transition, opacity $transition;
+            &:hover {
+              transform: scale(1.5);
+              opacity: 0.8;
+            }
+          }
+        }
+        &[disabled] {
+          background: $dim;
+          cursor: inherit;
         }
       }
       &.aside {
@@ -306,7 +306,6 @@
         @media screen and (min-width: $desktop) {
           transform: scaleY(8);
           pointer-events: auto;
-          cursor: pointer;
         }
         opacity: 0;
         transition: transform $transition, opacity $transition;
@@ -337,9 +336,10 @@
       }
       &:hover {
         @media screen and (min-width: $desktop) {
-          .aside {
+          .aside:not([disabled]) {
             opacity: 0.5;
             transform: scale(3, 8);
+            cursor: pointer;
           }
         }
         .icon {
