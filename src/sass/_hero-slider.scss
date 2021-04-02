@@ -1,4 +1,5 @@
 #hero_slider {
+  width: 100%;
   padding-bottom: 140px;
   @media screen and (min-width: $tablet) {
     padding-bottom: 190px;
@@ -6,16 +7,83 @@
   @media screen and (min-width: $desktop) {
     padding-bottom: 240px;
   }
-  & > .container.present {
-    width: 100%;
-    padding: 0 0 40px;
-    max-width: initial;
-  }
 }
+
+.hero-slider {
+  &__head {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__listItem {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 51px;
+    margin-right: 43px;
+  }
+
+  &__service-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__service-listItem {
+    border: 1px solid #fff;
+    width: 31%;
+    margin-right: 2%;
+
+
+
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__image {
+    width: 40%;
+    height: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text-wrapper {
+
+    width: 50%;
+  }
+
+  &__text-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #518AE0;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #F2F2F2;
+  }
+
+
+}
+
 .hero-slider {
   position: relative;
   height: 570px;
   margin: 0 auto;
+  margin-top: 100px;
   padding-bottom: 60px;
   @media screen and (min-width: $phone) {
     height: 510px;
@@ -304,6 +372,28 @@
     &.active {
       background: $accent;
       height: 20px;
+    }
+  }
+  &__service-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.1);
+    background-image: linear-gradient(
+      to right,
+      #53bdf1 50%,
+      #53bdf1 50%,
+      rgb(176, 73, 255) 95%,
+      transparent
+    );
+    background-size: 0px;
+    background-repeat: no-repeat;
+    transition: background-size $transition, color $transition;
+    background-clip: text;
+    &:not(.active):hover {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    &.active {
+      background-size: 200%;
+      transition: background-size $slider;
     }
   }
 }

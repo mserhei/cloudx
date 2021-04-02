@@ -1,0 +1,137 @@
+#you_can {
+  width: 100%;
+  padding-bottom: 80px;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 120px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 180px;
+  }
+}
+
+%lil-circle {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: $phone) {
+    width: 30px;
+    height: 30px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 40px;
+    height: 40px;
+  }
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #bdbdbd;
+  transition: transform $slider;
+}
+
+.you-can {
+  margin: 0 auto;
+  @extend %flex-container;
+
+  &__content {
+    @extend %flex-container;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__advantages {
+    width: 100%;
+    margin-top: 35px;
+    @media screen and (min-width: $tablet) {
+      width: 50%;
+      margin-top: 0px;
+    }
+  }
+
+  &__advantage {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    &:nth-of-type(1) {
+      margin-top: 0px;
+    }
+    @media screen and (min-width: $phone) {
+      width: 45%;
+      margin-top: 40px;
+      display: inline-block;
+      vertical-align: top;
+      &:nth-of-type(2) {
+        margin-top: 0px;
+      }
+      &:nth-of-type(2n + 1) {
+        margin-right: 5%;
+      }
+    }
+
+    &:hover &__circle:after {
+      transform: translate(0) scale(1.1);
+    }
+    &:hover &__circle:before {
+      transform: translate(0) scale(0.9);
+    }
+
+    &__circle {
+      position: relative;
+      @extend %lil-circle;
+      &:after {
+        content: '';
+        @extend %lil-circle;
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        transform: translate(4px, -4px) scale(1.1);
+        transition-delay: 100ms;
+      }
+      &:before {
+        content: '';
+        @extend %lil-circle;
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        transform: translate(-4px, 4px) scale(0.9);
+      }
+      margin-right: 20px;
+      @media screen and (min-width: $phone) {
+        margin-right: 0px;
+      }
+    }
+    &.circle-wrapper {
+      $circle-colors: rgba(243, 171, 31, 0.5), rgba(31, 103, 243, 0.5),
+        rgba(243, 31, 31, 0.5), rgba(243, 31, 171, 0.5),
+        rgba(255, 255, 255, 0.5);
+      $i: 0;
+
+      @each $color in $circle-colors {
+        $i: $i + 1;
+        &:nth-child(#{$i}) > .circle-wrapper--div {
+          filter: drop-shadow(0 4px 2px #{$color})
+            drop-shadow(0 4px 10px #{$color})
+            drop-shadow(0 4px 20px #{$color});
+        }
+      }
+    }
+    &__title {
+      font-size: 14px;
+      line-height: 18px;
+      @media screen and (min-width: $phone) {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      @media screen and (min-width: $tablet) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+      color: #f2f2f2;
+    }
+  }
+}

@@ -55,11 +55,7 @@ main {
   width: 100%;
   padding: 5px;
   margin: 0 auto;
-  transform-origin: top left;
-  &:not(#header) {
-    transform: scale(0.5) translate(-100px, 50px);
-    opacity: 0;
-  }
+  // transform-origin: top left;
   transition: transform $slider, opacity $slider;
   @media screen and (min-width: $phone) {
     max-width: 600px;
@@ -91,11 +87,14 @@ section.container {
   & > .main-header {
     padding: 30px;
   }
-
-  &:not(#header).present {
-    transition: transform $slider, opacity $slider;
+  filter: blur(4px);
+  transform: scale(0.5) translate(0, -600px);
+  opacity: 0;
+  transition: transform $slider, filter $slider 250ms, opacity $slider;
+  &.present {
     transform: scale(1) translate(0);
     opacity: 1;
+    filter: none;
     .main-header {
       opacity: 1;
       transform: translateX(0);
@@ -370,5 +369,42 @@ section.container {
   &.invalid {
     background: $main-red-light;
     border-bottom-color: $main-red;
+  }
+}
+
+.block-title {
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    width: 18%;
+    margin-right: 2%;
+  }
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 17px;
+  p {
+    font-weight: 500;
+  }
+  span {
+    font-weight: 300;
+  }
+}
+
+.content-title {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 800;
+  color: #f2f2f2;
+  @media screen and (min-width: $phone) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 0px;
+    width: 28%;
+    margin-right: 2%;
+    font-size: 48px;
+    line-height: 58px;
   }
 }
