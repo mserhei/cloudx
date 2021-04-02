@@ -25,12 +25,65 @@
     line-height: 51px;
     margin-right: 43px;
   }
+
+  &__service-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__service-listItem {
+    border: 1px solid #fff;
+    width: 31%;
+    margin-right: 2%;
+
+
+
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__image {
+    width: 40%;
+    height: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text-wrapper {
+
+    width: 50%;
+  }
+
+  &__text-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #518AE0;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #F2F2F2;
+  }
+
+
 }
 
 .hero-slider {
   position: relative;
   height: 570px;
   margin: 0 auto;
+  margin-top: 100px;
   padding-bottom: 60px;
   @media screen and (min-width: $phone) {
     height: 510px;

@@ -1,11 +1,11 @@
 {{#each service}}
     <div class="hero-slider__slide {{#if @first}}left active{{/if}}">
         <article class="hero-slider__article {{class}}">
-            <ul class="hero-slider__srevice-list">
+            <ul class="hero-slider__service-list">
                 {{#each service-item}}
-                    <li class="hero-slider__srevice-listitem">
+                    <li class="hero-slider__service-listItem">
                         <a href="{{href}}" class="hero-slider__link">
-                            <div class="hero-slider__image"></div>
+                            <div class="hero-slider__image" style="background-image: url('{{image}}');"></div>
                             <div class="hero-slider__text-wrapper">
                                 <h4 class="hero-slider__text-title">{{title}}</h4>
                                 <p class="hero-slider__text">{{description}}</p>
