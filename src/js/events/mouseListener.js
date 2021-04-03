@@ -19,11 +19,13 @@ function drawCursor(e) {
 function listenMouseOver(event) {
   const rocket = document.querySelector('.mouse__hover-ring');
   if (event.target.nodeName === 'A' || event.target.nodeName === 'BUTTON') {
-    rocket.style.opacity = '1';
-    rocket.style.transform = 'scale(1.1)';
-  } else {
-    rocket.style.opacity = '0';
-    rocket.style.transform = 'scale(0)';
+    if (!event.target.classList.contains('active')) {
+      rocket.style.opacity = '1';
+      rocket.style.transform = 'scale(1.1)';
+    } else {
+      rocket.style.opacity = '0';
+      rocket.style.transform = 'scale(0)';
+    }
   }
 }
 

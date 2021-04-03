@@ -101,26 +101,28 @@ export default function listenClicks(event) {
   let timer;
   if (event.target.classList.contains('hero-slider__service-link')) {
     event.preventDefault();
-    const serviceLinksRefs = document.querySelectorAll(
-      '.hero-slider__service-link',
-    );
-    serviceLinksRefs.forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
-    clearInterval(timer);
-
-    const slideWrapRef = document.querySelector('.hero-slider__content');
-    const index = event.target.dataset.slideIndex;
-    console.log(index);
-    slideWrapRef.style.opacity = '0';
-    slideWrapRef.style.transform = 'scale(0.5)';
-    timer = setTimeout(() => {
-      slideWrapRef.innerHTML = renderSlide(
-        localDataHome[lang.name]['services-new'][0].tabs[index],
+    if (!event.target.classList.contains('active')) {
+      const serviceLinksRefs = document.querySelectorAll(
+        '.hero-slider__service-link',
       );
-      udateSlider();
-      slideWrapRef.style.opacity = '1';
-      slideWrapRef.style.transform = 'scale(1)';
-    }, 500);
+      serviceLinksRefs.forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
+      clearInterval(timer);
+
+      const slideWrapRef = document.querySelector('.hero-slider__content');
+      const index = event.target.dataset.slideIndex;
+      console.log(index);
+      slideWrapRef.style.opacity = '0';
+      slideWrapRef.style.transform = 'scale(0.5)';
+      timer = setTimeout(() => {
+        slideWrapRef.innerHTML = renderSlide(
+          localDataHome[lang.name]['services-new'][0].tabs[index],
+        );
+        udateSlider();
+        slideWrapRef.style.opacity = '1';
+        slideWrapRef.style.transform = 'scale(1)';
+      }, 500);
+    }
   }
 }
 
