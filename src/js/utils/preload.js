@@ -50,7 +50,7 @@ function preload({ path }, hash) {
   }
   setTimeout(
     () => logo.length && logo.forEach(el => el.classList.add('in')),
-    200,
+    400,
   );
 }
 

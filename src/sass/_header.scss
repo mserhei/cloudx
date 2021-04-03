@@ -51,22 +51,21 @@
 }
 @keyframes flyOut {
   0% {
-    transform: translate(0, 0) rotate(0deg) scaleX(-1);
-  }
-  10% {
-    transform: rotate(45deg) scaleX(-1);
+    transform: translate(0, 0);
   }
   90% {
-    transform: translate(-200px, -200px) scaleX(-1);
+    transform: translate(200px, -200px);
+    opacity: 0;
   }
 }
 
 @keyframes flyIn {
   0% {
-    transform: translate(-200px, -200px) scaleX(1);
+    transform: translate(-200px, 200px);
   }
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0);
+    opacity: 1;
   }
 }
 .header__video {
@@ -80,7 +79,7 @@
   animation: flyIn 1s ease-in forwards;
 }
 .logo__home {
-  background: center / contain no-repeat url('../img/rocket1.svg');
+  background: center / contain no-repeat url('../img/rocket2.svg');
 }
 
 .navigation {
