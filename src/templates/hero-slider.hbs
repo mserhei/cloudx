@@ -11,7 +11,11 @@
                     {{#each tabs}}
                         <li class="hero-slider__listItem" style="position: relative;">
                             <a class="hero-slider__service-link{{#if @first}} active{{/if}}" href=""
-                                data-slide="{{@index}}">{{tab-item}}</a>
+                                data-slide-index="{{@index}}">{{tab-item}}</a>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="hero-slider__svg">
+                                <text class="hero-slider__svgtext" y="40.5" fill="none" stroke="white"
+                                    stroke-width="0.5px">{{tab-item}}</text>
+                            </svg>
                         </li>
                     {{/each}}
                 </ul>
@@ -24,7 +28,6 @@
                         <i class="icon material-icons">chevron_left</i>
                     </a>
                 </div>
-
                 <div class="hero-slider__content">
                     {{#each tabs}}
                         {{#if @first}}

@@ -9,6 +9,7 @@ import listenSubmit from './events/submitListener';
 import listenKeyDown from './events/keyDownListener';
 import listenScroll from './events/scrollListener';
 import { movePad } from './events/scrollListener';
+import listenMouse from './events/mouseListener';
 
 var debounce = require('debounce');
 
@@ -31,3 +32,4 @@ window.addEventListener('resize', listenResize);
 document.oncontextmenu = function (e) {
   return false;
 };
+document.addEventListener('mousemove', listenMouse);
