@@ -11,7 +11,17 @@ import renderSlide from '../../templates/hero-slider-slide.hbs';
 
 const drawHome = () => import('../pages/home');
 
+let mouseTimer;
+
 export default function listenClicks(event) {
+  const rocket = document.querySelector('.mouse__hover-ring');
+  if (event.target.nodeName === 'A' || event.target.nodeName === 'BUTTON') {
+    clearTimeout(mouseTimer);
+    rocket.style.opacity = '1';
+    rocket.style.transform = 'scale(2)';
+    mouseTimer = setTimeout(() => (rocket.style.transform = 'scale(1.1)'), 250);
+  }
+
   if (event.target.classList.contains('social__link'))
     return event.preventDefault();
   if (event.target.id.includes('id_rout')) {

@@ -10,12 +10,13 @@ import listenKeyDown from './events/keyDownListener';
 import listenScroll from './events/scrollListener';
 import { movePad } from './events/scrollListener';
 import listenMouse from './events/mouseListener';
+import { listenMouseOver } from './events/mouseListener';
 
-var debounce = require('debounce');
+const { debounce, throttle } = require('lodash');
 
 const rootRel = document.getElementById('root');
 
-rootRel.addEventListener('scroll', movePad);
+rootRel.addEventListener('scroll', throttle(movePad), 100);
 
 const rootCont = document.getElementById('root-content');
 
@@ -32,4 +33,5 @@ window.addEventListener('resize', listenResize);
 document.oncontextmenu = function (e) {
   return false;
 };
-document.addEventListener('mousemove', listenMouse);
+document.addEventListener('mousemove', throttle(listenMouse, 20));
+document.addEventListener('mouseover', listenMouseOver);
