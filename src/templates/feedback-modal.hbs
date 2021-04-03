@@ -1,6 +1,6 @@
-<div class="backdrop" data-close>
+<div class="backdrop" data-close data-mouse>
     <div class="main-modal feedback">
-        <button class="close-button icon-btn"><span data-close class="material-icons">clear</span></button>
+        <button class="close-button icon-btn"><span data-close data-mouse class="material-icons">clear</span></button>
         <div class="modal">
             <div class="feedback__form-wrapper">
                 <form action="feedback" class="feedback__form">
@@ -39,10 +39,10 @@
                     <div class="feedback__check-wrapper">
                         <label for="feedback-check" class="modal__label feedback__check-label required"><input
                                 type="checkbox" name="feedback-check" class="modal__input feedback__check required"
-                                id="feedback-check" checked>{{label}}
+                                id="feedback-check" checked data-mouse>{{label}}
                             <div class="error-wrapper"><span class="modal__message"></span></div>
                         </label>
-                        <button type="submit" class="feedback__button">{{button}}</button>
+                        <button type="submit" class="feedback__button" data-mouse>{{button}}</button>
                     </div>
                 </form>
             </div>

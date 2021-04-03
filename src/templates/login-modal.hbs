@@ -1,6 +1,6 @@
-<div class="backdrop" data-close>
+<div class="backdrop" data-close data-mouse>
     <div class="main-modal authorization">
-        <button class="close-button icon-btn"><span data-close class="material-icons">clear</span></button>
+        <button class="close-button icon-btn"><span data-close data-mouse class="material-icons">clear</span></button>
         <div class="modal">
             <div class="modal__tabs">
                 <div class="modal__tab active"><a class="modal__tab-link" href="" data-form="0">{{login}}</a></div>
@@ -27,7 +27,7 @@
                                 placeholder="{{../emailPlaceholder}}">
                             <div class="error-wrapper"><span class="modal__message password-error"></span></div>
                             {{#if @first}}<span class="modal__forgot-password">{{forgot}}</span>{{/if}}
-                            <button type="submit" class="modal__button">{{button}}</button>
+                            <button type="submit" class="modal__button" data-mouse>{{button}}</button>
                         {{/unless}}
                         {{#if timer}}
                             {{> ./timer}}

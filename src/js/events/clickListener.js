@@ -8,18 +8,12 @@ import { load, save, remove } from '../utils/storage';
 import { resizeServices } from '../utils/preload';
 import localDataHome from '../localization/localHome.json';
 import renderSlide from '../../templates/hero-slider-slide.hbs';
+import { clickMouse } from './mouseListener';
 
 const drawHome = () => import('../pages/home');
 
-let mouseTimer;
-
 export default function listenClicks(event) {
-  const rocket = document.querySelector('.mouse__hover-ring');
-  clearTimeout(mouseTimer);
-  rocket.style.opacity = '1';
-  rocket.style.transform = 'scale(2)';
-  mouseTimer = setTimeout(() => (rocket.style.opacity = '0'), 150);
-
+  clickMouse(event);
   if (event.target.classList.contains('social__link'))
     return event.preventDefault();
   if (event.target.id.includes('id_rout')) {

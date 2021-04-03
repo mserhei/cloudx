@@ -134,7 +134,7 @@ section.container {
     border: 1px solid red;
     border-radius: 50%;
     box-shadow: 0 0 12px red;
-    backdrop-filter: invert(1);
+    backdrop-filter: brightness(1.5);
   }
 }
 

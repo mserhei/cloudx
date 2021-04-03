@@ -85,7 +85,6 @@
     }
   }
   &__input {
-    pointer-events: none;
     width: 100%;
     appearance: none;
     width: 100%;
@@ -98,6 +97,8 @@
     transition: opacity 0.2s;
     overflow: visible;
     margin-bottom: 15px;
+    cursor: none;
+    pointer-events: none;
     @media screen and (min-width: $tablet) {
       margin-bottom: 25px;
     }
@@ -110,7 +111,6 @@
       border-color: transparent;
       color: transparent;
       outline: none;
-      cursor: pointer;
       & ~ .range__output {
         opacity: 1;
         transition: opacity $transition;
@@ -124,6 +124,7 @@
       appearance: none;
       width: 80px;
       height: 40px;
+      cursor: none;
       @media screen and (min-width: $tablet) {
         width: 100px;
         height: 50px;
@@ -139,7 +140,6 @@
       clip-path: inset(8px 8px 8px 4px);
       background-size: 80%;
       transform: scale(1.2);
-      cursor: pointer;
     }
     &::-moz-range-thumb {
       pointer-events: auto;
@@ -158,7 +158,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
-      cursor: pointer;
+      cursor: none;
     }
   }
   &__markers {

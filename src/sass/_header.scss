@@ -124,9 +124,6 @@
       @extend %anchor;
       position: absolute;
       bottom: 2px;
-      &[disabled] {
-        cursor: default;
-      }
     }
   }
   &__opts {

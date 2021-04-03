@@ -41,6 +41,7 @@ export default class RangeInput {
     input.dataset.price = this.price;
     input.dataset.value = 0;
     input.classList.add('range__input');
+    input.setAttribute('data-mouse', '');
     const result = document.createElement('div');
     result.innerHTML = `<span>${this.min}</span><span>${this.units}</span>`;
     result.setAttribute('value', this.min);

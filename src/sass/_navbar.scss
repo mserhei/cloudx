@@ -41,10 +41,8 @@
   }
   &__link {
     transition: color $transition;
-    cursor: text;
     &:hover:not([disabled]) {
       color: $accent;
-      cursor: pointer;
     }
   }
 }

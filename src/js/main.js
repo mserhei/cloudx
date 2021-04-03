@@ -10,7 +10,6 @@ import listenKeyDown from './events/keyDownListener';
 import listenScroll from './events/scrollListener';
 import { movePad } from './events/scrollListener';
 import listenMouse from './events/mouseListener';
-import { listenMouseOver } from './events/mouseListener';
 
 const { debounce, throttle } = require('lodash');
 
@@ -34,4 +33,3 @@ document.oncontextmenu = function (e) {
   return false;
 };
 document.addEventListener('mousemove', throttle(listenMouse, 20));
-document.addEventListener('mouseover', listenMouseOver);
