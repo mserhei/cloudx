@@ -6,7 +6,7 @@
   border-radius: 50%;
   overflow: hidden;
   transform: rotate(180deg);
-  background: conic-gradient($main-purple, $accent, #ffa409 90%);
+  background: conic-gradient($main-purple, $accent-sec, #ffa409 90%);
   &__half {
     height: 100%;
     width: 50%;
@@ -54,7 +54,7 @@
         width: 100px;
       }
       background: $main-purple;
-      border: 2px solid $accent;
+      border: 2px solid $accent-sec;
       border-radius: 50%;
       color: #fff;
     }
@@ -69,7 +69,7 @@
     width: 220px;
   }
   padding: 10px;
-  background: conic-gradient($main-purple, $accent, $main-purple);
+  background: conic-gradient($main-purple, $accent-sec, $main-purple);
   transform: rotate(225deg);
   box-shadow: 0 0 46px rgba(255, 107, 9, 0.8);
 }

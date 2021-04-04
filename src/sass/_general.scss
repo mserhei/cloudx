@@ -131,9 +131,9 @@ section.container {
     height: 40px;
     opacity: 0;
     transition: opacity $transition, transform $transition;
-    border: 1px solid red;
+    border: 1px solid $accent;
     border-radius: 50%;
-    box-shadow: 0 0 12px red;
+    box-shadow: 0 0 12px $accent;
     backdrop-filter: brightness(1.5);
   }
 }

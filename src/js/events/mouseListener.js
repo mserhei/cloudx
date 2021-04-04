@@ -1,4 +1,5 @@
 let mouseTimer;
+let opacityTimeout;
 
 function listenMouse(event) {
   drawCursor(event);
@@ -9,18 +10,35 @@ const mouse = document.querySelector('.mouse');
 const rocket = document.querySelector('.mouse__hover-ring');
 
 function drawCursor(e) {
+  clearTimeout(opacityTimeout);
   const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const header = document.querySelector('#hero-header-move');
+
+  let headerX = 0;
+  let headerY = 0;
+
   let deg = 0;
   if (windowWidth / 2 > e.x) {
     deg = -45 * (1 - (e.x / windowWidth) * 2);
+    headerX = -deg;
   } else {
     deg = ((45 * (e.x - windowWidth / 2)) / windowWidth) * 2;
+    headerX = -deg;
   }
+  if (windowHeight / 2 > e.y) {
+    headerY = 45 * (1 - (e.y / windowWidth) * 2);
+  } else {
+    headerY = -((45 * (e.y - windowWidth / 2)) / windowWidth) * 2;
+  }
+  if (header) header.style.transform = `translate(${headerX}px, ${headerY}px)`;
+
   mouse.style.transform = `translate(${e.x}px, ${e.y}px) rotate(${deg}deg)`;
   if (e.x > windowWidth - 10 || e.x < 10 || e.y < 10) mouse.style.opacity = '0';
   else if (e.target.closest('form') && !e.target.hasAttribute('data-mouse'))
     mouse.style.opacity = '0';
   else mouse.style.opacity = '1';
+  opacityTimeout = setTimeout(() => (mouse.style.opacity = '0'), 1000);
 }
 
 function listenMouseOver(event) {

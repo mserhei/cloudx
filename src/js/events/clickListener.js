@@ -105,7 +105,6 @@ export default function listenClicks(event) {
 
       const slideWrapRef = document.querySelector('.hero-slider__content');
       const index = event.target.dataset.slideIndex;
-      console.log(index);
       slideWrapRef.style.opacity = '0';
       slideWrapRef.style.transform = 'scale(0.5)';
       timer = setTimeout(() => {
