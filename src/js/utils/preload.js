@@ -52,6 +52,77 @@ function preload({ path }, hash) {
     () => logo.length && logo.forEach(el => el.classList.add('in')),
     400,
   );
+
+  fixSVG();
+
+  // texts.forEach(
+  //   el =>
+  //     (el.innerHTML = el.innerHTML
+  //       .split(' ')
+  //       .reduce(
+  //         (acc, e, i) => (acc += `<tspan x="0" dy="${i * 20}">${e} </tspan>`),
+  //         '',
+  //       )),
+  // );
+
+  // texts.forEach(el => prepareSVGtext(el));
+}
+
+function fixSVG() {
+  let y = 0;
+  let Width = window.innerWidth;
+  if (Width > 1280) y = 39;
+  else if (Width > 768) y = 31;
+  else y = 24;
+  const texts = document.querySelectorAll('text');
+  texts.forEach(el => {
+    el.setAttribute('y', y);
+
+    const { width, lineHeight } = window.getComputedStyle(
+      el.closest('svg').previousElementSibling,
+    );
+
+    prepareSVGtext(
+      el,
+      Number(width.match(/\d+\,*\d*/g).join('.')),
+      lineHeight.match(/\d+\,*\d*/g).join('.'),
+    );
+  });
+}
+
+function prepareSVGtext(el, width, y) {
+  var element = el;
+  var text = element.innerHTML;
+
+  /* split the words into array */
+  var words = text.split(' ');
+  var line = '';
+  let b = 0;
+
+  /* Make a tspan for testing */
+  element.innerHTML = '<tspan id="PROCESSING">busy</tspan >';
+
+  for (var n = 0; n < words.length; n++) {
+    var testLine = line + words[n] + ' ';
+    var testElem = document.getElementById('PROCESSING');
+    /*  Add line in testElement */
+    testElem.textContent = testLine;
+    /* Messure textElement */
+    var metrics = testElem.getBoundingClientRect();
+    var testWidth = metrics.width;
+    console.log(width, testWidth);
+
+    if (testWidth > width && n > 0) {
+      element.innerHTML +=
+        '<tspan x="0" dy="' + ++b * y + '">' + line + '</tspan>';
+      line = words[n] + ' ';
+    } else {
+      line = testLine;
+    }
+  }
+
+  element.innerHTML += '<tspan x="0" dy="' + b * y + '">' + line + '</tspan>';
+  document.getElementById('PROCESSING').remove();
 }
 
 function startCircle(entries) {
@@ -118,5 +189,5 @@ function resizeServices() {
     }
   }, 200);
 }
-export { resizeServices };
+export { resizeServices, fixSVG };
 export default preload;

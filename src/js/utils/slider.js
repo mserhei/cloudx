@@ -34,7 +34,7 @@ class Slider {
       this.next = 1;
     }
     if (this.slides.length <= 1) {
-      const arr = [this.left, this.right, this.left0, this.right0];
+      const arr = [this.left, this.right];
       arr.map(el => el.setAttribute('disabled', ''));
     }
     this.changeSlides();

@@ -1,28 +1,46 @@
 #hero_slider {
   width: 100%;
-  padding-bottom: 140px;
+  padding: 100px 0;
   @media screen and (min-width: $tablet) {
-    padding-bottom: 190px;
+    padding: 140px 0;
   }
   @media screen and (min-width: $desktop) {
-    padding-bottom: 240px;
+    padding: 180px 0;
   }
 }
-
+tspan {
+  white-space: normal;
+}
 .hero-slider {
+  position: relative;
+  margin: 0 auto;
+  @extend %flex-container;
   &__head {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: 80px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 100px;
+      flex-direction: row;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 120px;
+    }
   }
 
   &__listItem {
     display: inline-block;
     font-weight: 900;
-    font-size: 42px;
-    line-height: 51px;
+    font-size: 26px;
+    @media screen and (min-width: $tablet) {
+      font-size: 34px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 42px;
+    }
     margin-right: 43px;
   }
 
@@ -30,78 +48,100 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   &__service-listItem {
-    border: 1px solid #fff;
-    width: 31%;
-    margin-right: 2%;
+    width: calc((100% - 40px) / 3);
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    @media screen and (min-width: $tablet) {
+      width: calc((100% - 80px) / 3);
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+    @media screen and (min-width: $desktop) {
+      width: calc((100% - 160px) / 3);
+      &:not(:last-child) {
+        margin-right: 80px;
+      }
+    }
   }
 
   &__link {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+    }
   }
 
   &__image {
-    width: 40%;
-    height: inherit;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+    pointer-events: none;
+    margin-bottom: 30px;
+    height: 100px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+      margin-right: 30px;
+      width: calc(40% - 30px);
+      height: auto;
+    }
   }
 
   &__text-wrapper {
-    width: 50%;
+    width: 100%;
+    pointer-events: none;
+    @media screen and (min-width: $desktop) {
+      width: calc(60% - 30px);
+    }
   }
 
   &__text-title {
+    width: 100%;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 1.2em;
     color: #518ae0;
+    pointer-events: none;
+    @media screen and (min-width: $tablet) {
+      font-size: 22px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 24px;
+    }
   }
 
   &__text {
     margin-top: 20px;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 22px;
     color: #f2f2f2;
+    pointer-events: none;
+    @media screen and (min-width: $tablet) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 16px;
+    }
   }
-}
-
-.hero-slider {
-  position: relative;
-  height: 570px;
-  margin: 0 auto;
-  margin-top: 100px;
-  padding-bottom: 60px;
-  @media screen and (min-width: $phone) {
-    height: 510px;
-  }
-  @media screen and (min-width: $tablet) {
-    height: 530px;
-  }
-  @extend %flex-container;
   &__content {
     flex-shrink: 0;
     position: relative;
-    height: 520px;
     width: 100%;
-    border-radius: 16px;
-    @media screen and (min-width: $phone) {
-      height: 460px;
-    }
+    height: 550px;
     @media screen and (min-width: $tablet) {
-      height: 480px;
-      max-width: 800px;
+      height: 350px;
     }
     @media screen and (min-width: $desktop) {
-      height: 480px;
-      max-width: 1100px;
+      height: 250px;
     }
     transition: opacity $transition, transform $transition;
     &.disabled {
@@ -130,21 +170,19 @@
     }
   }
   &__slide {
-    padding: 10px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: contain;
     will-change: opacity, transform;
     transition: transform $slider, opacity $slider;
     opacity: 0;
     &.left {
-      transform: translateX(-100%) scale(0.5);
+      transform: scale(0.2) translateX(-400%);
     }
     &.right {
-      transform: translateX(100%) scale(0.5);
+      transform: scale(0.2) translateX(400%);
     }
     &.left.active,
     &.right.active {
@@ -159,23 +197,6 @@
   &__article {
     width: 100%;
     height: 100%;
-    border-radius: 16px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    &.one {
-      background-image: $slider-bg-one, url('../img/one.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    &.two {
-      background-image: $slider-bg-two, url('../img/two.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    &.three {
-      background-image: $slider-bg-three, url('../img/three.jpg');
-      background-size: cover;
-      background-position: center;
-    }
   }
   &__section-header {
     position: absolute;
@@ -195,45 +216,11 @@
     background: $slider-bg-three;
     backdrop-filter: blur(4px);
     // background: $overlay-light;
-    border-radius: 10px;
     padding: 10px;
     padding-top: 60px;
     @media screen and (min-width: $tablet) {
       padding: 30px;
       padding-top: 60px;
-    }
-  }
-  &__section-listitem {
-    @extend %flex-container;
-    line-height: 1em;
-    padding: 2px;
-    color: $white;
-    font-size: 12px;
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-    &::before {
-      content: '';
-      flex-shrink: 0;
-      height: 1em;
-      width: 1em;
-      background: $accent;
-      margin-right: 10px;
-      display: inline-block;
-      border-radius: 50%;
-    }
-    @media screen and (min-width: $tablet) {
-      font-size: 16px;
-    }
-    @media screen and (min-width: $desktop) {
-      font-size: 20px;
-    }
-  }
-  &__article-container {
-    padding: 30px 10px 0 10px;
-    position: relative;
-    @media screen and (min-width: $tablet) {
-      padding: 30px 30px 0 60px;
     }
   }
   &__controls {
@@ -243,7 +230,6 @@
     right: 0;
     padding: 6px;
     border-radius: 28px;
-    background: $overlay-light;
     @extend %flex-container;
     @media screen and (max-width: $tablet - 1) {
       display: none;
@@ -360,25 +346,25 @@
     position: absolute;
     bottom: 0px;
     right: 50%;
-    transform: translateX(50%);
+    transform: translate(50%, 100%);
     padding: 6px;
-    border-radius: 11px;
-    background: $overlay-light;
     @extend %flex-container;
   }
   &__indicator {
-    background: $main-purple;
+    background: $accent;
+    opacity: 0.4;
     height: 10px;
     width: 10px;
     border-radius: 5px;
-    will-change: height;
-    transition: height $transition, background $transition;
+    will-change: height, opacity;
+    transition: height $transition, opacity $transition;
     &:not(:last-child) {
       margin-right: 10px;
     }
     &.active {
       background: $accent;
       height: 20px;
+      opacity: 1;
     }
   }
   &__service-link {

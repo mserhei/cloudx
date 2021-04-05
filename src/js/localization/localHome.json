@@ -143,8 +143,6 @@
       }
     ],
 
-
-
     "services-new": [
       {
         "title": "Услуги",
@@ -156,19 +154,19 @@
                 "service-item": [
                   {
                     "title": "Облачный хостинг",
-                    "image": "/img/service1.svg",
+                    "image": "/img/service1.png",
                     "description": "Самый гибкий и современный способ размещения сайтов",
                     "href": "/"
                   },
                   {
                     "title": "Облачный VPS",
-                    "image": "/img/service2.svg",
+                    "image": "/img/service2.png",
                     "description": "Ваш собственный облачный сервер без капитальных затрат",
                     "href": "/"
                   },
                   {
                     "title": "1С:Бухгалтерия в облаке",
-                    "image": "/img/service3.svg",
+                    "image": "/img/service3.png",
                     "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных",
                     "href": "/"
                   }
@@ -178,19 +176,19 @@
                 "service-item": [
                   {
                     "title": "Битрикс в облаке",
-                    "image": "/img/service4.svg",
+                    "image": "/img/service4.png",
                     "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»",
                     "href": "/"
                   },
                   {
                     "title": "Битрикс24 в облаке",
-                    "image": "/img/service5.svg",
+                    "image": "/img/service5.png",
                     "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне",
                     "href": "/"
                   },
                   {
                     "title": "Облачный диск",
-                    "image": "/img/service6.svg",
+                    "image": "/img/service6.png",
                     "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер",
                     "href": "/"
                   }
@@ -200,13 +198,13 @@
                 "service-item": [
                   {
                     "title": "Почта в облаке",
-                    "image": "/img/service7.svg",
+                    "image": "/img/service7.png",
                     "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке",
                     "href": "/"
                   },
                   {
                     "title": "Облачный офис",
-                    "image": "/img/service8.svg",
+                    "image": "/img/service8.png",
                     "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office",
                     "href": "/"
                   }
@@ -214,8 +212,6 @@
               }
             ]
           },
-
-
 
           {
             "tab-item": "Rocket S",
@@ -234,12 +230,11 @@
             ]
           },
 
-
           {
             "tab-item": "Veeam",
             "service": [
               {
-                "service-item" : [
+                "service-item": [
                   {
                     "title": "Резервное копирование Veeam Backup & Replication (VM)",
                     "image": "/img/service1.svg",
@@ -261,7 +256,7 @@
                 ]
               },
               {
-                "service-item" : [
+                "service-item": [
                   {
                     "title": "Резервное копирование Veeam Cloud Connect (VM)",
                     "image": "/img/service1.svg",
@@ -283,7 +278,7 @@
                 ]
               },
               {
-                "service-item" : [
+                "service-item": [
                   {
                     "title": "Резервное копирование Veeam Agent (Server)",
                     "image": "/img/service1.svg",
@@ -369,7 +364,7 @@
             "tab-item": "Хостинг",
             "service": [
               {
-                "service-item" : [
+                "service-item": [
                   {
                     "title": "Запуск запланирован через:",
                     "image": "/img/service1.svg",
@@ -387,7 +382,7 @@
             "tab-item": "Электронная почта",
             "service": [
               {
-                "service-item" : [
+                "service-item": [
                   {
                     "title": "Почта 10 ГБ",
                     "image": "/img/service1.svg",
@@ -865,22 +860,18 @@
                     "image": "/img/service1.svg",
                     "description": "Самый гибкий и современный способ размещения сайтов",
                     "href": "/"
-
-
                   },
                   {
                     "title": "Облачный VPS",
                     "image": "/img/service2.svg",
                     "description": "Ваш собственный облачный сервер без капитальных затрат",
                     "href": "/"
-
                   },
                   {
                     "title": "1С:Бухгалтерия в облаке",
                     "image": "/img/service3.svg",
                     "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных",
                     "href": "/"
-
                   }
                 ]
               },
@@ -1156,8 +1147,6 @@
         ]
       }
     ],
-
-
 
     "services": [
       {

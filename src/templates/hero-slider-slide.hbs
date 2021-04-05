@@ -4,8 +4,8 @@
             <ul class="hero-slider__service-list">
                 {{#each service-item}}
                     <li class="hero-slider__service-listItem">
-                        <a href="{{href}}" class="hero-slider__link">
-                            <div class="hero-slider__image" style="background-image: url('{{image}}');"></div>
+                        <a href="{{href}}" class="hero-slider__link" {{#if id}}id={{id}}{{/if}}>
+                            <img class="hero-slider__image" src={{image}} alt="{{title}}" />
                             <div class="hero-slider__text-wrapper">
                                 <h4 class="hero-slider__text-title">{{title}}</h4>
                                 <p class="hero-slider__text">{{description}}</p>

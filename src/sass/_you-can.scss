@@ -1,12 +1,5 @@
 #you_can {
   width: 100%;
-  padding-bottom: 80px;
-  @media screen and (min-width: $tablet) {
-    padding-bottom: 120px;
-  }
-  @media screen and (min-width: $desktop) {
-    padding-bottom: 180px;
-  }
 }
 
 %lil-circle {
