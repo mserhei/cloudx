@@ -4,9 +4,11 @@
 }
 .nav.container {
   transform: translateY(-30px);
+  will-change: transform;
   transition: transform 500ms ease-in-out;
   &.present {
     transform: translateY(0);
+    will-change: transform;
     transition: transform 500ms ease-in-out;
   }
 }
@@ -22,6 +24,7 @@
     display: inline-block;
     padding-left: 10px;
     opacity: 1;
+    will-change: transform, opacity;
     transition: transform $transition, opacity $transition;
     font-weight: $bold;
     & .material-icons {
@@ -32,6 +35,7 @@
   &__item:last-child {
     transform: translateX(-20px);
     opacity: 0;
+    will-change: transform, opacity;
     transition: transform 1000ms $transition, opacity 1000ms $transition;
     font-weight: $normal;
   }
@@ -40,6 +44,7 @@
     opacity: 0.8;
   }
   &__link {
+    will-change: color;
     transition: color $transition;
     &:hover:not([disabled]) {
       color: $accent;

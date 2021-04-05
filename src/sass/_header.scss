@@ -132,6 +132,7 @@
 .coloured ~ .accent {
   background: $accent;
   width: 100%;
+  will-change: width;
   transition: width $transition;
 }
 
@@ -198,6 +199,7 @@
     .material-icons {
       position: absolute;
       color: $white;
+      will-change: color, opacity;
       transition: color $transition, opacity $transition;
       pointer-events: none;
     }
@@ -228,6 +230,7 @@ ul.navigation__list#id_nav {
     opacity: 0;
     transform-origin: top;
     transform: scaleY(0);
+    will-change: opacity, transform, padding-top;
     transition: opacity $slider, transform $slider, padding-top $slider 500ms;
     &.open {
       padding-top: 50px;

@@ -58,6 +58,7 @@ main {
   padding: 5px;
   margin: 0 auto;
   // transform-origin: top left;
+  will-change: transform, opacity;
   transition: transform $slider, opacity $slider;
   @media screen and (min-width: $phone) {
     max-width: 600px;
@@ -92,6 +93,7 @@ section.container {
   filter: blur(4px);
   transform: scale(0.5) translate(0, -600px);
   opacity: 0;
+  will-change: transform, filter, opacity;
   transition: transform $slider, filter $slider 250ms, opacity $slider;
   &.present {
     transform: scale(1) translate(0);
@@ -113,6 +115,7 @@ section.container {
   height: 60px;
   transform-origin: top left;
   opacity: 0;
+  will-change: opacity;
   transition: opacity $transition;
   &__rocket {
     position: relative;
@@ -130,6 +133,7 @@ section.container {
     width: 40px;
     height: 40px;
     opacity: 0;
+    will-change: opacity, transform;
     transition: opacity $transition, transform $transition;
     border: 1px solid $accent;
     border-radius: 50%;
@@ -161,6 +165,7 @@ section.container {
   font-weight: 500;
   letter-spacing: 0.02em;
   transform: scale(0.8);
+  will-change: opacity, transform;
   transition: opacity $slider, transform $slider;
 }
 .backdrop {
@@ -195,6 +200,7 @@ section.container {
     font-weight: 500;
     letter-spacing: 0.02em;
     transform: scale(0.8);
+    will-change: opacity, transform;
     transition: opacity $slider, transform $slider;
     @media screen and (min-width: $tablet) {
       padding: 55px 55px 60px;
@@ -221,6 +227,7 @@ section.container {
   background-color: transparent;
   color: $white;
   line-height: 1em;
+  will-change: transform, background-color;
   transition: transform $transition, background-color $transition;
   &:hover,
   &:focus {
@@ -272,6 +279,7 @@ section.container {
   font-size: 22px;
   opacity: 0.5;
   transform: translateX(100px);
+  will-change: transform, opacity;
   transition: transform $slider 250ms, opacity $slider 500ms;
   @media screen and (min-width: $tablet) {
     font-size: 32px;
@@ -323,6 +331,7 @@ section.container {
   padding: 0 15px;
   width: fit-content;
   height: 40px;
+  will-change: color, border-color;
   transition: color $transition, border-color $transition;
   filter: drop-shadow(0 0 2px rgb(20, 2, 46));
   @extend %flex-container;
@@ -367,6 +376,7 @@ section.container {
 %anchor {
   text-transform: uppercase;
   font-weight: $light;
+  will-change: color, transform;
   transition: color $slider, transform $slider;
   height: 100%;
   width: 100%;

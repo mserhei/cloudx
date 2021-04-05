@@ -146,6 +146,7 @@
     }
     width: auto;
     object-fit: contain;
+    will-change: transform;
     transition: transform $transition;
   }
   &__goods-listitem {
@@ -227,6 +228,7 @@
     margin-bottom: 30px;
   }
   &__file-listitem {
+    will-change: transform;
     transition: transform $transition;
   }
   &__file-listitem:hover {
@@ -265,6 +267,7 @@
 }
 .present .about-us__main {
   transform: translateX(0);
+  will-change: transform, opacity;
   transition: transform $transition, opacity $transition;
   opacity: 1;
 }

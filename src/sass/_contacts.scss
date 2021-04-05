@@ -161,6 +161,7 @@
     align-items: center;
     justify-content: stretch;
     margin-bottom: 40px;
+    will-change: transform;
     transition: transform $transition;
     &:hover {
       transform: scale(1.2);

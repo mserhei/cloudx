@@ -143,6 +143,7 @@ tspan {
     @media screen and (min-width: $desktop) {
       height: 250px;
     }
+    will-change: opacity, transform;
     transition: opacity $transition, transform $transition;
     &.disabled {
       opacity: 0;
@@ -164,6 +165,7 @@ tspan {
     text-shadow: $text-shade-light;
     opacity: 0;
     transform: translateY(-100px) scale(0.5);
+    will-change: transform, opacity;
     transition: transform $transition 750ms, opacity $transition 750ms;
     @media screen and (min-width: $tablet) {
       font-size: 16px;
@@ -302,6 +304,7 @@ tspan {
           pointer-events: auto;
         }
         opacity: 0;
+        will-change: transform, opacity;
         transition: transform $transition, opacity $transition;
         &:active {
           @media screen and (min-width: $tablet) {
@@ -326,6 +329,7 @@ tspan {
         font-size: 64px;
         color: $white;
         will-change: opacity, transform;
+        will-change: transform, opacity;
         transition: transform $transition, opacity $transition;
       }
       &:hover {
@@ -379,6 +383,7 @@ tspan {
     );
     background-size: 0px;
     background-repeat: no-repeat;
+    will-change: background-size, color;
     transition: background-size $transition, color $transition;
     background-clip: text;
     &.active {
@@ -390,6 +395,7 @@ tspan {
     }
     &.active {
       background-size: 200%;
+      will-change: background-size;
       transition: background-size $slider;
     }
   }
@@ -402,6 +408,7 @@ tspan {
     z-index: -1;
     & > text {
       stroke: $stroke-grey;
+      will-change: stroke;
       transition: stroke $transition;
     }
   }

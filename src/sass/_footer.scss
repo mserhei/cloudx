@@ -39,12 +39,14 @@
     height: 44px;
     border-radius: 40%;
     padding: 7px;
+    will-change: transform;
     transition: transform $transition;
     border-radius: 50%;
     background: center / contain url('../img/planet.png');
     & a {
       filter: opacity(0.8) drop-shadow(2px 2px 2px $main-purple);
       transform: scale(0.8);
+      will-change: transform;
       transition: transform $transition 150ms;
     }
     filter: saturate(0.3);
@@ -138,6 +140,7 @@
     line-height: 1.4em;
     font-style: normal;
     font-size: 14px;
+    will-change: color;
     transition: color $transition;
     @media screen and (min-width: $tablet) {
       font-size: 16px;

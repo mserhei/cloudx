@@ -23,6 +23,7 @@
     flex-wrap: nowrap;
     position: absolute;
     transform: translateX(0);
+    will-change: transform;
     transition: transform $slider;
     @include Cardset-Responsive($phone, 15px, 15px, 2);
     @include Cardset-Responsive($tablet, 20px, 20px, 3);
@@ -48,6 +49,7 @@
     width: 120px;
     overflow: hidden;
     box-shadow: $text-shade;
+    will-change: transform, filter;
     transition: transform $transition, filter $transition;
     margin-bottom: 14px;
     @media screen and (max-width: $tablet - 1) {
