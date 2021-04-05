@@ -78,53 +78,45 @@ function fixSVG() {
   texts.forEach(el => {
     el.setAttribute('y', y);
 
-    const { width, lineHeight } = window.getComputedStyle(
-      el.closest('svg').previousElementSibling,
-    );
+    const { width, lineHeight } = window.getComputedStyle(el.closest('svg'));
 
     prepareSVGtext(
       el,
-      Number(width.match(/\d+\,*\d*/g).join('.')),
+      Math.ceil(Number(width.match(/\d+\,*\d*/g).join('.'))),
       lineHeight.match(/\d+\,*\d*/g).join('.'),
     );
   });
 }
 
-function prepareSVGtext(el, width, y) {
-  var element = el;
-  var text = element.innerHTML;
-  text = text
+function prepareSVGtext(el, Width, y) {
+  const element = el;
+  const words = element.innerHTML
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s{2,}/g, ' ')
-    .trim();
-  console.log(text);
-  /* split the words into array */
-  var words = text.split(' ');
-  var line = '';
+    .trim()
+    .split(' ');
+
+  let line = '';
   let b = 0;
 
-  /* Make a tspan for testing */
   element.innerHTML = '<tspan id="PROCESSING">busy</tspan >';
 
-  for (var n = 0; n < words.length; n++) {
-    var testLine = line + words[n] + ' ';
-    var testElem = document.getElementById('PROCESSING');
-    /*  Add line in testElement */
-    testElem.textContent = testLine;
-    /* Messure textElement */
-    var metrics = testElem.getBoundingClientRect();
-    var testWidth = metrics.width;
+  words.map((word, i) => {
+    const testLine = line + word;
+    const testElem = document.getElementById('PROCESSING');
 
-    if (testWidth > width && n > 0) {
-      element.innerHTML +=
-        '<tspan x="0" dy="' + b++ * y + '">' + line + '</tspan>';
-      line = words[n] + ' ';
+    testElem.innerHTML = testLine;
+
+    const { width } = testElem.getBoundingClientRect();
+    if (Math.ceil(width) > Width && i > 0) {
+      element.innerHTML += `<tspan x="0" dy="${b++ * y}">${line}</tspan>`;
+      line = word + ' ';
     } else {
-      line = testLine;
+      line = testLine + ' ';
     }
-  }
+  });
 
-  element.innerHTML += '<tspan x="0" dy="' + b * y + '">' + line + '</tspan>';
+  element.innerHTML += `<tspan x="0" dy="${b * y}">${line}</tspan>`;
   document.getElementById('PROCESSING').remove();
 }
 

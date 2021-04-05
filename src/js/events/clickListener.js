@@ -14,23 +14,29 @@ const drawHome = () => import('../pages/home');
 
 export default function listenClicks(event) {
   clickMouse(event);
+
   if (event.target.classList.contains('social__link'))
     return event.preventDefault();
+
   if (event.target.id.includes('id_rout')) {
     event.preventDefault();
     render(event);
   }
+
   if (event.target.hasAttribute('data-modal')) {
     event.preventDefault();
     myModal.openModal(event);
   }
+
   if (event.target.hasAttribute('data-slide')) {
     slider.changeSlidesOnEvent(event);
   }
+
   if (event.target.hasAttribute('data-burger')) {
     event.preventDefault();
     openMenu(event);
   }
+
   if (event.target.hasAttribute('data-lang')) {
     const previousLang = lang.name;
     save('Lang', event.target.dataset.lang);
@@ -41,6 +47,7 @@ export default function listenClicks(event) {
     if (index >= 0) href = path.slice(index);
     decideRout(path, href, true);
   }
+
   if (event.target.hasAttribute('data-service')) {
     let wd = -50;
     const deviceWidth = Math.max(
@@ -82,6 +89,7 @@ export default function listenClicks(event) {
       behavoir: 'smooth',
     });
   }
+
   if (event.target.hasAttribute('data-form')) {
     event.preventDefault();
     const tabs = document.querySelectorAll('.modal__tab');
@@ -92,7 +100,9 @@ export default function listenClicks(event) {
         forms[i].classList.toggle('active');
       });
   }
+
   let timer;
+
   if (event.target.classList.contains('hero-slider__service-link')) {
     event.preventDefault();
     if (!event.target.classList.contains('active')) {

@@ -35,6 +35,7 @@ tspan {
     display: inline-block;
     font-weight: 900;
     font-size: 26px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     @media screen and (min-width: $tablet) {
       font-size: 34px;
     }
@@ -381,13 +382,13 @@ tspan {
     background-repeat: no-repeat;
     transition: background-size $transition, color $transition;
     background-clip: text;
-    &.active {
-      & ~ .hero-slider__svg {
-        & > text {
-          stroke: transparent;
-        }
-      }
-    }
+    // &.active {
+    //   & ~ .hero-slider__svg {
+    //     & > text {
+    //       stroke: transparent;
+    //     }
+    //   }
+    // }
     &.active {
       background-size: 200%;
       transition: background-size $slider;
@@ -401,7 +402,7 @@ tspan {
     left: 0;
     z-index: -1;
     & > text {
-      stroke: $stroke-grey;
+      stroke: $accent;
       transition: stroke $transition;
     }
   }
