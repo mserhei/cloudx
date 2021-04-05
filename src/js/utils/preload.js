@@ -93,7 +93,11 @@ function fixSVG() {
 function prepareSVGtext(el, width, y) {
   var element = el;
   var text = element.innerHTML;
-
+  text = text
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  console.log(text);
   /* split the words into array */
   var words = text.split(' ');
   var line = '';
@@ -110,11 +114,10 @@ function prepareSVGtext(el, width, y) {
     /* Messure textElement */
     var metrics = testElem.getBoundingClientRect();
     var testWidth = metrics.width;
-    console.log(width, testWidth);
 
     if (testWidth > width && n > 0) {
       element.innerHTML +=
-        '<tspan x="0" dy="' + ++b * y + '">' + line + '</tspan>';
+        '<tspan x="0" dy="' + b++ * y + '">' + line + '</tspan>';
       line = words[n] + ' ';
     } else {
       line = testLine;
