@@ -94,6 +94,7 @@
     color: transparent;
     outline: none;
     opacity: 1;
+    will-change: opacity;
     transition: opacity 0.2s;
     overflow: visible;
     margin-bottom: 15px;
@@ -113,6 +114,7 @@
       outline: none;
       & ~ .range__output {
         opacity: 1;
+        will-change: opacity;
         transition: opacity $transition;
       }
       & ~ .range__markers {
@@ -174,6 +176,7 @@
       padding: 0 50px;
     }
     opacity: 0.5;
+    will-change: opacity;
     transition: opacity $transition;
     &-item.shine {
       color: rgb(158, 221, 255);
@@ -202,6 +205,7 @@
     background: $overlay-light;
     color: white;
     border-radius: 30px;
+    will-change: opacity;
     transition: opacity $transition 2s;
     & > :first-child {
       margin-right: 4px;

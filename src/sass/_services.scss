@@ -31,6 +31,7 @@
     margin: 0 auto;
     background: $overlay-light;
     height: 100%;
+    will-change: width;
     transition: width $transition;
   }
   &__aside {
@@ -80,6 +81,7 @@
       display: inline-block;
       height: 100%;
       width: 0;
+      will-change: width;
       transition: width $transition;
     }
     &.current {
@@ -104,6 +106,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 0 16px 16px 0;
+    will-change: height;
     transition: height 0.7s ease-out;
     background: $stroke-grey;
   }
@@ -128,12 +131,14 @@
     @include Cardset-Responsive($tablet, 10px, 10px, 2);
     @include Cardset-Responsive($desktop, 10px, 10px, 3);
     transform: translateX(-1400px);
+    will-change: opacity, transform;
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
     &.active {
       z-index: 1;
       width: 100%;
       opacity: 1;
       transform: translateX(0);
+      will-change: transform, opacity;
       transition: opacity 0.7s ease-out, transform 0.7s ease-out;
     }
   }
@@ -168,6 +173,7 @@
       display: block;
       position: absolute;
       z-index: 0;
+      will-change: width, opacity;
       transition: 0.2s width 0.1s ease-out, opacity 0.2s ease-out;
       opacity: 0;
       transform: translateY(-50%);
@@ -175,8 +181,10 @@
     }
     &:hover {
       color: #fff;
+      will-change: color;
       transition: color 0.5s ease-in;
       &:before {
+        will-change: width;
         transition: width 0.5s ease-in;
         width: 300%;
         opacity: 1;
@@ -200,6 +208,7 @@
     z-index: 1;
     height: 100%;
     background-size: contain;
+    will-change: transform, filter;
     transition: transform $transition, filter $transition;
     background-repeat: no-repeat;
     filter: drop-shadow(2px 2px 4px $main-purple);

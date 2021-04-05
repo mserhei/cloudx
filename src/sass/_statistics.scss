@@ -156,6 +156,7 @@
 
     transform: translateX(20px);
     opacity: 0.6;
+    will-change: transform, opacity;
     transition: transform 100ms ease-out, opacity 100ms ease-out;
     font-size: 10px;
     @media screen and (min-width: $phone) {
@@ -183,6 +184,7 @@
   &__value {
     display: inline-block;
     @extend %button;
+    will-change: border-color;
     transition: border-color 100ms ease-out;
     margin-right: 10px;
     width: 70px;
@@ -198,6 +200,7 @@
   }
   &__name {
     @extend %anchor;
+    will-change: font-weight, text-shadow;
     transition: font-weight 100ms ease-out, text-shadow 100ms ease-out;
     &:nth-child(2) {
       transition-delay: 100ms, 100ms;
@@ -221,6 +224,7 @@
 
 #statistics.hover {
   .statistics__listitem {
+    will-change: transform, opacity;
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
     &:nth-child(2) {
       transition-delay: 0.5s, 0.5s;
@@ -235,6 +239,7 @@
     opacity: 1;
     .statistics__value {
       border-color: $accent;
+      will-change: border-color;
       transition: border-color 0.5s ease-out;
       &:nth-child(2) {
         transition-delay: 0.5s;
@@ -247,6 +252,7 @@
       }
     }
     .statistics__name {
+      will-change: font-weight, text-shadow;
       transition: font-weight 0.5s ease-out, text-shadow 0.5s ease-out;
       font-weight: $bold;
       text-shadow: 0 0 14px rgba(255, 255, 255, 0.8);

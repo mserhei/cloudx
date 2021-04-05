@@ -1,11 +1,9 @@
 /* dewice-width */
-
 $desktop: 1280px;
 $tablet: 768px;
 $phone: 480px;
 
 /* colors*/
-
 $main-text: rgba(242, 242, 242, 1);
 
 $white: #fff;
@@ -22,7 +20,6 @@ $purple-btn: #918dd1;
 $purple-accent: rgb(67, 64, 110);
 $purple-secondary: rgba(60, 32, 101, 0.8);
 $black: #000000;
-$logo-black: #010002;
 $main-grey: rgb(110, 119, 157);
 $bg-grey: #e5e5e5;
 $stroke-grey: #bdbdbd;
@@ -35,19 +32,9 @@ $main-red-light: rgba(255, 0, 0, 0.2);
 $overlay: rgba(0, 0, 0, 0.7);
 $overlay-light: rgba(27, 69, 111, 0.4);
 $dim: rgba(225, 225, 225, 0.8);
-$dim-bg: rgba(202, 218, 255, 0.8);
-$dim-bg-light: rgba(202, 218, 255, 0.2);
-$slider-bg: linear-gradient($dim-bg-light, $dim-bg);
+
 $root-bg: linear-gradient(rgba(0, 7, 52, 0.9), rgba(0, 7, 52, 1));
-$slider-bg-one: linear-gradient(
-  rgba(147, 157, 221, 0.6),
-  rgba(121, 17, 128, 0.5)
-);
-$slider-bg-two: linear-gradient(rgba(147, 220, 221, 0.6), rgba(14, 9, 74, 0.5));
-$slider-bg-three: linear-gradient(
-  rgba(147, 184, 221, 0.6),
-  rgba(40, 6, 42, 0.5)
-);
+
 $color: #000734;
 /* shadows */
 
@@ -62,8 +49,6 @@ $text-shade-light: 1px 1px 1px rgba(0, 0, 0, 0.8);
 
 $Inter: 'Inter', 'Open Sans', sans-serif;
 
-$Montserrat: 'Montserrat', 'Open Sans', sans-serif;
-$Roboto: 'Roboto', 'Open Sans', sans-serif;
 $light: 300;
 $normal: 400;
 $medium: 500;
