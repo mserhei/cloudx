@@ -299,15 +299,19 @@ section.container {
   min-height: 100vh;
 }
 .section__header {
-  background: $overlay;
+  width: 100%;
   display: inline-block;
   border-radius: 8px;
-  color: $accent;
+  color: #F2F2F2;
   font-size: 16px;
-  padding: 15px 15px 15px 0px;
-  margin-bottom: 15px;
   @media screen and (min-width: $tablet) {
+    font-weight: 900;
     font-size: 24px;
+    line-height: 24px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 48px;
+    line-height: 48px;
   }
 }
 %flex-container {
