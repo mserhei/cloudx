@@ -29,7 +29,6 @@
     align-items: flex-start;
     border-radius: 16px;
     margin: 0 auto;
-    background: $overlay-light;
     height: 100%;
     will-change: width;
     transition: width $transition;
@@ -47,7 +46,7 @@
       top: 100px;
     }
     @media screen and (min-width: $desktop) {
-      width: 300px;
+      width: 45%;
     }
   }
   &__tabs {
@@ -78,6 +77,18 @@
       padding-right: 5px;
       line-height: 40px;
     }
+    .tab-accent {
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      will-change: width;
+      transition: width $transition;
+    }
+    &.current {
+      .tab-accent {
+        width: 4px;
+      }
+    }
   }
   &__main {
     @extend %flex-container;
@@ -86,7 +97,7 @@
       width: calc(100% - 200px);
     }
     @media screen and (min-width: $desktop) {
-      width: calc(100% - 300px);
+      width: 55%;
     }
     width: 100%;
     min-height: 350px;
@@ -95,7 +106,6 @@
     border-radius: 0 16px 16px 0;
     will-change: height;
     transition: height 0.7s ease-out;
-    background: $stroke-grey;
   }
   &__tab-list {
     position: absolute;
@@ -108,15 +118,14 @@
     @media screen and (min-width: $tablet) {
       padding: 20px;
     }
-    min-height: 350px;
-    // background: $stroke-grey;
+    height: 100%;
     color: $overlay;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     @include Cardset-Responsive(0, 10px, 10px, 1);
     @include Cardset-Responsive($tablet, 10px, 10px, 2);
-    @include Cardset-Responsive($desktop, 10px, 10px, 2);
+    @include Cardset-Responsive($desktop, 10%, 10%, 2);
     transform: translateX(-1400px);
     will-change: opacity, transform;
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
@@ -132,23 +141,21 @@
   &__card {
     position: relative;
     overflow: hidden;
-    padding: 10px;
+    // padding: 10px;
     border-radius: 8px;
-    background: $white;
-    box-shadow: $text-shade;
     @extend %flex-container;
     flex-direction: column;
-    height: 360px;
+
+    // height: 360px;
     @media screen and (min-width: 600px) {
       flex-direction: row;
-      height: 200px;
+      // height: 200px;
     }
     @media screen and (min-width: $tablet) {
-      height: 250px;
+      // height: 250px;
+      margin-right: 100px;
     }
-    // @media screen and (min-width: 900px) {
-    //   height: 200px;
-    // }
+
     &:before {
       border-radius: 50% 0 0 50%/75% 0 0 75%;
       right: 0;
@@ -170,12 +177,12 @@
       color: #fff;
       will-change: color;
       transition: color 0.5s ease-in;
-      &:before {
-        will-change: width;
-        transition: width 0.5s ease-in;
-        width: 300%;
-        opacity: 1;
-      }
+      // &:before {
+      //   will-change: width;
+      //   transition: width 0.5s ease-in;
+      //   width: 300%;
+      //   opacity: 1;
+      // }
       .services__image {
         transform: translateY(-10px);
         filter: drop-shadow(2px 14px 4px $accent);
@@ -185,12 +192,20 @@
       }
     }
   }
+
+  &__link {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   &__image {
     width: 100%;
     max-height: 200px;
-    @media screen and (min-width: 600px) {
-      width: 40%;
-    }
+    // @media screen and (min-width: 600px) {
+    //   width: 40%;
+    // }
     position: relative;
     z-index: 1;
     height: 100%;
@@ -204,9 +219,9 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    @media screen and (min-width: 600px) {
-      width: 60%;
-    }
+    // @media screen and (min-width: 600px) {
+    //   width: 60%;
+    // }
     display: flex;
     height: 100%;
     padding: 10px;
@@ -215,17 +230,18 @@
     justify-content: flex-start;
   }
   &__title {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 32px;
+    color: #518ae0;
     margin-bottom: 10px;
     text-align: center;
+    font-weight: bold;
   }
   &__description {
-    color: $dark-grey;
     margin-bottom: auto;
-    font-size: 12px;
-  }
-  &__button {
-    @extend %button-main;
-    align-self: flex-end;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #f2f2f2;
   }
 }
