@@ -1,10 +1,29 @@
 {{#each statistics}}
     <div id="statistics">
         <section class="container present">
-            <h2 class="main-header">{{title}}</h2>
+            <h2 class="block-title">
+              <span>02</span>
+              <span>{{title}}</span>
+            </h2>
+
+
+
+
+
+
             <article class="statistics" id="id_statistics">
-                <h3 class="section__header">{{subTitle}}</h3>
+
+
                 <div class="statistics__wrapper">
+
+                    <div>
+                      <h3 class="section__header">{{subTitle}}</h3>
+                      <div class="statistics__circle" id="id_circle">
+                        <div class="speed" id="speed">0 %</div>
+                        {{> ./circle}}
+                      </div>
+                    </div>
+
                     <ul class="statistics__list">
                         {{#each stats}}
                             <li class="statistics__listitem">
@@ -14,10 +33,7 @@
                             </li>
                         {{/each}}
                     </ul>
-                    <div class="statistics__circle" id="id_circle">
-                        <div class="speed" id="speed">0 %</div>
-                        {{> ./circle}}
-                    </div>
+
                 </div>
             </article>
         </section>
