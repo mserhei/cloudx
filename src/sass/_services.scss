@@ -54,6 +54,7 @@
     height: 100%;
   }
   &__tab-item {
+    position: relative;
     height: 50px;
     font-size: 12px;
     @media screen and (min-width: $tablet) {
@@ -76,20 +77,6 @@
       }
       padding-right: 5px;
       line-height: 40px;
-    }
-    .tab-accent {
-      display: inline-block;
-      height: 100%;
-      width: 0;
-      will-change: width;
-      transition: width $transition;
-    }
-    &.current {
-      background: $overlay-light;
-      .tab-accent {
-        background: $accent;
-        width: 4px;
-      }
     }
   }
   &__main {
