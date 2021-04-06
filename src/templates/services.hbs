@@ -1,19 +1,16 @@
 {{#each services}}
     <div id="services">
         <section class="container present services">
-
-
-
-
-
-            <h2 class="main-header" id="services__header">{{title}}</h2>
+            <h2 class="block-title">
+                <span>02</span> <span>{{title}}</span>
+            </h2>
             <div class="services__table">
                 <div class="services__aside">
                     <ul class="services__tabs">
                         {{#each tabs}}
-                            <li class="services__tab-item {{#if @first}}current{{/if}}">
+                            <li class="services__tab-item">
                                 <a class="hero-slider__service-link{{#if @first}} active{{/if}}" href=""
-                                    data-slide-index="{{@index}}">{{tab-item}}</a>
+                                    data-service="{{@index}}">{{tab-item}}</a>
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="hero-slider__svg">
                                     <text class="hero-slider__svgtext" fill="none" stroke="white"
                                         stroke-width="0.5px">{{tab-item}}</text>
@@ -28,18 +25,18 @@
                             {{#each serviceList}}
                                 <li class="services__card"
                                     style="position: relative;{{#if timerid}}height: 400px;width: 500px;{{/if}}">
-                                      <a href="{{href}}" class="services__link">
+                                    <a href="{{href}}" class="services__link">
                                         {{#if timerid}}
                                             {{> ./timer}}
                                         {{else}}
 
-                                        <img class="services__image" src="" alt={{title}} loading="lazy" />
-                                        <article class="services__story">
-                                            <h2 class="services__title">{{title}}</h2>
-                                            <p class="services__description">{{description}}</p>
-                                        </article>
-                                      </a>
-                                    {{/if}}
+                                            <img class="services__image" src="" alt={{title}} loading="lazy" />
+                                            <article class="services__story">
+                                                <h2 class="services__title">{{title}}</h2>
+                                                <p class="services__description">{{description}}</p>
+                                            </article>
+                                        {{/if}}
+                                    </a>
                                 </li>
                             {{/each}}
                         </ul>

@@ -53,6 +53,7 @@
     height: 100%;
   }
   &__tab-item {
+    position: relative;
     height: 50px;
     font-size: 12px;
     @media screen and (min-width: $tablet) {
@@ -145,7 +146,6 @@
     @extend %flex-container;
     flex-direction: column;
 
-
     // height: 360px;
     @media screen and (min-width: 600px) {
       flex-direction: row;
@@ -198,7 +198,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
   }
 
   &__image {
@@ -233,7 +232,7 @@
   &__title {
     font-size: 24px;
     line-height: 32px;
-    color: #518AE0;
+    color: #518ae0;
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
@@ -243,6 +242,6 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 22px;
-    color: #F2F2F2;
+    color: #f2f2f2;
   }
 }
