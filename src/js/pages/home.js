@@ -20,19 +20,10 @@ import svg6 from '../../img/service6.svg';
 import svg7 from '../../img/service7.svg';
 import svg8 from '../../img/service8.svg';
 
-import png1 from '../../img/service1.png';
-import png2 from '../../img/service2.png';
-import png3 from '../../img/service3.png';
-import png4 from '../../img/service4.png';
-import png5 from '../../img/service5.png';
-import png6 from '../../img/service6.png';
-import png7 from '../../img/service7.png';
-import png8 from '../../img/service8.png';
-
 const imgs = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 const svgs = [
-  [png1, png2, png3, png4, png5, png6, png7, png8],
+  [svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8],
   [svg1],
   [svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg1],
   [svg1, svg2, svg3, svg4, svg5, svg6, svg7],

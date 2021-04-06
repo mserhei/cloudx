@@ -153,25 +153,6 @@ tspan {
       opacity: 1;
     }
   }
-  .order {
-    @extend %flex-container;
-    flex-direction: column;
-    align-items: flex-end;
-    width: fit-content;
-    margin-top: 20px;
-    position: static;
-    background: $dim;
-    font-size: 14px;
-    font-weight: $normal;
-    text-shadow: $text-shade-light;
-    opacity: 0;
-    transform: translateY(-100px) scale(0.5);
-    will-change: transform, opacity;
-    transition: transform $transition 750ms, opacity $transition 750ms;
-    @media screen and (min-width: $tablet) {
-      font-size: 16px;
-    }
-  }
   &__slide {
     position: absolute;
     top: 0;
@@ -191,10 +172,6 @@ tspan {
     &.right.active {
       transform: translateX(0) scale(1);
       opacity: 1;
-      .order {
-        opacity: 1;
-        transform: translateY(-10px);
-      }
     }
   }
   &__article {
@@ -208,12 +185,6 @@ tspan {
     left: 20px;
     z-index: 1;
   }
-  &__order-btn {
-    margin-top: 15px;
-    @extend %button-main;
-    width: fit-content;
-  }
-
   &__controls {
     position: absolute;
     z-index: 2;
@@ -228,79 +199,61 @@ tspan {
     &-button {
       @extend %flex-container;
       position: relative;
-      &:not(.aside) {
-        background: $accent;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        &:not(:last-child) {
-          margin-right: 20px;
+      background: $accent;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      &:not([disabled]) {
+        &::before {
+          pointer-events: none;
+          content: '';
+          position: absolute;
+          height: 42px;
+          width: 42px;
+          border-radius: 50%;
+          will-change: opacity, transform;
+          opacity: 1;
+          transform: scale(1);
+          transition: transform $transition, opacity $transition;
+          background: $main-purple;
         }
-        &:not([disabled]) {
+        &:hover {
+          transform: scale(1.1);
           &::before {
-            pointer-events: none;
+            transform: scale(0);
+            opacity: 0;
+          }
+        }
+        &:active {
+          transform: scale(1.2);
+          &::after {
             content: '';
+            pointer-events: none;
             position: absolute;
-            height: 42px;
-            width: 42px;
+            height: 40px;
+            width: 40px;
+            transform: scale(0.9);
             border-radius: 50%;
-            will-change: opacity, transform;
-            opacity: 1;
-            transform: scale(1);
-            transition: transform $transition, opacity $transition;
             background: $main-purple;
           }
-          &:hover {
-            transform: scale(1.1);
-            &::before {
-              transform: scale(0);
-              opacity: 0;
-            }
-          }
-          &:active {
-            transform: scale(1.2);
-            &::after {
-              content: '';
-              pointer-events: none;
-              position: absolute;
-              height: 40px;
-              width: 40px;
-              transform: scale(0.9);
-              border-radius: 50%;
-              background: $main-purple;
-            }
-          }
-          & .icon {
-            pointer-events: none;
-            font-size: 34px;
-            color: $white;
-            will-change: opacity, transform;
-            transition: transform $transition, opacity $transition;
-            &:hover {
-              transform: scale(1.5);
-              opacity: 0.8;
-            }
-          }
         }
-        &[disabled] {
-          background: $dim;
+        & .icon {
+          pointer-events: none;
+          font-size: 34px;
+          color: $white;
+          will-change: opacity, transform;
+          transition: transform $transition, opacity $transition;
+          &:hover {
+            transform: scale(1.5);
+            opacity: 0.8;
+          }
         }
       }
-      &.aside {
-        pointer-events: none;
-        @media screen and (min-width: $desktop) {
-          transform: scaleY(8);
-          pointer-events: auto;
-        }
-        opacity: 0;
-        will-change: transform, opacity;
-        transition: transform $transition, opacity $transition;
-        &:active {
-          @media screen and (min-width: $tablet) {
-            filter: brightness(0.8);
-            transform: scaleY(0.5);
-          }
-        }
+      &[disabled] {
+        background: $dim;
       }
     }
   }
@@ -366,7 +319,6 @@ tspan {
     z-index: -1;
     & > text {
       stroke: $accent;
-      stroke: $stroke-grey;
       will-change: stroke;
       transition: stroke $transition;
     }

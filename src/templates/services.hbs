@@ -6,9 +6,14 @@
                 <div class="services__aside">
                     <ul class="services__tabs">
                         {{#each tabs}}
-                            <li class="services__tab-item {{#if @first}}current{{/if}}"><span
-                                    class="tab-accent"></span><span class="tab-title" data-service={{@index}}
-                                    data-mouse>{{tab-item}}</span></li>
+                            <li class="services__tab-item {{#if @first}}current{{/if}}">
+                                <a class="hero-slider__service-link{{#if @first}} active{{/if}}" href=""
+                                    data-slide-index="{{@index}}">{{tab-item}}</a>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="hero-slider__svg">
+                                    <text class="hero-slider__svgtext" fill="none" stroke="white"
+                                        stroke-width="0.5px">{{tab-item}}</text>
+                                </svg>
+                            </li>
                         {{/each}}
                     </ul>
                 </div>
