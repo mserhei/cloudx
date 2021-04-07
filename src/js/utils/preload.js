@@ -27,7 +27,6 @@ function preload({ path }, hash) {
   const circle = document.querySelector('#statistics');
   circle ? observer.observe(circle) : observer.disconnect();
   const services = document.querySelector('.services__main');
-  services && resizeServices();
   aboutObserver.disconnect();
   container.forEach(el => {
     el.classList.remove('present');
@@ -52,8 +51,7 @@ function preload({ path }, hash) {
     () => logo.length && logo.forEach(el => el.classList.add('in')),
     400,
   );
-
-  fixSVG();
+  services && resizeServices(true);
 
   // texts.forEach(
   //   el =>
@@ -71,9 +69,9 @@ function preload({ path }, hash) {
 function fixSVG() {
   let y = 0;
   let Width = window.innerWidth;
-  if (Width > 1280) y = 39;
-  else if (Width > 768) y = 31;
-  else y = 24;
+  if (Width > 1280) y = 41;
+  else if (Width > 768) y = 27;
+  else y = 16.5;
   const texts = document.querySelectorAll('text');
   texts.forEach(el => {
     el.setAttribute('y', y);
@@ -82,42 +80,41 @@ function fixSVG() {
 
     prepareSVGtext(
       el,
-      Math.ceil(Number(width.match(/\d+\,*\d*/g).join('.'))),
+      Number(width.match(/\d+\,*\d*/g).join('.')),
       lineHeight.match(/\d+\,*\d*/g).join('.'),
     );
   });
 }
 
 function prepareSVGtext(el, Width, y) {
-  const element = el;
-  const words = element.innerHTML
-    .replace(/<[^>]*>/g, ' ')
+  const words = el
+    .closest('svg')
+    .previousElementSibling.innerHTML.replace(/<[^>]*>/g, ' ')
     .replace(/\s{2,}/g, ' ')
     .trim()
     .split(' ');
 
+  let results = '';
   let line = '';
   let b = 0;
 
-  element.innerHTML = '<tspan id="PROCESSING">busy</tspan >';
-
   words.map((word, i) => {
-    const testLine = line + word;
-    const testElem = document.getElementById('PROCESSING');
-
-    testElem.innerHTML = testLine;
-
-    const { width } = testElem.getBoundingClientRect();
-    if (Math.ceil(width) > Width && i > 0) {
-      element.innerHTML += `<tspan x="0" dy="${b++ * y}">${line}</tspan>`;
-      line = word + ' ';
+    const test = `${line} ${word}`.trim();
+    el.innerHTML = test;
+    const width = el.getComputedTextLength();
+    if (width >= Width && i !== 0) {
+      results += `<tspan x="0" dy="${b++ * y}">${line}</tspan>`;
+      console.log('longer', test, width, Width);
+      line = word;
     } else {
-      line = testLine + ' ';
+      line = test;
+      console.log('not longer', test, width, Width);
     }
   });
 
-  element.innerHTML += `<tspan x="0" dy="${b * y}">${line}</tspan>`;
-  document.getElementById('PROCESSING').remove();
+  results += `<tspan x="0" dy="${b * y}">${line}</tspan>`;
+
+  el.innerHTML = results;
 }
 
 function startCircle(entries) {
@@ -146,13 +143,13 @@ function startCircle(entries) {
 
 let timerOne;
 
-function resizeServices() {
+function resizeServices(fix = false) {
   clearTimeout(timerOne);
 
   let acc = 1;
   const deviceWidth = window.innerWidth;
   if (deviceWidth >= 1280) {
-    acc = 3;
+    acc = 2;
   } else if (deviceWidth >= 768) {
     acc = 2;
   }
@@ -167,11 +164,11 @@ function resizeServices() {
 
   Array.from(active.children).map(el => (el.style.width = ''));
 
+  fix && fixSVG();
+
   timerOne = setTimeout(() => {
-    services.style.height =
-      active.scrollHeight <= 350
-        ? Number(active.scrollHeight) + 40 + 'px'
-        : Number(active.scrollHeight) + 'px';
+    services.style.minHeight = tabs.scrollHeight + 40 + 'px';
+    services.style.height = active.scrollHeight + 'px';
     if (childrenAmount < acc) {
       Array.from(active.children).map(
         el => (el.style.width = el.scrollWidth + 'px'),
@@ -184,5 +181,6 @@ function resizeServices() {
     }
   }, 200);
 }
+
 export { resizeServices, fixSVG };
 export default preload;

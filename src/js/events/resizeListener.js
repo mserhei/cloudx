@@ -7,7 +7,7 @@ let timer = null;
 
 export default function listenResize(event) {
   if (opts.canvas) starsResize();
-  if (document.querySelector('#services')) resizeServices();
+  if (document.querySelector('#services')) resizeServices(true);
   if (document.querySelector('#hero_slider')) {
     clearTimeout(timer);
     timer = setTimeout(() => fixSVG(), 250);

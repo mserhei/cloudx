@@ -11,14 +11,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: linear-gradient(to top, black, black),
+  background-image: linear-gradient(to top, rgb(9, 9, 83), rgb(3, 0, 68)),
     url('../img/stars@0.5x.jpg');
   @media screen and (min-width: $tablet) {
-    background-image: linear-gradient(to top, black, black),
+    background-image: linear-gradient(to top, rgb(9, 9, 83), rgb(3, 0, 68)),
       url('../img/stars@1x.jpg');
   }
   @media screen and (min-width: $desktop) {
-    background-image: linear-gradient(to top, black, black),
+    background-image: linear-gradient(to top, rgb(9, 9, 83), rgb(3, 0, 68)),
       url('../img/stars@2x.jpg');
   }
   background-attachment: fixed;
@@ -302,7 +302,7 @@ section.container {
   width: 100%;
   display: inline-block;
   border-radius: 8px;
-  color: #F2F2F2;
+  color: #f2f2f2;
   font-size: 16px;
   @media screen and (min-width: $tablet) {
     font-weight: 900;

@@ -8,9 +8,6 @@
     padding: 180px 0;
   }
 }
-tspan {
-  white-space: normal;
-}
 .hero-slider {
   position: relative;
   margin: 0 auto;
@@ -280,47 +277,6 @@ tspan {
       background: $accent;
       height: 20px;
       opacity: 1;
-    }
-  }
-  &__service-link {
-    position: relative;
-    color: transparent;
-    background-image: linear-gradient(
-      to right,
-      #53bdf1 50%,
-      #53bdf1 50%,
-      rgb(176, 73, 255) 95%,
-      transparent
-    );
-    background-size: 0px;
-    background-repeat: no-repeat;
-    will-change: background-size, color;
-    transition: background-size $transition, color $transition;
-    background-clip: text;
-    // &.active {
-    //   & ~ .hero-slider__svg {
-    //     & > text {
-    //       stroke: transparent;
-    //     }
-    //   }
-    // }
-    &.active {
-      background-size: 200%;
-      will-change: background-size;
-      transition: background-size $slider;
-    }
-  }
-  &__svg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    & > text {
-      stroke: $accent;
-      will-change: stroke;
-      transition: stroke $transition;
     }
   }
 }
