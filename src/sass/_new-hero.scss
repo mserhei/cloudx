@@ -41,7 +41,6 @@
       -webkit-text-stroke-width: 2px;
       color: transparent;
       text-transform: uppercase;
-      text-shadow: 0 0 1px black;
       display: inline-block;
       background-image: linear-gradient(
         211.28deg,
@@ -90,7 +89,7 @@
   }
   &__planet {
     position: absolute;
-    bottom: 0;
+    bottom: -20%;
     left: 0;
     z-index: -1;
     width: 600px;

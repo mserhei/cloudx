@@ -19,13 +19,14 @@
                         {{/each}}
                     </ul>
                 </div>
+                <div class="services__spark"></div>
                 <div class="services__main">
                     {{#each tabs}}
                         <ul class="services__tab-list {{#if @first}}active{{/if}}" data-service="{{@index}}">
                             {{#each serviceList}}
                                 <li class="services__card"
                                     style="position: relative;{{#if timerid}}height: 400px;width: 500px;{{/if}}">
-                                    <a href="{{href}}" class="services__link">
+                                    <a href="{{href}}" class="services__link" id="id_rout_006">
                                         {{#if timerid}}
                                             {{> ./timer}}
                                         {{else}}

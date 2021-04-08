@@ -27,16 +27,6 @@ const myMobile = {
   },
 };
 
-function listenScroll(event) {
-  const header = document.querySelector('#hero-header-scroll');
-  const val = window.scrollY;
-  console.log(val);
-  if (header) {
-    console.log(val);
-    header.style.transform = `translateY(${val * 0.5}px)`;
-  }
-}
-
 function movePad(event) {
   if (myMobile.any()) return;
   const rails = document.getElementById('scroll-rail');
@@ -63,15 +53,14 @@ function movePad(event) {
   const server = document.querySelector('.new-hero__server');
   document.body.style.backgroundPositionY = `${-y * 0.02}px`;
   if (header) {
-    planet.style.transform = `translate(${-y * 0.2}px, ${
-      -y * 0.85
-    }px) rotate(${(1 - y / 20).toFixed(1)}deg) scale(${(1 + y / height).toFixed(
-      2,
-    )})`;
+    planet.style.transform = `translate(${-y * 0.2}px, ${-y * 0.3}px) rotate(${(
+      1 -
+      y / 40
+    ).toFixed(1)}deg) scale(${(1 + y / height).toFixed(2)})`;
     if (-y < 400) {
       header.style.transform = `translateY(${-y * 1.1}px)`;
       header.style.opacity = `${(1 + y / 400).toFixed(1)}`;
-      server.style.transform = `translate(${-y}px, ${-y * 1.5}px)`;
+      server.style.transform = `translateY(${y * 0.2}px)`;
       server.style.opacity = `${(1 + y / 400).toFixed(1)}`;
     } else {
       header.style.opacity = '0';
@@ -81,4 +70,3 @@ function movePad(event) {
 }
 
 export { movePad };
-export default listenScroll;

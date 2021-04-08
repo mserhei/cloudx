@@ -7,7 +7,6 @@ import listenFocusout from './events/focusoutListener';
 import listenFocusin from './events/focusinListener';
 import listenSubmit from './events/submitListener';
 import listenKeyDown from './events/keyDownListener';
-import listenScroll from './events/scrollListener';
 import { movePad } from './events/scrollListener';
 import listenMouse from './events/mouseListener';
 
@@ -16,10 +15,6 @@ const { debounce, throttle } = require('lodash');
 const rootRel = document.getElementById('root');
 
 rootRel.addEventListener('scroll', throttle(movePad), 100);
-
-const rootCont = document.getElementById('root-content');
-
-rootCont.addEventListener('scroll', listenScroll);
 
 document.addEventListener('click', listenClicks);
 document.addEventListener('swiped', listenSwipes);

@@ -21,20 +21,20 @@ function drawCursor(e) {
   let deg = 0;
   if (windowWidth / 2 > e.x) {
     deg = -45 * (1 - (e.x / windowWidth) * 2);
-    headerX = -deg;
+    headerX = -deg / 4.5;
   } else {
     deg = ((45 * (e.x - windowWidth / 2)) / windowWidth) * 2;
-    headerX = -deg;
+    headerX = -deg / 4.5;
   }
   if (windowHeight / 2 > e.y) {
-    headerY = 45 * (1 - (e.y / windowWidth) * 2);
+    headerY = 10 * (1 - (e.y / windowWidth) * 2);
   } else {
-    headerY = -((45 * (e.y - windowWidth / 2)) / windowWidth) * 2;
+    headerY = -((10 * (e.y - windowWidth / 2)) / windowWidth) * 2;
   }
   if (header) header.style.transform = `translate(${headerX}px, ${headerY}px)`;
 
   mouse.style.transform = `translate(${e.x}px, ${e.y}px) rotate(${deg}deg)`;
-  if (e.x > windowWidth - 10 || e.x < 10 || e.y < 10) mouse.style.opacity = '0';
+  if (e.x > windowWidth - 20 || e.x < 20 || e.y < 20) mouse.style.opacity = '0';
   else if (e.target.closest('form') && !e.target.hasAttribute('data-mouse'))
     mouse.style.opacity = '0';
   else mouse.style.opacity = '1';
@@ -50,14 +50,11 @@ function listenMouseOver(event) {
     if (!event.target.classList.contains('active')) {
       rocket.style.opacity = '1';
       rocket.style.transform = 'scale(1.1)';
-    } else {
-      rocket.style.opacity = '0';
-      rocket.style.transform = 'scale(0)';
+      return;
     }
-  } else {
-    rocket.style.opacity = '0';
-    rocket.style.transform = 'scale(0)';
   }
+  rocket.style.opacity = '0';
+  rocket.style.transform = 'scale(0)';
 }
 
 function clickMouse(event) {

@@ -52,8 +52,10 @@ export default function listenClicks(event) {
     event.preventDefault();
     if (!event.target.classList.contains('active')) {
       const serviceLinksRefs = document.querySelectorAll('a[data-service]');
-      serviceLinksRefs.forEach(el => el.classList.remove('active'));
-      event.target.classList.add('active');
+      setTimeout(() => {
+        serviceLinksRefs.forEach(el => el.classList.remove('active'));
+        event.target.classList.add('active');
+      }, 500);
 
       let wd = -50;
       const deviceWidth = Math.max(
