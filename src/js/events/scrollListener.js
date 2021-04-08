@@ -69,4 +69,4 @@ function movePad(event) {
   }
 }
 
-export { movePad };
+export { movePad, myMobile };

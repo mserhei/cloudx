@@ -2,64 +2,111 @@ import slider from '../utils/slider';
 const rootEl = document.getElementById('root');
 const rootCont = document.getElementById('root-content');
 
-const observer = new IntersectionObserver(startCircle, {
-  threshold: 0.1,
-});
+const refs = {
+  get container() {
+    return document.querySelectorAll('section.container');
+  },
+  get services() {
+    return document.querySelector('.services__main');
+  },
+};
+const logo = document.querySelectorAll('.logo__image');
 
-const aboutObserver = new IntersectionObserver(entries =>
+let containerTimeout;
+let logoTimeout;
+let resizeServicesTimer;
+let scrollTimeout;
+
+function clearTimoutsOnPop() {
+  clearTimeout(containerTimeout);
+  clearTimeout(logoTimeout);
+  clearTimeout(resizeServicesTimer);
+  clearTimeout(scrollTimeout);
+}
+
+const observer = new IntersectionObserver(entries =>
   entries.forEach(entry => {
+    const statisticsRef = document.getElementById('statistics');
+    if (entry.target === statisticsRef) {
+      startCircle(entry);
+    }
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('present'), 250);
+      console.log(entry.target);
+      setTimeout(() => {
+        entry.target.classList.add('present');
+      }, 250);
+      !statisticsRef && observer.unobserve(entry.target);
     }
   }),
 );
 
-function preload({ path }, hash) {
-  const container = document.querySelectorAll('section.container');
-  const logo = document.querySelectorAll('.logo__image');
-  if (slider.timer) slider.end();
-  logo.forEach(el => el.classList.remove('in'));
-  const circle = document.querySelector('#statistics');
-  circle ? observer.observe(circle) : observer.disconnect();
-  const services = document.querySelector('.services__main');
-  aboutObserver.disconnect();
-  container.forEach(el => {
+observer.restartAtPreload = function () {
+  observer.disconnect();
+  refs.container.forEach(el => {
     el.classList.remove('present');
-    aboutObserver.observe(el);
+    observer.observe(el);
   });
-  setTimeout(() => container[0].classList.add('present'), 0);
+};
+
+function preload({ path }, hash) {
+  if (slider.timer) slider.end();
+
+  clearTimoutsOnPop();
+  observer.restartAtPreload();
+  scrollToAnchor(hash);
+
+  containerTimeout = setTimeout(
+    () => refs.container[0].classList.add('present'),
+    0,
+  );
+
+  logo.forEach(el => el.classList.remove('in'));
+
+  logoTimeout = setTimeout(
+    () => logo.length && logo.forEach(el => el.classList.add('in')),
+    400,
+  );
+
+  refs.services && resizeServices();
+  refs.services && fixHomeSVGs();
+}
+
+function scrollToAnchor(hash) {
   if (hash) {
     rootCont.style.opacity = '0';
     const target = document.querySelector(hash);
-    setTimeout(() => {
+    scrollTimeout = setTimeout(() => {
       rootCont.style.opacity = '1';
       rootEl.scrollTo({
         top: Math.round(target.offsetTop),
       });
     }, 500);
-  } else {
+  } else
     rootEl.scrollTo({
       top: 0,
       behavoir: 'smooth',
     });
-  }
-  setTimeout(
-    () => logo.length && logo.forEach(el => el.classList.add('in')),
-    400,
-  );
-  services && resizeServices();
+}
+
+function fixHomeSVGs() {
   const serviceSvg = document.querySelector('text.services__svgtext');
   serviceSvg &&
     fixSVG(
       { phone: 16.5, tablet: 27, desktop: 41 },
       'text.services__svgtext',
-      'start',
+      'end',
     );
   const statSvg = document.querySelector('text.statistics__svgtext');
-  statSvg && fixSVG('text.statistics__svgtext', 'end');
+  statSvg &&
+    fixSVG(
+      { phone: 85, tablet: 96, desktop: 112 },
+      'text.statistics__svgtext',
+      'end',
+    );
 }
 
 function fixSVG({ phone, tablet, desktop }, selector, position) {
+  console.log(selector);
   let y = 0;
   const Width = window.innerWidth;
   if (Width > 1280) y = desktop;
@@ -114,35 +161,29 @@ function prepareSVGtext(el, textRef, Width, y, textAnchor) {
   el.innerHTML = results;
 }
 
-function startCircle(entries) {
+function startCircle(entry) {
   const circle = document.querySelector('#statistics');
   const speed = document.querySelector('#speed');
   let timer = null;
-  entries.forEach(entry => {
-    let count = 1;
-    if (entry.isIntersecting) {
-      circle.classList.add('hover');
-      clearInterval(timer);
-      timer = setInterval(() => {
-        count += 5.5;
-        if (count === 100) {
-          count = 99.9;
-          clearInterval(timer);
-        }
-        speed.textContent = count.toFixed(1) + ' %';
-      }, 100);
-    } else {
-      circle.classList.remove('hover');
-      speed.textContent = '0 %';
-    }
-  });
+  let count = 1;
+  if (entry.isIntersecting) {
+    circle.classList.add('hover');
+    clearInterval(timer);
+    timer = setInterval(() => {
+      count += 5.5;
+      if (count === 100) {
+        count = 99.9;
+        clearInterval(timer);
+      }
+      speed.textContent = count.toFixed(1) + ' %';
+    }, 100);
+  } else {
+    circle.classList.remove('hover');
+    speed.textContent = '0 %';
+  }
 }
 
-let timerOne;
-
-function resizeServices() {
-  clearTimeout(timerOne);
-
+function resizeServices(withClick = false) {
   let acc = 1;
   const deviceWidth = window.innerWidth;
   if (deviceWidth >= 1280) {
@@ -162,7 +203,7 @@ function resizeServices() {
 
   Array.from(active.children).map(el => (el.style.width = ''));
 
-  timerOne = setTimeout(() => {
+  resizeServicesTimer = setTimeout(() => {
     services.style.minHeight = tabs.scrollHeight + 40 + 'px';
     services.style.height = spark.style.height = active.scrollHeight + 'px';
     if (childrenAmount < acc) {
@@ -175,8 +216,35 @@ function resizeServices() {
         30 +
         'px';
     }
+    const { y } = services.getBoundingClientRect();
+    const { y: Y } = rootCont.getBoundingClientRect();
+
+    let wd = -50;
+    if (getDeviceWidth() >= 768) wd = -110;
+    const top = wd - (Y - y);
+
+    withClick &&
+      root.scrollTo({
+        top,
+        behavoir: 'smooth',
+      });
   }, 200);
 }
 
-export { resizeServices, fixSVG };
+function getDeviceWidth(max = true) {
+  if (max)
+    return Math.max(
+      window.innerWidth,
+      document.documentElement.clientWidth,
+      document.body.clientWidth,
+    );
+  else
+    return Math.min(
+      window.innerWidth,
+      document.documentElement.clientWidth,
+      document.body.clientWidth,
+    );
+}
+
+export { resizeServices, fixSVG, fixHomeSVGs, getDeviceWidth };
 export default preload;

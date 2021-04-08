@@ -48,22 +48,24 @@ export default function listenClicks(event) {
     decideRout(path, href, true);
   }
 
+  if (event.target.hasAttribute('data-form')) {
+    event.preventDefault();
+    const tabs = document.querySelectorAll('.modal__tab');
+    const forms = document.querySelectorAll('.modal__form');
+    if (!event.target.closest('.modal__tab').classList.contains('active'))
+      tabs.forEach((el, i) => {
+        el.classList.toggle('active');
+        forms[i].classList.toggle('active');
+      });
+  }
+
   if (event.target.hasAttribute('data-service')) {
     event.preventDefault();
     if (!event.target.classList.contains('active')) {
       const serviceLinksRefs = document.querySelectorAll('a[data-service]');
-      setTimeout(() => {
-        serviceLinksRefs.forEach(el => el.classList.remove('active'));
-        event.target.classList.add('active');
-      }, 500);
+      serviceLinksRefs.forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
 
-      let wd = -50;
-      const deviceWidth = Math.max(
-        window.innerWidth,
-        document.documentElement.clientWidth,
-        document.body.clientWidth,
-      );
-      if (deviceWidth >= 768) wd = -110;
       let ind = 0;
       const serviceLists = Array.from(
         document.querySelector('.services__main').children,
@@ -87,64 +89,10 @@ export default function listenClicks(event) {
         }
       });
 
-      resizeServices();
-
-      const a = document
-        .querySelector('.services__main')
-        .getBoundingClientRect().y;
-      const b = document.getElementById('root-content').getBoundingClientRect()
-        .y;
-      root.scrollTo({
-        top: wd - (b - a),
-        behavoir: 'smooth',
-      });
+      resizeServices(true);
     }
-
-    if (event.target.hasAttribute('data-form')) {
-      event.preventDefault();
-      const tabs = document.querySelectorAll('.modal__tab');
-      const forms = document.querySelectorAll('.modal__form');
-      if (!event.target.closest('.modal__tab').classList.contains('active'))
-        tabs.forEach((el, i) => {
-          el.classList.toggle('active');
-          forms[i].classList.toggle('active');
-        });
-    }
-
-    // let timer;
-
-    // if (event.target.classList.contains('hero-slider__service-link')) {
-    //   event.preventDefault();
-    //   if (!event.target.classList.contains('active')) {
-    //     const serviceLinksRefs = document.querySelectorAll(
-    //       '.hero-slider__service-link',
-    //     );
-    //     serviceLinksRefs.forEach(el => el.classList.remove('active'));
-    //     event.target.classList.add('active');
-    //     clearInterval(timer);
-
-    //     const slideWrapRef = document.querySelector('.hero-slider__content');
-    //     const index = event.target.dataset.slideIndex;
-    //     slideWrapRef.style.opacity = '0';
-    //     slideWrapRef.style.transform = 'scale(0.5)';
-    //     timer = setTimeout(() => {
-    //       slideWrapRef.innerHTML = renderSlide(
-    //         localDataHome[lang.name]['services-new'][0].tabs[index],
-    //       );
-    //       udateSlider();
-    //       slideWrapRef.style.opacity = '1';
-    //       slideWrapRef.style.transform = 'scale(1)';
-    //     }, 500);
-    //   }
   }
 }
-
-// async function udateSlider() {
-//   const module = await drawHome();
-//   slider.end();
-//   module.renderIndicators('slider', '.hero-slider__slide');
-//   slider.start();
-// }
 
 function render(e) {
   if (e.target.hasAttribute('disabled')) return;

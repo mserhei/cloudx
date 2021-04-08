@@ -1,7 +1,10 @@
+import { myMobile } from './scrollListener';
+
 let mouseTimer;
 let opacityTimeout;
 
 function listenMouse(event) {
+  if (myMobile.any()) return;
   drawCursor(event);
   !mouseTimer && listenMouseOver(event);
 }
