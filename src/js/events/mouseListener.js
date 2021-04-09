@@ -10,6 +10,7 @@ function listenMouse(event) {
 }
 
 const mouse = document.querySelector('.mouse');
+const mouseCircle = document.querySelector('.white-circle');
 const rocket = document.querySelector('.mouse__hover-ring');
 
 function drawCursor(e) {
@@ -53,14 +54,17 @@ function listenMouseOver(event) {
     if (!event.target.classList.contains('active')) {
       rocket.style.opacity = '1';
       rocket.style.transform = 'scale(1.1)';
+      if (mouseCircle) mouseCircle.style.boxShadow = 'none';
       return;
     }
   }
+  if (mouseCircle) mouseCircle.style.boxShadow = '';
   rocket.style.opacity = '0';
   rocket.style.transform = 'scale(0)';
 }
 
 function clickMouse(event) {
+  document.querySelector('.mouse__rocket').classList.toggle('white-circle');
   clearTimeout(mouseTimer);
   rocket.style.opacity = '1';
   rocket.style.transform = 'scale(2)';

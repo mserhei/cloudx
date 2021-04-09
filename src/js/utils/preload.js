@@ -31,7 +31,6 @@ const observer = new IntersectionObserver(entries =>
       startCircle(entry);
     }
     if (entry.isIntersecting) {
-      console.log(entry.target);
       setTimeout(() => {
         entry.target.classList.add('present');
       }, 250);
@@ -106,7 +105,6 @@ function fixHomeSVGs() {
 }
 
 function fixSVG({ phone, tablet, desktop }, selector, position) {
-  console.log(selector);
   let y = 0;
   const Width = window.innerWidth;
   if (Width > 1280) y = desktop;
@@ -185,7 +183,7 @@ function startCircle(entry) {
 
 function resizeServices(withClick = false) {
   let acc = 1;
-  const deviceWidth = window.innerWidth;
+  const deviceWidth = getDeviceWidth();
   if (deviceWidth >= 1280) {
     acc = 2;
   } else if (deviceWidth >= 768) {
@@ -206,29 +204,27 @@ function resizeServices(withClick = false) {
   resizeServicesTimer = setTimeout(() => {
     services.style.minHeight = tabs.scrollHeight + 40 + 'px';
     services.style.height = spark.style.height = active.scrollHeight + 'px';
-    if (childrenAmount < acc) {
-      Array.from(active.children).map(
-        el => (el.style.width = el.scrollWidth + 'px'),
-      );
-      table.style.width =
-        (child.scrollWidth + 10) * childrenAmount +
-        tabs.scrollWidth +
-        30 +
-        'px';
-    }
-    const { y } = services.getBoundingClientRect();
-    const { y: Y } = rootCont.getBoundingClientRect();
-
-    let wd = -50;
-    if (getDeviceWidth() >= 768) wd = -110;
-    const top = wd - (Y - y);
-
-    withClick &&
-      root.scrollTo({
-        top,
-        behavoir: 'smooth',
-      });
+    // if (childrenAmount < acc) {
+    //   Array.from(active.children).map(
+    //     el => (el.style.width = el.scrollWidth + 'px'),
+    //   );
+    //   table.style.width =
+    //     (child.scrollWidth + 10) * childrenAmount +
+    //     tabs.scrollWidth +
+    //     30 +
+    //     'px';
+    // }
   }, 200);
+
+  let wd = -50;
+  const { y } = services.getBoundingClientRect();
+  const { y: Y } = rootCont.getBoundingClientRect();
+  const top = wd - (Y - y);
+  withClick &&
+    root.scrollTo({
+      top,
+      behavoir: 'smooth',
+    });
 }
 
 function getDeviceWidth(max = true) {

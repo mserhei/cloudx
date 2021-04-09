@@ -50,16 +50,18 @@
     width: 100px;
     flex-shrink: 0;
     height: fit-content;
-    padding-top: 20px;
+    padding-top: 10px;
     @media screen and (min-width: $phone) {
       width: 200px;
     }
     @media screen and (min-width: $tablet) {
+      padding-top: 30px;
       width: 300px;
       top: 100px;
     }
     @media screen and (min-width: $desktop) {
       width: 400px;
+      padding-top: 50px;
     }
   }
   &__spark {
@@ -68,7 +70,7 @@
     position: relative;
     right: -6px;
     z-index: 10;
-    backdrop-filter: brightness(3) blur(6px);
+    backdrop-filter: brightness(5) blur(6px);
   }
   &__tabs {
     height: 100%;
@@ -112,9 +114,12 @@
     left: 0;
     width: 100%;
     height: fit-content;
-    padding: 10px;
+    padding-left: 10px;
     @media screen and (min-width: $tablet) {
-      padding: 20px;
+      padding-left: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      padding-left: 70px;
     }
     color: $overlay;
     display: flex;
@@ -183,13 +188,7 @@
     @media screen and (min-width: 600px) {
       flex-direction: row;
     }
-    @media screen and (min-width: $tablet) {
-      margin-right: 100px;
-    }
     &:hover {
-      color: #fff;
-      will-change: color;
-      transition: color 0.5s ease-in;
       .services__image {
         transform: translateY(-10px);
         filter: drop-shadow(2px 14px 4px $accent);
