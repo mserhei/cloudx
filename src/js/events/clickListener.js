@@ -4,10 +4,8 @@ import slider from '../utils/slider';
 import openMenu from '../pages/burger';
 import { lang } from '../history/mainHistory';
 import { changeLangPath } from './changeListener';
-import { load, save, remove } from '../utils/storage';
+import { save } from '../utils/storage';
 import { resizeServices } from '../utils/preload';
-import localDataHome from '../localization/localHome.json';
-import renderSlide from '../../templates/hero-slider-slide.hbs';
 import { clickMouse } from './mouseListener';
 
 const drawHome = () => import('../pages/home');

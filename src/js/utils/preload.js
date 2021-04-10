@@ -16,6 +16,12 @@ let containerTimeout;
 let logoTimeout;
 let resizeServicesTimer;
 let scrollTimeout;
+let containerIntroIdle;
+
+function idleHandler(callback, timeout) {
+  const handler = window.requestIdleCallback(callback, { timeout });
+  return handler;
+}
 
 function clearTimoutsOnPop() {
   clearTimeout(containerTimeout);
@@ -24,25 +30,25 @@ function clearTimoutsOnPop() {
   clearTimeout(scrollTimeout);
 }
 
-const observer = new IntersectionObserver(entries =>
+const observer = new IntersectionObserver(entries => {
+  window.cancelIdleCallback(containerIntroIdle);
   entries.forEach(entry => {
     const statisticsRef = document.getElementById('statistics');
     if (entry.target === statisticsRef) {
       startCircle(entry);
     }
     if (entry.isIntersecting) {
-      setTimeout(() => {
+      containerIntroIdle = idleHandler(() => {
         entry.target.classList.add('present');
+        if (entry.target !== statisticsRef) observer.unobserve(entry.target);
       }, 250);
-      !statisticsRef && observer.unobserve(entry.target);
     }
-  }),
-);
+  });
+});
 
 observer.restartAtPreload = function () {
   observer.disconnect();
   refs.container.forEach(el => {
-    el.classList.remove('present');
     observer.observe(el);
   });
 };
@@ -51,13 +57,11 @@ function preload({ path }, hash) {
   if (slider.timer) slider.end();
 
   clearTimoutsOnPop();
-  observer.restartAtPreload();
   scrollToAnchor(hash);
 
-  containerTimeout = setTimeout(
-    () => refs.container[0].classList.add('present'),
-    0,
-  );
+  containerTimeout = setTimeout(() => {
+    observer.restartAtPreload();
+  }, 0);
 
   logo.forEach(el => el.classList.remove('in'));
 
@@ -91,7 +95,7 @@ function fixHomeSVGs() {
   const serviceSvg = document.querySelector('text.services__svgtext');
   serviceSvg &&
     fixSVG(
-      { phone: 16.5, tablet: 27, desktop: 41 },
+      { initial: 13, phone: 16.5, tablet: 27, desktop: 41 },
       'text.services__svgtext',
       'end',
     );
@@ -104,12 +108,13 @@ function fixHomeSVGs() {
     );
 }
 
-function fixSVG({ phone, tablet, desktop }, selector, position) {
+function fixSVG({ initial, phone, tablet, desktop }, selector, position) {
   let y = 0;
   const Width = window.innerWidth;
-  if (Width > 1280) y = desktop;
-  else if (Width > 768) y = tablet;
+  if (Width >= 1280) y = desktop;
+  else if (Width >= 768) y = tablet;
   else y = phone;
+  if (initial && Width < 480) y = initial;
   const texts = document.querySelectorAll(selector);
   texts.forEach(el => {
     const { width, lineHeight } = window.getComputedStyle(el.closest('svg'));
@@ -195,14 +200,14 @@ function resizeServices(withClick = false) {
   const table = document.querySelector('.services__table');
   const tabs = document.querySelector('.services__tabs');
   const spark = document.querySelector('.services__spark');
-  const child = active.children[0];
-  const childrenAmount = active.children.length;
+  // const child = active.children[0];
+  // const childrenAmount = active.children.length;
   table.style.width = '100%';
 
-  Array.from(active.children).map(el => (el.style.width = ''));
+  // Array.from(active.children).map(el => (el.style.width = ''));
 
   resizeServicesTimer = setTimeout(() => {
-    services.style.minHeight = tabs.scrollHeight + 40 + 'px';
+    services.style.minHeight = tabs.scrollHeight + 'px';
     services.style.height = spark.style.height = active.scrollHeight + 'px';
     // if (childrenAmount < acc) {
     //   Array.from(active.children).map(
@@ -216,7 +221,7 @@ function resizeServices(withClick = false) {
     // }
   }, 200);
 
-  let wd = -50;
+  let wd = -100;
   const { y } = services.getBoundingClientRect();
   const { y: Y } = rootCont.getBoundingClientRect();
   const top = wd - (Y - y);

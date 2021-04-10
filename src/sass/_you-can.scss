@@ -26,7 +26,6 @@
   @extend %flex-container;
 
   &__content {
-    margin-top: 50px;
     @extend %flex-container;
     display: flex;
     flex-direction: column;

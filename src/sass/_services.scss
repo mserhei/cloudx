@@ -14,16 +14,6 @@
 }
 #services {
   color: #fff;
-  padding-top: 60px;
-  @media screen and (min-width: $tablet) {
-    padding-top: 110px;
-  }
-  @media screen and (min-width: $desktop) {
-    padding-top: 140px;
-  }
-  .new-year-timer {
-    width: 120%;
-  }
   .cardset__pic {
     width: 100%;
     height: 100%;
@@ -38,7 +28,6 @@
     @extend %flex-container;
     justify-content: flex-end;
     align-items: flex-start;
-    border-radius: 16px;
     margin: 0 auto;
     height: 100%;
     will-change: width;
@@ -46,22 +35,20 @@
   }
   &__aside {
     position: sticky;
-    top: 40px;
+    top: 50px;
     width: 100px;
     flex-shrink: 0;
     height: fit-content;
-    padding-top: 10px;
+
     @media screen and (min-width: $phone) {
       width: 200px;
     }
     @media screen and (min-width: $tablet) {
-      padding-top: 30px;
-      width: 300px;
       top: 100px;
+      width: 300px;
     }
     @media screen and (min-width: $desktop) {
       width: 400px;
-      padding-top: 50px;
     }
   }
   &__spark {
@@ -162,6 +149,11 @@
       background-size: 200%;
       will-change: background-size;
       transition: background-size 1s ease-in-out;
+      & ~ .services__svg {
+        text {
+          stroke: transparent;
+        }
+      }
     }
   }
   &__svg {
@@ -174,14 +166,13 @@
   &__svgtext {
     stroke: $accent;
     will-change: stroke;
-    transition: stroke $transition;
+    transition: stroke $transition 500ms;
     tspan {
       white-space: normal;
     }
   }
   &__card {
     position: relative;
-    border-radius: 8px;
     height: fit-content;
     @extend %flex-container;
     flex-direction: column;
@@ -235,8 +226,14 @@
   }
   &__title {
     pointer-events: none;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 14px;
+    line-height: 1.3em;
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 24px;
+    }
     color: #518ae0;
     margin-bottom: 10px;
     text-align: center;
@@ -246,8 +243,14 @@
     pointer-events: none;
     margin-bottom: auto;
     font-weight: 300;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 12px;
+    line-height: 1.4em;
+    @media screen and (min-width: $tablet) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 16px;
+    }
     color: #f2f2f2;
   }
 }

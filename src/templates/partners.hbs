@@ -1,17 +1,15 @@
 {{#each partners}}
-    <div id="partners">
-        <section class="container present">
-            <h2 class="main-header" id="partners-header">{{title}}</h2>
-            <div class="cardset" id="partners-slider">
-                <ul class="cardset__list" id="partners-slide">
-                    {{#each list}}
-                        <li class="cardset__list-item" data-adv="adv"><img src="../img/benefit1.svg" alt="benefits"
-                                class="cardset__image">
-                            <h3 class="cardset__header">{{benefit}}</h3>
-                        </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </section>
-    </div>
+    <section class="container" id="partners">
+        <h2 class="main-header" id="partners-header">{{title}}</h2>
+        <div class="cardset" id="partners-slider">
+            <ul class="cardset__list" id="partners-slide">
+                {{#each list}}
+                    <li class="cardset__list-item" data-adv="adv"><img src="../img/benefit1.svg" alt="benefits"
+                            class="cardset__image">
+                        <h3 class="cardset__header">{{benefit}}</h3>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
 {{/each}}

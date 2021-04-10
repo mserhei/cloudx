@@ -64,10 +64,9 @@ function listenMouseOver(event) {
 }
 
 function clickMouse(event) {
-  document.querySelector('.mouse__rocket').classList.toggle('white-circle');
   clearTimeout(mouseTimer);
   rocket.style.opacity = '1';
-  rocket.style.transform = 'scale(2)';
+  rocket.style.transform = 'scale(1.4)';
   mouseTimer = setTimeout(() => {
     rocket.style.opacity = '0';
     rocket.style.transform = 'scale(1.1)';
@@ -76,5 +75,9 @@ function clickMouse(event) {
   }, 250);
 }
 
+function changeMouse() {
+  document.querySelector('.mouse__rocket').classList.toggle('white-circle');
+}
+
 export default listenMouse;
-export { clickMouse };
+export { clickMouse, changeMouse };

@@ -55,21 +55,18 @@ main {
 .container {
   position: relative;
   width: 100%;
-  padding: 5px;
+  padding: 0 5px;
   margin: 0 auto;
-  // transform-origin: top left;
-  will-change: transform, opacity;
-  transition: transform $slider, opacity $slider;
   @media screen and (min-width: $phone) {
     max-width: 600px;
   }
   @media screen and (min-width: $tablet) {
-    padding: 25px;
+    padding: 0 25px;
     max-width: 1100px;
   }
   @media screen and (min-width: $desktop) {
     max-width: 1280px;
-    padding: 40px;
+    padding: 0 40px;
   }
 }
 
@@ -77,32 +74,33 @@ article > .main-header {
   padding: 30px;
 }
 section.container {
-  padding: 10px;
+  padding-bottom: 60px;
+  transform-origin: top;
   @media screen and (min-width: $tablet) {
-    padding: 20px;
+    padding-bottom: 100px;
   }
   @media screen and (min-width: $desktop) {
-    padding: 30px;
-  }
-  @media screen and (min-width: 0px) {
-    padding-top: 0;
+    padding-bottom: 140px;
   }
   & > .main-header {
     padding: 30px;
   }
   filter: blur(4px);
-  transform: scale(0.5) translate(0, -600px);
-  opacity: 0;
+  transform: translateY(40px) scale(0.5);
+  opacity: 0.6;
   will-change: transform, filter, opacity;
   transition: transform $slider, filter $slider 250ms, opacity $slider;
   &.present {
-    transform: scale(1) translate(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
     filter: none;
     .main-header {
       opacity: 1;
       transform: translateX(0);
     }
+  }
+  &:nth-child(1) {
+    padding-top: 30px;
   }
 }
 .mouse {
@@ -116,7 +114,7 @@ section.container {
   transform-origin: top left;
   opacity: 0;
   will-change: opacity;
-  transition: opacity $transition;
+  transition: opacity $slider;
   &__rocket {
     position: relative;
     z-index: 10000;
@@ -127,9 +125,7 @@ section.container {
       background: url('../img/rocket-thumb.svg') center / contain no-repeat;
       & ~ .mouse__hover-ring {
         border: 1px solid $accent;
-
         box-shadow: 0 0 12px $accent;
-        backdrop-filter: brightness(1.5);
       }
     }
     &.white-circle {
@@ -141,8 +137,6 @@ section.container {
       & ~ .mouse__hover-ring {
         border: 1px solid white;
         box-shadow: 0 0 12px white;
-        backdrop-filter: brightness(2);
-        transform: scale(0.9);
       }
     }
   }
@@ -158,6 +152,7 @@ section.container {
     will-change: opacity, transform;
     transition: opacity $transition, transform $transition;
     border-radius: 50%;
+    backdrop-filter: brightness(2);
   }
 }
 
@@ -279,15 +274,7 @@ section.container {
     padding-top: 100px;
   }
 }
-.main__home {
-  padding-top: 10px;
-  @media screen and (min-width: $tablet) {
-    padding-top: 30px;
-  }
-  @media screen and (min-width: $desktop) {
-    padding-top: 50px;
-  }
-}
+
 .main-header {
   font-family: $Inter;
   text-align: center;
@@ -444,13 +431,16 @@ section.container {
 
 .block-title {
   width: 100%;
-  @media screen and (min-width: $tablet) {
-    width: 18%;
-    margin-right: 2%;
-  }
   color: #e0e0e0;
   font-size: 14px;
   line-height: 17px;
+  margin-bottom: 20px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 60px;
+  }
   span {
     display: inline-block;
   }

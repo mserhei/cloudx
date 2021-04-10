@@ -9,6 +9,7 @@ import listenSubmit from './events/submitListener';
 import listenKeyDown from './events/keyDownListener';
 import { movePad } from './events/scrollListener';
 import listenMouse from './events/mouseListener';
+import { changeMouse } from './events/mouseListener';
 
 const { debounce, throttle } = require('lodash');
 
@@ -28,3 +29,4 @@ document.oncontextmenu = function (e) {
   return false;
 };
 document.addEventListener('mousemove', throttle(listenMouse, 20));
+document.addEventListener('dblclick', changeMouse);

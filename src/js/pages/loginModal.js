@@ -9,7 +9,7 @@ function renderModal() {
   setTimeout(() => {
     const newTimer = new CountdownTimer({
       selector: '#timer',
-      targetDate: new Date('Mar 31, 2021'),
+      targetDate: new Date('Jul 31, 2021'),
     });
   }, 100);
   return markup;

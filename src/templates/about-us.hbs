@@ -1,83 +1,81 @@
 <main class="main__home">
     {{#each about-us}}
-        <div id="about-us">
-            <section class="container present about-us">
-                <article class="about-us__main">
-                    <h1 class="main-header about-us__header">{{title}}</h1>
-                    <div class="about-us__flex">
-                        {{#each definitions}}
-                            <p class="about-us__paragraf {{#if @first}}main{{/if}}"><dfn
-                                    class="about-us__definition">{{../title}}</dfn>{{definition}}
-                            </p>
-                        {{/each}}
-                    </div>
-                </article>
-            </section>
-            <section class="container present">
-                <ul class="about-us__story-flex">
-                    {{#each story}}
-                        <li>
-                            <article class="about-us__story">
-                                <h2 class="main-header about-us__story-header">{{story-title}}</h2>
-                                <p class="about-us__story-text">{{story-text}}</p>
-                                <p class="about-us__story-text">{{story-subtext}}</p>
-                            </article>
-                        </li>
+        <section class="container about-us" id="about-us">
+            <article class="about-us__main">
+                <h1 class="main-header about-us__header">{{title}}</h1>
+                <div class="about-us__flex">
+                    {{#each definitions}}
+                        <p class="about-us__paragraf {{#if @first}}main{{/if}}"><dfn
+                                class="about-us__definition">{{../title}}</dfn>{{definition}}
+                        </p>
                     {{/each}}
-                </ul>
-            </section>
-            <section class="container present" id="goods">
-                <ul class="about-us__goods-flex">
-                    {{#each goods}}
-                        <li>
-                            <article class="about-us__goods">
-                                <img src="{{image}}" alt="{{goods-title}}" class="about-us__goods-image">
-                                <h2 class="main-header about-us__goods-header">{{goods-title}}</h2>
-                                <ul class="about-us__goods-list">
-                                    {{#each goods-list}}
-                                        <li class="about-us__goods-listitem">{{text}}</li>
-                                    {{/each}}
-                                </ul>
-
-                            </article>
-                        </li>
-                    {{/each}}
-                </ul>
-            </section>
-            <section class="container present">
-                <div class="about-us__question">
-                    <dl class="about-us__question-list">
-                        {{#each QandA}}
-                            <dt class="about-us__question-item"><i class="material-icons">info_outlined</i>{{q}}</dt>
-                            <dd class="about-us__question-item-answer">{{a1}}
-                                <a href="{{href1}}" {{data1}}={{data1text}} {{#if data2}}{{data2}}={{data2text}}{{/if}}
-                                    class="about-us__link">{{link1}}</a>
-                            </dd>
-                            {{#if a2}}
-                                <dd class="about-us__question-item-answer">{{a2}}
-                                    <a href="{{href2}}" data-modal="1" class="about-us__link">{{link2}}</a>
-                                </dd>
-                            {{/if}}
-
-                        {{/each}}
-                    </dl>
-                    <ul class="about-us__file-list">
-                        {{#each files}}
-                            <li class="about-us__file-listitem">
-                                {{!-- <a href="{{path}}" download="{{path}}" class="about-us__file-link"> --}}
-                                <a href="" data-modal="0" class="about-us__file-link">
-                                    <span class="about-us__file-link-flex">
-                                        <i class="material-icons">file_download</i>
-                                        <span class="about-us__file">{{size}}</span>
-                                    </span>
-                                    <span class="about-us__file-title">{{name}}</span>
-
-                                </a>
-                            </li>
-                        {{/each}}
-                    </ul>
                 </div>
-            </section>
-        </div>
+            </article>
+        </section>
+        <section class="container present">
+            <ul class="about-us__story-flex">
+                {{#each story}}
+                    <li>
+                        <article class="about-us__story">
+                            <h2 class="main-header about-us__story-header">{{story-title}}</h2>
+                            <p class="about-us__story-text">{{story-text}}</p>
+                            <p class="about-us__story-text">{{story-subtext}}</p>
+                        </article>
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+        <section class="container present" id="goods">
+            <ul class="about-us__goods-flex">
+                {{#each goods}}
+                    <li>
+                        <article class="about-us__goods">
+                            <img src="{{image}}" alt="{{goods-title}}" class="about-us__goods-image">
+                            <h2 class="main-header about-us__goods-header">{{goods-title}}</h2>
+                            <ul class="about-us__goods-list">
+                                {{#each goods-list}}
+                                    <li class="about-us__goods-listitem">{{text}}</li>
+                                {{/each}}
+                            </ul>
+
+                        </article>
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+        <section class="container present">
+            <div class="about-us__question">
+                <dl class="about-us__question-list">
+                    {{#each QandA}}
+                        <dt class="about-us__question-item"><i class="material-icons">info_outlined</i>{{q}}</dt>
+                        <dd class="about-us__question-item-answer">{{a1}}
+                            <a href="{{href1}}" {{data1}}={{data1text}} {{#if data2}}{{data2}}={{data2text}}{{/if}}
+                                class="about-us__link">{{link1}}</a>
+                        </dd>
+                        {{#if a2}}
+                            <dd class="about-us__question-item-answer">{{a2}}
+                                <a href="{{href2}}" data-modal="1" class="about-us__link">{{link2}}</a>
+                            </dd>
+                        {{/if}}
+
+                    {{/each}}
+                </dl>
+                <ul class="about-us__file-list">
+                    {{#each files}}
+                        <li class="about-us__file-listitem">
+                            {{!-- <a href="{{path}}" download="{{path}}" class="about-us__file-link"> --}}
+                            <a href="" data-modal="0" class="about-us__file-link">
+                                <span class="about-us__file-link-flex">
+                                    <i class="material-icons">file_download</i>
+                                    <span class="about-us__file">{{size}}</span>
+                                </span>
+                                <span class="about-us__file-title">{{name}}</span>
+
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
     {{/each}}
 </main>

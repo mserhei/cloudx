@@ -1,6 +1,6 @@
 #hero_section {
   position: relative;
-  height: 800px;
+  margin-bottom: 100px;
 }
 
 .new-hero {
@@ -91,6 +91,7 @@
     position: absolute;
     bottom: -20%;
     left: 0;
+    top: 50%;
     z-index: -1;
     width: 600px;
     height: 600px;
