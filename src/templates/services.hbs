@@ -8,7 +8,7 @@
                 <ul class="services__tabs">
                     {{#each tabs}}
                         <li class="services__tab-item">
-                            <a class="services__service-link{{#if @first}} active{{/if}}" href=""
+                            <a class="services__service-link{{#if @first}} active{{/if}}" href="/"
                                 data-service="{{@index}}">{{tab-item}}</a>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="services__svg">
                                 <text class="services__svgtext" fill="none" stroke="white"
@@ -23,19 +23,7 @@
                 {{#each tabs}}
                     <ul class="services__tab-list {{#if @first}}active{{/if}}" data-service="{{@index}}">
                         {{#each serviceList}}
-                            <li class="services__card" style="position: relative;{{#if timerid}}width: 100%;{{/if}}">
-                                {{#if timerid}}
-                                    {{> ./timer}}
-                                {{else}}
-                                    <a href="{{href}}" class="services__link" id="{{id}}">
-                                        <img class="services__image" src="" alt={{title}} loading="lazy" />
-                                        <article class="services__story">
-                                            <h2 class="services__title">{{title}}</h2>
-                                            <p class="services__description">{{description}}</p>
-                                        </article>
-                                    </a>
-                                {{/if}}
-                            </li>
+                            {{> ./service-list}}
                         {{/each}}
                     </ul>
                 {{/each}}

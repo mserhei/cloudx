@@ -46,13 +46,25 @@ module.exports = env => ({
         ],
       },
       {
-        test: /\.(txt|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
               outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(txt)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: '/',
             },
           },
         ],
