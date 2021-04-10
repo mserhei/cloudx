@@ -1,5 +1,11 @@
 #you_can {
   width: 100%;
+  .content-title {
+    @media screen and (min-width: $tablet) {
+      width: calc(50% - 20px);
+      margin-right: 20px;
+    }
+  }
 }
 
 %lil-circle {

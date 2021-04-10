@@ -257,7 +257,8 @@ section.container {
 }
 #root {
   position: relative;
-  height: 100%;
+  min-height: 100vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   // background-color: #e5e5e5;
@@ -454,7 +455,6 @@ section.container {
 }
 
 .content-title {
-  margin-top: 20px;
   width: 100%;
   font-size: 30px;
   line-height: 38px;
@@ -466,8 +466,6 @@ section.container {
   }
   @media screen and (min-width: $tablet) {
     margin-top: 0px;
-    width: 48%;
-    margin-right: 2%;
     font-size: 48px;
     line-height: 58px;
   }

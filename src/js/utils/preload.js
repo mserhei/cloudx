@@ -188,9 +188,11 @@ function startCircle(entry) {
 
 function resizeServices(withClick = false) {
   let acc = 1;
+  let wd = -50;
   const deviceWidth = getDeviceWidth();
   if (deviceWidth >= 1280) {
     acc = 2;
+    wd = -100;
   } else if (deviceWidth >= 768) {
     acc = 2;
   }
@@ -221,7 +223,6 @@ function resizeServices(withClick = false) {
     // }
   }, 200);
 
-  let wd = -100;
   const { y } = services.getBoundingClientRect();
   const { y: Y } = rootCont.getBoundingClientRect();
   const top = wd - (Y - y);

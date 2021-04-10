@@ -1,3 +1,11 @@
+#statistics {
+  .content-title {
+    @media screen and (max-width: $phone - 1) {
+      font-size: 26px;
+    }
+  }
+}
+
 @keyframes wave {
   0% {
     opacity: 0;
@@ -52,59 +60,6 @@
     top: 700px;
   }
 }
-.wave {
-  height: 240px;
-  width: 100%;
-  background-image: url('../img/bg-wave.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  @media screen and (min-width: $tablet) {
-    height: 340px;
-  }
-  @media screen and (min-width: $desktop) {
-    height: 440px;
-  }
-  position: absolute;
-  top: 0;
-  transform: translateY(-60%);
-  opacity: 0.99;
-  overflow: hidden;
-
-  &__spark {
-    position: absolute;
-    border-radius: 30px;
-    right: -100%;
-    width: 200%;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    // background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: opacity(0.9) brightness(2);
-    background-clip: text;
-    transform: translateX(0) rotate(-45deg);
-    animation: wave 8s $transition infinite;
-    &--accent {
-      position: absolute;
-      right: 60%;
-      top: -40px;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: radial-gradient(
-        rgba(255, 255, 174, 0.592),
-        4%,
-        transparent 50%,
-        transparent
-      );
-    }
-  }
-  &__spark.two {
-    height: 10px;
-    backdrop-filter: opacity(0.7) brightness(1);
-    animation: wave-two 8s $transition infinite;
-  }
-}
 .statistics {
   @extend %flex-container;
   flex-direction: column;
@@ -113,17 +68,11 @@
     @extend %flex-container;
     flex-direction: column;
     justify-content: space-between;
-
     @media screen and (min-width: $tablet) {
       flex-direction: row;
-      justify-content: flex-start;
       align-items: flex-start;
       padding: 0px;
     }
-
-    @extend %flex-container;
-    flex-direction: column;
-    justify-content: space-between;
   }
   &__subtitle-circle {
     width: 100%;

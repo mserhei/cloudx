@@ -13,76 +13,20 @@
         "list": [
           { "listitem": "снизить затраты на ИТ-инфраструктуру до 60%" },
           {
-            "listitem": "платить только за то, чем пользуетесь, по модели pay-as-you-go"
+            "listitem": "платить только за то, чем пользуетесь, по модели pay‑as‑you‑go"
           },
           {
             "listitem": "больше не беспокоиться об уязвимостях ваших серверов"
           },
           { "listitem": "получить комплексное решение: IaaS и каналы связи" },
           { "listitem": "бесплатно протестировать возможности Rocket S" }
-        ]
-      }
-    ],
-    "heroSlider": [
-      {
-        "class": "one",
-        "title": "Почему Rocket S?",
-        "subTitle": "С Rocket S Вы сможете:",
-        "list": [
-          { "listitem": "снизить затраты на ИТ-инфраструктуру до 60%" },
-          {
-            "listitem": "платить только за то, чем пользуетесь, по модели pay-as-you-go"
-          },
-          {
-            "listitem": "больше не беспокоиться об уязвимостях ваших серверов"
-          },
-          { "listitem": "получить комплексное решение: IaaS и каналы связи" },
-          { "listitem": "бесплатно протестировать возможности Rocket S" }
-        ],
-        "order": [
-          {
-            "buttonTitle": "Оставьте заявку на бесплатный тестовый период!",
-            "buttonText": "Получить консультацию"
-          }
-        ]
-      },
-      {
-        "class": "two",
-        "title": "Индивидуальный подход",
-        "subTitle": "Не подходит стандартное решение?",
-        "list": [
-          {
-            "listitem": "Команда экспертов Rocket S разработает и реализует проект специально для вашей компании."
-          }
-        ],
-        "order": [
-          {
-            "buttonTitle": "Оставьте заявку на бесплатный тестовый период!",
-            "buttonText": "Получить консультацию"
-          }
-        ]
-      },
-      {
-        "class": "three",
-        "title": "Почему Rocket S?",
-        "subTitle": "С Rocket S Вы сможете:",
-        "list": [
-          { "listitem": "" },
-          {
-            "listitem": ""
-          },
-          {
-            "listitem": ""
-          },
-          { "listitem": "" },
-          { "listitem": "" }
         ]
       }
     ],
     "statistics": [
       {
         "title": "Статистика",
-        "subTitle": "Лучшие показатели производительности и быстродействия",
+        "subTitle": "Лучшие показатели быстродействия",
         "stats": [
           {
             "value": 1000,
@@ -403,7 +347,7 @@
         "list": [
           { "listitem": "reduce expances on IT-structure up to 60%" },
           {
-            "listitem": "pay only for that you use, according to pay-as-you-go model"
+            "listitem": "pay only for that you use, according to pay‑as‑you‑go model"
           },
           {
             "listitem": "not to warry anymore about vulnerabilities of your servers"
@@ -418,64 +362,6 @@
             "buttonTitle": "leave your order for a free test period!",
             "buttonText": "Get consultation"
           }
-        ]
-      }
-    ],
-    "heroSlider": [
-      {
-        "class": "one",
-        "title": "Why Rocket S?",
-        "subTitle": "With Rocket S you will manage to:",
-        "list": [
-          { "listitem": "reduce expances on IT-structure up to 60%" },
-          {
-            "listitem": "pay only for that you use, according to pay-as-you-go model"
-          },
-          {
-            "listitem": "not to warry anymore about vulnerabilities of your servers"
-          },
-          {
-            "listitem": "obtain a complex solution: IaaS and conection channels"
-          },
-          { "listitem": "test  Rocket S facilities for free" }
-        ],
-        "order": [
-          {
-            "buttonTitle": "leave your order for a free test period!",
-            "buttonText": "Get consultation"
-          }
-        ]
-      },
-      {
-        "class": "two",
-        "title": "Individual treatment",
-        "subTitle": "Are you not enough with a standart solution?",
-        "list": [
-          {
-            "listitem": "Rocket S experts team will develope and release your Companie's own project."
-          }
-        ],
-        "order": [
-          {
-            "buttonTitle": "leave your order for a free test period!",
-            "buttonText": "Get consultation"
-          }
-        ]
-      },
-      {
-        "class": "three",
-        "title": "Why Rocket S?",
-        "subTitle": "With Rocket S you will manage to:",
-        "list": [
-          { "listitem": "" },
-          {
-            "listitem": ""
-          },
-          {
-            "listitem": ""
-          },
-          { "listitem": "" },
-          { "listitem": "" }
         ]
       }
     ],
@@ -539,310 +425,6 @@
         ]
       }
     ],
-
-    "new-services": [
-      {
-        "title": "Услуги",
-        "button": "Подробнее",
-        "tabs": [
-          {
-            "tab-item": "Облачные решения",
-            "service": [
-              {
-                "service-item": [
-                  {
-                    "title": "Облачный хостинг",
-                    "image": "/img/service1.svg",
-                    "description": "Самый гибкий и современный способ размещения сайтов",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Облачный VPS",
-                    "image": "/img/service2.svg",
-                    "description": "Ваш собственный облачный сервер без капитальных затрат",
-                    "href": "/"
-                  },
-                  {
-                    "title": "1С:Бухгалтерия в облаке",
-                    "image": "/img/service3.svg",
-                    "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных",
-                    "href": "/"
-                  }
-                ]
-              },
-              {
-                "service-item": [
-                  {
-                    "title": "Битрикс в облаке",
-                    "image": "/img/service4.svg",
-                    "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Битрикс24 в облаке",
-                    "image": "/img/service5.svg",
-                    "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Облачный диск",
-                    "image": "/img/service6.svg",
-                    "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер",
-                    "href": "/"
-                  }
-                ]
-              },
-              {
-                "service-item": [
-                  {
-                    "title": "Почта в облаке",
-                    "image": "/img/service7.svg",
-                    "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Облачный офис",
-                    "image": "/img/service8.svg",
-                    "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office",
-                    "href": "/"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab-item": "Rocket S",
-            "service": [
-              {
-                "service-item": [
-                  {
-                    "title": "Онлайн калькулятор",
-                    "image": "/img/service1.svg",
-                    "description": "Расчитать стоимость и заказать услуги быстро и удобно",
-                    "href": "/online-calc?lang=ru",
-                    "id": "id_rout_32"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab-item": "Veeam",
-            "service": [
-              {
-                "service-item": [
-                  {
-                    "title": "Резервное копирование Veeam Backup & Replication (VM)",
-                    "image": "/img/service1.svg",
-                    "description": "Резервное копирование Veeam Backup & Replication (VM)",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Резервное копирование Veeam Cloud Connect (Workstation)",
-                    "image": "/img/service1.svg",
-                    "description": "Резервное копирование Veeam Cloud Connect (Workstation)",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Резервное копирование Veeam Cloud Connect (Server)",
-                    "image": "/img/service1.svg",
-                    "description": "Резервное копирование Veeam Cloud Connect (Server)",
-                    "href": "/"
-                  }
-                ]
-              },
-              {
-                "service-item": [
-                  {
-                    "title": "Резервное копирование Veeam Cloud Connect (VM)",
-                    "image": "/img/service1.svg",
-                    "description": "Резервное копирование Veeam Cloud Connect (VM)",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Репликация Veeam Cloud Connect (VM)",
-                    "image": "/img/service1.svg",
-                    "description": "Репликация Veeam Cloud Connect (VM)",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Резервное копирование Veeam Agent (Workstation)",
-                    "image": "/img/service1.svg",
-                    "description": "Резервное копирование Veeam Cloud Agent (Workstation)",
-                    "href": "/"
-                  }
-                ]
-              },
-              {
-                "service-item": [
-                  {
-                    "title": "Резервное копирование Veeam Agent (Server)",
-                    "image": "/img/service1.svg",
-                    "description": "Резервное копирование Veeam Cloud Agent (Server)",
-                    "href": "/"
-                  },
-                  {
-                    "title": "DRaaS CPU",
-                    "image": "/img/service1.svg",
-                    "description": "DRaaS CPU",
-                    "href": "/"
-                  },
-                  {
-                    "title": "DRaaS RAM",
-                    "image": "/img/service1.svg",
-                    "description": "DRaaS RAM",
-                    "href": "/"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab-item": "Microsoft",
-            "service": [
-              {
-                "service-item": [
-                  {
-                    "title": "Microsoft Exchange Standart SAL",
-                    "image": "/img/service1.svg",
-                    "description": "Microsoft Exchange Standart SAL",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Microsoft Remote Desctop Services SAL",
-                    "image": "/img/service1.svg",
-                    "description": "Microsoft Remote Desctop Services SAL",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Microsoft Windows SQL Standard SAL",
-                    "image": "/img/service1.svg",
-                    "description": "Microsoft Windows SQL Standard SAL",
-                    "href": "/"
-                  }
-                ]
-              },
-              {
-                "service-item": [
-                  {
-                    "title": "Microsoft Windows SQL Web Edition",
-                    "image": "/img/service1.svg",
-                    "description": "Microsoft Windows SQL Web Edition",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Microsoft Windows Server",
-                    "image": "/img/service1.svg",
-                    "description": "Microsoft Windows Server",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Microsoft Windows SQL Standard",
-                    "image": "/img/service1.svg",
-                    "description": "Microsoft Windows SQL Standard",
-                    "href": "/"
-                  }
-                ]
-              },
-              {
-                "service-item": [
-                  {
-                    "title": "Microsoft Windows SQL Enterprise",
-                    "image": "/img/service1.svg",
-                    "description": "Microsoft Windows SQL Enterprise",
-                    "href": "/"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab-item": "Хостинг",
-            "service": [
-              {
-                "service-item": [
-                  {
-                    "title": "Запуск запланирован через:",
-                    "image": "/img/service1.svg",
-                    "description": "Самый гибкий и современный способ размещения сайтов",
-                    "timerid": "timer2",
-                    "timer": {
-                      "title": "Запуск запланирован через:"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab-item": "Электронная почта",
-            "service": [
-              {
-                "service-item": [
-                  {
-                    "title": "Почта 10 ГБ",
-                    "image": "/img/service1.svg",
-                    "description": "10,00 руб/мес",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Почта 10 ГБ (При оплате на 1 год)",
-                    "image": "/img/service1.svg",
-                    "description": "-17% 100,00 руб/год",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Почта 50 ГБ",
-                    "image": "/img/service1.svg",
-                    "description": "45,00 руб/мес",
-                    "href": "/"
-                  }
-                ]
-              },
-              {
-                "service-item": [
-                  {
-                    "title": "Почта 50 ГБ (При оплате на 1 год)",
-                    "image": "/img/service1.svg",
-                    "description": "-17% 450,00 руб/год",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Почта 100 ГБ",
-                    "image": "/img/service1.svg",
-                    "description": "80,00 руб/мес",
-                    "href": "/"
-                  },
-                  {
-                    "title": "Почта 100 ГБ (При оплате на 1 год)",
-                    "image": "/img/service1.svg",
-                    "description": "-17% 800,00 руб/годс",
-                    "href": "/"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab-item": "Регистрация в БелГИЭ",
-            "service": [
-              {
-                "service-item": [
-                  {
-                    "title": "Услуга по государственной регистрации сайта в БелГИЭ",
-                    "image": "/img/service1.svg",
-                    "description": "Возможность проверить сайт онлайн. Хостинг-провайдер rockets.by - услуги хостинга и регистрации доменов.",
-                    "id": "id_rout_6",
-                    "href": "/belgie"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-
     "services": [
       {
         "title": "Услуги",
@@ -908,7 +490,7 @@
                 "title": "Онлайн калькулятор",
                 "image": "/img/service1.svg",
                 "description": "Расчитать стоимость и заказать услуги быстро и удобно",
-                "href": "/online-calc?lang=ru",
+                "href": "/online-calc?lang=en",
                 "id": "id_rout_32"
               }
             ]
