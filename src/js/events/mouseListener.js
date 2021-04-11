@@ -1,10 +1,10 @@
-import { myMobile } from './scrollListener';
+import myAgent from '../utils/checkAgent';
 
 let mouseTimer;
 let opacityTimeout;
 
 function listenMouse(event) {
-  if (myMobile.any()) return;
+  if (myAgent) return;
   drawCursor(event);
   !mouseTimer && listenMouseOver(event);
 }

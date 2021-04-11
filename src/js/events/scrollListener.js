@@ -1,34 +1,6 @@
 let timer;
 
-const myMobile = {
-  Android() {
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry() {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS() {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  Opera() {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows() {
-    return navigator.userAgent.match(/IEMobile/i);
-  },
-  any() {
-    return (
-      myMobile.Android() ||
-      myMobile.BlackBerry() ||
-      myMobile.iOS() ||
-      myMobile.Opera() ||
-      myMobile.Windows()
-    );
-  },
-};
-
 function movePad(event) {
-  if (myMobile.any()) return;
   const rails = document.getElementById('scroll-rail');
   const pad = document.getElementById('scroll-pad');
   rails.style.opacity = '1';
@@ -70,4 +42,4 @@ function movePad(event) {
   }
 }
 
-export { movePad, myMobile };
+export default movePad;

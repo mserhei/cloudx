@@ -1,4 +1,4 @@
-(function (window, document) {
+function addSwipeEvent(window, document) {
   'use strict';
 
   // patch CustomEvent to allow constructor creation (IE/Chrome)
@@ -143,7 +143,7 @@
 
     return defaultValue;
   }
-})(window, document);
+}
 
 class Swiper {
   constructor(slider, slide, indicators) {
@@ -243,5 +243,7 @@ const swiper = new Swiper(
   'advantages-slide',
   '.advantage',
 );
+
+export default addSwipeEvent;
 
 export { swiper };

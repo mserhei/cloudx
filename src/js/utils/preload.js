@@ -1,4 +1,7 @@
-import slider from '../utils/slider';
+// import slider from '../utils/slider';
+
+import myAgent from '../utils/checkAgent';
+
 const rootEl = document.getElementById('root');
 const rootCont = document.getElementById('root-content');
 
@@ -54,14 +57,16 @@ observer.restartAtPreload = function () {
 };
 
 function preload({ path }, hash) {
-  if (slider.timer) slider.end();
+  // if (slider.timer) slider.end();
 
   clearTimoutsOnPop();
   scrollToAnchor(hash);
 
-  containerTimeout = setTimeout(() => {
-    observer.restartAtPreload();
-  }, 0);
+  if (!myAgent)
+    containerTimeout = setTimeout(() => {
+      observer.restartAtPreload();
+    }, 0);
+  else refs.container.forEach(el => el.classList.add('present'));
 
   logo.forEach(el => el.classList.remove('in'));
 
@@ -167,23 +172,23 @@ function prepareSVGtext(el, textRef, Width, y, textAnchor) {
 function startCircle(entry) {
   const circle = document.querySelector('.new-circle');
   const speed = document.querySelector('#speed');
+  speed.textContent = '0 %';
   let timer = null;
   let count = 1;
   if (entry.isIntersecting) {
     circle.classList.add('hover');
     clearInterval(timer);
     timer = setInterval(() => {
-      count += 0.3;
+      count += 0.9;
       if (count > 99.6) {
         count = 99.9;
         clearInterval(timer);
         speed.style.transform = 'translate(-50%, -50%) scale(1.5)';
       }
       speed.textContent = count.toFixed(1) + ' %';
-    }, 15);
+    }, 45);
   } else {
     circle.classList.remove('hover');
-    speed.textContent = '0 %';
     speed.style.transform = 'translate(-50%, -50%)';
   }
 }

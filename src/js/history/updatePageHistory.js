@@ -15,8 +15,9 @@ import renderPartners from '../../templates/for-partners.hbs';
 import renderContacts from '../../templates/contacts.hbs';
 import renderCalc from '../../templates/calc.hbs';
 
-import { slider } from '../utils/slider';
-import { swiper } from '../utils/swiper';
+// import { slider } from '../utils/slider';
+
+const startSwiper = () => import('../utils/swiper');
 
 // import { drawImages, renderIndicators } from '../pages/home';
 // import { drawPartnersImages } from '../pages/forPartners';
@@ -49,7 +50,8 @@ async function fun1() {
   module.renderIndicators('advantages', '.cardset__list-item', 'advantage', 2);
   module.drawImages();
   // slider.start();
-  swiper.start();
+  const swiper = await startSwiper();
+  swiper.swiper.start();
 }
 
 async function fun2() {
