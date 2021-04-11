@@ -1,4 +1,3 @@
-import { addPreloader, delPreloader } from './utils/preloader.js';
 import listenClicks from './events/clickListener';
 import listenSwipes from './events/swipeListener';
 import listenChange from './events/changeListener';

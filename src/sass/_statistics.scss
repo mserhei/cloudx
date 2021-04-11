@@ -68,7 +68,7 @@
     @extend %flex-container;
     flex-direction: column;
     justify-content: space-between;
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: 1000px) {
       flex-direction: row;
       align-items: flex-start;
       padding: 0px;
@@ -76,7 +76,8 @@
   }
   &__subtitle-circle {
     width: 100%;
-    @media screen and (min-width: $tablet) {
+    max-width: 700px;
+    @media screen and (min-width: 1000px) {
       width: 40%;
     }
   }
@@ -84,8 +85,10 @@
   &__list {
     width: 100%;
     margin-top: 30px;
-    @media screen and (min-width: $tablet) {
+    max-width: 700px;
+    @media screen and (min-width: 1000px) {
       width: 55%;
+      max-width: unset;
       margin-top: 0px;
     }
   }

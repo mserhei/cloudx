@@ -40,9 +40,9 @@ function movePad(event) {
     pad.style.height = '0';
   }, 2000);
   const rootCont = document.getElementById('root-content');
-  const { y, height } = rootCont.getBoundingClientRect();
+  const { height, y } = rootCont.getBoundingClientRect();
   const parentHeight = window.innerHeight;
-  const childHeight = rootCont.offsetHeight + 140;
+  const childHeight = rootCont.scrollHeight + 140;
   const padHeight = Math.round(parentHeight ** 2 / childHeight);
   const position = (y * (parentHeight - padHeight)) / childHeight;
   pad.style.height = padHeight + 'px';
@@ -52,6 +52,7 @@ function movePad(event) {
   const planet = document.querySelector('.new-hero__planet');
   const server = document.querySelector('.new-hero__server');
   document.body.style.backgroundPositionY = `${-y * 0.02}px`;
+
   if (header) {
     planet.style.transform = `translate(${-y * 0.2}px, ${-y * 0.3}px) rotate(${(
       1 -

@@ -165,7 +165,7 @@ function prepareSVGtext(el, textRef, Width, y, textAnchor) {
 }
 
 function startCircle(entry) {
-  const circle = document.querySelector('#statistics');
+  const circle = document.querySelector('.new-circle');
   const speed = document.querySelector('#speed');
   let timer = null;
   let count = 1;
@@ -173,16 +173,18 @@ function startCircle(entry) {
     circle.classList.add('hover');
     clearInterval(timer);
     timer = setInterval(() => {
-      count += 5.5;
-      if (count === 100) {
+      count += 0.3;
+      if (count > 99.6) {
         count = 99.9;
         clearInterval(timer);
+        speed.style.transform = 'translate(-50%, -50%) scale(1.5)';
       }
       speed.textContent = count.toFixed(1) + ' %';
-    }, 100);
+    }, 15);
   } else {
     circle.classList.remove('hover');
     speed.textContent = '0 %';
+    speed.style.transform = 'translate(-50%, -50%)';
   }
 }
 

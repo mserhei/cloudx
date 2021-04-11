@@ -1,0 +1,155 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate(0px);
+  }
+  50% {
+    transform: rotate(0.5turn) translate(40px);
+  }
+  100% {
+    transform: rotate(1turn) translate(0px);
+  }
+}
+@keyframes rotateWrapper {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+$colors: #9b51e0, #c58490, rgba(248, 192, 49, 0.85), #9b51e0, #c58490,
+  rgba(248, 192, 49, 0.85);
+$i: 0;
+
+.new-circle {
+  width: 100%;
+  @extend %flex-container;
+
+  height: 240px;
+  padding: 20px 0;
+  @media screen and (min-width: $tablet) {
+    height: 250px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 280px;
+  }
+
+  &__content {
+    height: 100%;
+    position: relative;
+
+    @supports (aspect-ratio: 1) {
+      aspect-ratio: 1;
+    }
+
+    @supports not (aspect-ratio: 1) {
+      width: 200px;
+      @media screen and (min-width: $tablet) {
+        width: 210px;
+      }
+      @media screen and (min-width: $desktop) {
+        width: 240px;
+      }
+    }
+    & > * {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__circle {
+    z-index: 10;
+    border-radius: 50%;
+    background: linear-gradient(
+      211.28deg,
+      rgba(58, 30, 234, 0.4) -1.48%,
+      rgba(155, 81, 224, 0.4) 15.5%,
+      rgba(197, 132, 144, 0.4) 40.2%,
+      rgba(248, 192, 49, 0.4) 76.79%,
+      rgba(155, 81, 224, 1) 129.16%
+    );
+
+    box-shadow: inset 1px 1px 2px 0px rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(4px);
+
+    &.black {
+      z-index: 0;
+      background: black;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    &--ring {
+      z-index: 12;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      background: url(../img/ring.svg);
+      background-size: 70%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &__orbits {
+    animation: rotateWrapper 4s linear infinite;
+  }
+
+  &__orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    @each $color in $colors {
+      $i: $i + 1;
+      &:nth-child(#{$i}) {
+        .new-circle__orbit--content {
+          z-index: $i;
+          transform: rotate(#{60 * $i - 1}deg) scale(0.75, 1.5);
+          //   animation: rotate 4s ease-in-out #{200 * ($i - 1)}ms infinite;
+          border-color: $color;
+        }
+        .new-circle__atom {
+          box-shadow: 0px 0px 20px $color, 0px 0px 10px $color,
+            0px 0px 5px $color;
+        }
+      }
+    }
+    &--content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 1px solid;
+      border-radius: 50%;
+    }
+  }
+  &__atom {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    z-index: 10;
+    left: calc(50% - 6px);
+    top: -6px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    transform: scale(1.5, 0.75);
+  }
+  &__wrap {
+    width: 100%;
+    height: 100%;
+  }
+  &.hover {
+    .new-circle__orbit {
+      @each $color in $colors {
+        $i: $i + 1;
+        &:nth-child(#{$i}) {
+          animation: rotate 4s ease-in-out #{250 * ($i - 1)}ms;
+          .new-circle__wrap {
+            animation: rotateWrapper 4s ease-in-out #{250 * ($i - 1)}ms;
+          }
+        }
+      }
+    }
+  }
+}
