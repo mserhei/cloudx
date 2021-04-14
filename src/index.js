@@ -41,4 +41,9 @@ button.addEventListener('click', () => {
 
 
 window.onload = () => {
-  console.log('content loaded') }
+  const preloader = document.getElementById('preloader');
+  setTimeout(() => {
+    preloader.classList.remove('active')
+  }, 1000)
+
+}
