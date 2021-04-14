@@ -1,0 +1,19 @@
+{
+  "en": {
+    "person": [
+      {"name": "serhie"},
+      {"name": "dima"},
+      {"name": "oleg"}
+    ]
+  }
+
+  ,
+  "ru": {
+    "person": [
+      {"name": "сергей"},
+      {"name": "дима"},
+      {"name": "олег"}
+    ]
+  }
+
+}
