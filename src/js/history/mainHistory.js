@@ -50,7 +50,9 @@ if (routIdx === -1) {
 }
 
 header.addEventListener('click', function (e) {
+  console.log(e.target)
   if (e.target.getAttribute('href')) {
+
     e.preventDefault();
     const link = e.target.getAttribute('href');
     const nextPath = `${link}?lang=${lang}`;

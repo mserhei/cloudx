@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #272727;
+  color: #F2F2F2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.section {
+  margin: 0px auto;
+  padding: 0px 10px;
+  width: 100%;
+  @media screen and (min-width: $desktop) {
+    max-width: $desktop;
+    padding: 0px;
+  }
+}
+
+img.pointer {
+  cursor: pointer;
+}
+
+%flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+/* dewice-width */
+$desktop: 1280px;
+$tablet: 768px;
+$phone: 480px;
+
+/* colors*/
+$main-text: rgba(242, 242, 242, 1);
+
+$white: #fff;
+$header-gr: linear-gradient(
+  180deg,
+  rgba(45, 21, 70, 0.95),
+  rgba(29, 15, 67, 0.9) 45%,
+  rgba(19, 12, 65, 0.9)
+);
+$main-purple: rgba(0, 7, 52, 1);
+$main-purple-gr: rgba(0, 7, 52, 0.5);
+$main-purple-bg: rgba(0, 7, 52, 0.2);
+$purple-btn: #918dd1;
+$purple-accent: rgb(67, 64, 110);
+$purple-secondary: rgba(60, 32, 101, 0.8);
+$black: #000000;
+$main-grey: rgb(110, 119, 157);
+$bg-grey: #e5e5e5;
+$stroke-grey: #bdbdbd;
+$dark-grey: #bbbbbb;
+$accent-sec: rgba(255, 124, 37, 1);
+$accent: #53bdf1;
+$main-red: red;
+$main-red-light: rgba(255, 0, 0, 0.2);
+
+$overlay: rgba(0, 0, 0, 0.7);
+$overlay-light: rgba(27, 69, 111, 0.4);
+$dim: rgba(225, 225, 225, 0.8);
+
+$root-bg: linear-gradient(rgba(0, 7, 52, 0.9), rgba(0, 7, 52, 1));
+
+$color: #000734;
+/* shadows */
+
+$shade: 0px 2px 4px rgba(0, 0, 0, 0.1);
+$text-shade: 2px 2px 2px rgba(0, 0, 0, 0.5);
+$text-shade-light: 1px 1px 1px rgba(0, 0, 0, 0.8);
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+$Inter: 'Inter', 'Open Sans', sans-serif;
+
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+$blackfont: 900;
+
+/* transition */
+
+$transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$slider: 1s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,11 +1,6 @@
 .header {
-  padding: 20px;
-  background-color: #111;
-  color: #fff;
-
-  a {
-    margin-right: 20px;
-  }
+  @extend %flexRow;
+  justify-content: space-between;
+  padding: 20px 0px;
+  border-bottom: 1px solid grey;
 }
-
-
