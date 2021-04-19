@@ -1,1 +1,0 @@
-.text{color:#00f;opacity:1}#root{transition:all .2s ease}.hide{opacity:0}#preloader:not(.active){display:none}#preloader.active{position:fixed;top:0;left:0;right:0;bottom:0;background:#00f;transition:opacity 1s ease-in-out;opacity:1;z-index:10}

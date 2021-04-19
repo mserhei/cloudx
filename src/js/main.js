@@ -1,3 +1,5 @@
+import './history/mainHistory';
+
 // import listenClicks from './events/clickListener';
 // import listenChange from './events/changeListener';
 // import listenResize from './events/resizeListener';
