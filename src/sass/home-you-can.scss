@@ -1,0 +1,17 @@
+.home-you-can {
+  padding: 50px 0px;
+  border-bottom: 1px solid gray;
+
+  &__list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    border: 1px solid $mainWhite;
+    padding: 20px;
+    width: 25%;
+  }
+}

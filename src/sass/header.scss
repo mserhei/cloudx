@@ -3,4 +3,34 @@
   justify-content: space-between;
   padding: 20px 0px;
   border-bottom: 1px solid grey;
+
+
+  &__nav {
+    @extend %flexRow;
+
+    &_item {
+      margin-right: 20px;
+      font-weight: bold;
+    }
+  }
+
+  &__buttons {
+    @extend %flexRow;
+
+    &_modal {
+      color: $mainWhite;
+      background-color: transparent;
+      border: 1px solid $mainWhite;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+.lang-btn {
+  background-color: transparent;
+  border: none;
+  color: $mainWhite;
+  margin-right: 20px;
+  font-weight: bold;
 }

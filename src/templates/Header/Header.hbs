@@ -1,7 +1,14 @@
 <div class="wrapper">
   <section id="header" class="header section">
-    <a><img class="pointer" src="../../img/rocket1.svg"  href="/" height="30" width="30"/></a>
-    <a href="/contacts">CONTACTS</a>
-    <button class="lang-btn">LANG</button>
+    <a><img class="pointer header__logo-link" src="../../img/rocket1.svg"  href="/" height="30" width="30"/></a>
+    <ul class="header__nav">
+      {{#each navLinks}}
+        <li class="header__nav_item"><a href="/{{href}}">{{text}}</a></li>
+      {{/each}}
+    </ul>
+    <div class="header__buttons">
+      <button class="lang-btn">{{Lang}}</button>
+      <button class="header__buttons_modal">{{login}}</button>
+    </div>
   </section>
 </div>

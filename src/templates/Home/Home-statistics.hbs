@@ -1,0 +1,13 @@
+{{#each statistics}}
+  <div id="home-statistics" class="home-statistics">
+    <h3 class="section-title">{{subTitle}}</h3>
+    <ul class="home-statistics__list">
+      {{#each stats}}
+      <li class="home-statistics__item">
+        <p class="home-statistics__value">{{value}}</p>
+        <p class="home-statistics__name">{{name}}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/each}}

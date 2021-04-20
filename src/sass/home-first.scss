@@ -1,0 +1,22 @@
+.home-first {
+  margin-top: 150px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid grey;
+
+  &__s {
+    font-weight: bold;
+    font-size: 240px;
+    line-height: 290px;
+  }
+
+  &__subtitle {
+    width: 650px;
+  }
+
+  &__button {
+    margin-top: 60px;
+    padding: 20px;
+    font-weight: bold;
+  }
+
+}

@@ -2,9 +2,9 @@
   "ru": {
     "hero": {
       "title": "rocket",
-      "title-style": "s",
+      "title-style": "S",
       "text": "Cовременный сервис аренды вычислительных мощностей и систем хранения данных для создания собственной виртуальной инфраструктуры",
-      "button": "получить доступ"
+      "button": "ПОЛУЧИТЬ ДОСТУП"
     },
     "youCan": [
       {
@@ -336,9 +336,9 @@
   "en": {
     "hero": {
       "title": "rocket",
-      "title-style": "s",
+      "title-style": "S",
       "text": "A modern computing power and data storage systems rent service to create your own virtual infrastructure",
-      "button": "get access"
+      "button": "GET ACCESS"
     },
     "youCan": [
       {

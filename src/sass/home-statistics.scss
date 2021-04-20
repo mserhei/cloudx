@@ -1,0 +1,27 @@
+.home-statistics {
+  padding: 50px 0px;
+  border-bottom: 1px solid grey;
+
+  &__list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 40%;
+    margin-bottom: 30px;
+  }
+
+  &__value {
+    font-weight: bold;
+    font-size: 96px;
+    border-bottom: 1px solid $mainWhite;
+  }
+
+  &__name {
+    margin-top: 10px;
+  }
+}
