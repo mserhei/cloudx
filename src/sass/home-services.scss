@@ -1,0 +1,47 @@
+.home-services {
+  padding: 50px 0px;
+  border-bottom: 1px solid grey;
+
+  &__title-block {
+    @extend %flexRow;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ffa500;
+    transition: background-color .5s ease;
+    &:hover {
+      background-color: rgba(255,165,0, .1);
+    }
+  }
+
+
+
+  &__tabs {
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    opacity: 0;
+    height: 0;
+
+    height: 0;
+    &.active {
+      opacity: 1;
+      height: auto;
+
+    }
+  }
+
+  &__tab {
+    width: 25%;
+    padding: 20px;
+    border: 1px solid $mainWhite;
+    transition: background-color .5s ease-in-out;
+    &:hover {
+      background-color: rgba(242,242,242, .1);
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+  }
+}

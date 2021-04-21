@@ -28,7 +28,31 @@ body {
       font-weight: bold;
       font-size: 48px;
       line-height: 48px;
+      background: rgb(255,165,0);
+    background: linear-gradient(45deg, rgba(255,165,0,1) 0%, rgba(90,47,231,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
+    h4 {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 36px;
+      color: #ffa500;
+
+    }
+    h5 {
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: bold;
+
+
+    }
+    h6 {
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: bold;
+    }
+
   }
 }
 

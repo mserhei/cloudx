@@ -1,0 +1,24 @@
+{{#each services}}
+  <div id="home-services" class="home-services">
+    <ul class="home-services__list">
+      {{#each tabs}}
+      <li class="home-services__item">
+        <div class="home-services__title-block">
+          <h4 class="home-services__title">{{tab-item}}</h4>
+        </div>
+
+        
+
+        <ul class="home-services__tabs {{#if @first}}active{{/if}}">
+          {{#each serviceList}}
+          <li class="home-services__tab">
+            <h5 class="home-services__subtitle">{{title}}</h5>
+            <p class="home-services__description">{{description}}</p>
+          </li>
+          {{/each}}
+        </ul>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/each}}
