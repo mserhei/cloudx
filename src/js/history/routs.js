@@ -4,12 +4,23 @@ import {homePage, contactsPage} from './pages';
 let lang = load('Local') || 'ru';
 
 
+
+
 function changeLang (langFromUrl) {
   lang = langFromUrl;
   save('Local', langFromUrl);
+  updateRouts(langFromUrl);
 }
 
-const routs = [
+function updateRouts (newLang) {
+  routs.forEach(rout => {
+    const oldRoutPath = rout.path.toString();
+    const oldRoutPathWithoutLang = oldRoutPath.slice(0, -2);
+    rout.path = oldRoutPathWithoutLang + newLang;
+  })
+}
+
+let routs = [
   {
     title: 'Home',
     path: `/?lang=${lang}`,
