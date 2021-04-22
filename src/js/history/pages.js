@@ -18,8 +18,8 @@ function homePage () {
 }
 
 function contactsPage () {
-  header.innerHTML = Header(localHeader);
-  root.innerHTML = Contacts(localContacts);
+  header.innerHTML = Header(localHeader[lang]);
+  root.innerHTML = Contacts(localContacts[lang]);
 }
 
 export {homePage, contactsPage};

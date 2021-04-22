@@ -1,5 +1,6 @@
 .header {
   @extend %flexRow;
+  position: relative;
   justify-content: space-between;
   padding: 20px 0px;
   border-bottom: 1px solid grey;
@@ -17,12 +18,59 @@
   &__buttons {
     @extend %flexRow;
 
-    &_modal {
+    &_modal-button {
       color: $mainWhite;
       background-color: transparent;
       border: 1px solid $mainWhite;
       padding: 10px 20px;
       font-weight: bold;
+
+    }
+  }
+
+  &__auth {
+    visibility: hidden;
+    border: 1px solid $mainWhite;
+    border-radius: 5px;
+    position: absolute;
+    width: 400px;
+    right: 0;
+    top: 100px;
+    z-index: 10;
+    background-color: #333333;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: all .8s ease-in-out;
+    &.active {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+
+    &_wrapper {
+      width: 100%;
+      padding: 20px;
+      @extend %flexCol;
+      align-items: flex-start;
+    }
+
+    &_close {
+
+      @extend %btnWhite;
+      font-size: 20px;
+    }
+
+    &_menu {
+      width: 100%;
+      margin-top: 20px;
+      padding-bottom: 10px;
+      @extend %flexRow;
+      justify-content: space-around;
+      border-bottom: 1px solid grey;
+    }
+
+    &_login {
+      width: 100%;
     }
   }
 }

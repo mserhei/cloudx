@@ -1,6 +1,6 @@
 .home-services {
-  padding: 50px 0px;
-  border-bottom: 1px solid grey;
+  padding: 20px 0px;
+  margin-top: 50px;
 
   &__title-block {
     @extend %flexRow;
@@ -13,28 +13,34 @@
     }
   }
 
+  &__title{
+    &.active {
+      color: $mainWhite;
+    }
+  }
+
 
 
   &__tabs {
     margin: 5px 0px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
     opacity: 0;
-    height: 0;
-
     height: 0;
     &.active {
       opacity: 1;
       height: auto;
-
     }
   }
 
   &__tab {
-    width: 25%;
+    width: calc((100% - 30px)/4);
+    margin-bottom: 10px;
     padding: 20px;
-    border: 1px solid $mainWhite;
+    border-bottom: 1px solid #6a6a6a;
+    border-right: 1px solid #6a6a6a;
     transition: background-color .5s ease-in-out;
     &:hover {
       background-color: rgba(242,242,242, .1);

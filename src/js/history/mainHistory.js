@@ -11,10 +11,10 @@ const currentPath = window.location.pathname;
 const currentSearch = window.location.search;
 const currentHash = window.location.hash;
 const currentAllPath = currentPath + currentSearch + currentHash;
-console.log('currentPath: ', currentPath);
-console.log('currentSearch: ', currentSearch);
-console.log('currentHash: ', currentHash);
-console.log('currentAllPath:  ', currentAllPath);
+// console.log('currentPath: ', currentPath);
+// console.log('currentSearch: ', currentSearch);
+// console.log('currentHash: ', currentHash);
+// console.log('currentAllPath:  ', currentAllPath);
 
 const currentUrl = new URL(location);
 const currentUrlLang = currentUrl.searchParams.get('lang');
@@ -50,10 +50,12 @@ if (routIdx === -1) {
 }
 
 header.addEventListener('click', function (e) {
+  e.preventDefault();
   console.log(e.target)
   if (e.target.getAttribute('href')) {
 
-    e.preventDefault();
+
+
     const link = e.target.getAttribute('href');
     const nextPath = `${link}?lang=${lang}`;
     history.pushState(null, null, nextPath);
@@ -63,7 +65,44 @@ header.addEventListener('click', function (e) {
       }
     })
   }
+
+
 })
+
+
+
+
+
+const langBtn = document.querySelector('.lang-btn')
+
+function langBtnClick () {
+  console.log('langBtn click')
+  let currentPathC = window.location.pathname;
+  let currentSearchC = window.location.search;
+  let currentHashC = window.location.hash;
+  let currentAllPathC = currentPathC + currentSearchC + currentHashC;
+
+  let routIdx = null;
+  routs.forEach((rout, i) => {
+    if (currentAllPathC === rout.path) {
+      routIdx = i;
+    }
+  })
+  console.log('routIdx:  ', routIdx);
+  const nextLang = lang === 'ru' ? 'en' : 'ru';
+  changeLang(nextLang);
+
+  currentSearchC = `?lang=${lang}`;
+  const newAllPathC = currentPathC + currentSearchC + currentHashC;
+  history.replaceState(null, null, newAllPathC);
+
+  routs[routIdx].comp();
+}
+
+langBtn.addEventListener('click', langBtnClick)
+
+
+
 
 // window.onpopstate = function(event) {
 //   const currentPath = window.location.pathname;
@@ -80,31 +119,3 @@ header.addEventListener('click', function (e) {
 //   console.log('currentAllPath:  ', currentAllPath);
 //   history.replaceState(null, null, currentAllPath);
 // };
-
-const langBtn = document.querySelector('.lang-btn')
-
-function langBtnClick () {
-  console.log('langBtn clicks')
-  let currentPathC = window.location.pathname;
-  let currentSearchC = window.location.search;
-  let currentHashC = window.location.hash;
-  let currentAllPathC = currentPathC + currentSearchC + currentHashC;
-
-  let routIdx = null;
-  routs.forEach((rout, i) => {
-    if (currentAllPathC === rout.path) {
-      routIdx = i;
-    }
-  })
-  console.log(routIdx);
-  const nextLang = lang === 'ru' ? 'en' : 'ru';
-  changeLang(nextLang);
-
-  currentSearchC = `?lang=${lang}`;
-  const newAllPathC = currentPathC + currentSearchC + currentHashC;
-  history.replaceState(null, null, newAllPathC);
-
-}
-
-langBtn.addEventListener('click', langBtnClick)
-

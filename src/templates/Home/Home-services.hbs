@@ -3,11 +3,11 @@
     <ul class="home-services__list">
       {{#each tabs}}
       <li class="home-services__item">
-        <div class="home-services__title-block">
-          <h4 class="home-services__title">{{tab-item}}</h4>
-        </div>
+        {{!-- <div class="home-services__title-block"> --}}
+          <h4 class="home-services__title {{#if @first}}active{{/if}}">{{tab-item}}</h4>
+        {{!-- </div> --}}
 
-        
+
 
         <ul class="home-services__tabs {{#if @first}}active{{/if}}">
           {{#each serviceList}}

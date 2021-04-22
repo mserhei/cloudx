@@ -8,7 +8,24 @@
     </ul>
     <div class="header__buttons">
       <button class="lang-btn">{{Lang}}</button>
-      <button class="header__buttons_modal">{{login}}</button>
+      <button class="header__buttons_modal-button">{{login}}</button>
+    </div>
+
+    <div class="header__auth">
+      <div class="header__auth_wrapper">
+        <button class="header__auth_close">Х</button>
+        <ul class="header__auth_menu">
+          <li class="header__auth_item"><h5>{{login}}</h5></li>
+          <li class="header__auth_item"><h5>{{register}}</h5></li>
+        </ul>
+        <form class="header__auth_login" action="">
+          <label for="auth-login-name">Введите Ваш e-mail <span class="color-red">*</span> :</label>
+          <input id="auth-login-name" type="text">
+          <label for="auth-login-password">Введите пароль <span class="color-red">*</span> :</label>
+          <input id="auth-login-password" type="text">
+          <button type="submit" class="big-white-button">{{login}}</button>
+        </form>
+      </div>
     </div>
   </section>
 </div>
