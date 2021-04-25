@@ -11,13 +11,14 @@
 
   &__item {
     margin-right: 40px;
-    h4 {
-      color: transparent;
-    }
+  }
 
-    &.active h4 {
+  &__title {
+    transition: color .3s ease-in-out;
+    &.active {
       color: $mainWhite;
     }
+
   }
 
   &__tabs-block {
@@ -31,6 +32,7 @@
     opacity: 0;
     height: 0;
     pointer-events: none;
+    transition: opacity .3s ease-in-out;
     &.active {
       opacity: 1;
       height: auto;

@@ -3,8 +3,8 @@
     <h3 class="section-title">{{title}}</h3>
     <ul class="home-services__list">
       {{#each tabs}}
-      <li class="home-services__item  {{#if @first}}active{{/if}}">
-          <h4 class="home-services__title">{{tab-item}}</h4>
+      <li class="home-services__item  ">
+          <h4 class="home-services__title {{#if @first}}active{{/if}}" data-index="{{id}}" >{{tab-item}}</h4>
       </li>
       {{/each}}
     </ul>
