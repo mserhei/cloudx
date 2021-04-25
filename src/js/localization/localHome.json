@@ -89,10 +89,12 @@
     "services": [
       {
         "title": "Мы предоставляем:",
+
         "button": "Подробнее",
         "tabs": [
           {
             "tab-item": "Облачные решения",
+            "id": 0,
             "serviceList": [
               {
                 "title": "Облачный хостинг",
@@ -146,6 +148,7 @@
           },
           {
             "tab-item": "Rocket S",
+            "id": 1,
             "serviceList": [
               {
                 "title": "Онлайн калькулятор",
@@ -158,6 +161,7 @@
           },
           {
             "tab-item": "Veeam",
+            "id": 2,
             "serviceList": [
               {
                 "title": "Резервное копирование Veeam Backup & Replication (VM)",
@@ -217,6 +221,7 @@
           },
           {
             "tab-item": "Microsoft",
+            "id": 3,
             "serviceList": [
               {
                 "title": "Microsoft Exchange Standart SAL",
@@ -264,6 +269,7 @@
           },
           {
             "tab-item": "Хостинг",
+            "id": 4,
             "serviceList": [
               {
                 "title": "Запуск запланирован через:",
@@ -278,6 +284,7 @@
           },
           {
             "tab-item": "Электронная почта",
+            "id": 5,
             "serviceList": [
               {
                 "title": "Почта 10 ГБ",
@@ -319,6 +326,7 @@
           },
           {
             "tab-item": "Регистрация в БелГИЭ",
+            "id": 6,
             "serviceList": [
               {
                 "title": "Услуга по государственной регистрации сайта в БелГИЭ",
@@ -432,6 +440,7 @@
         "tabs": [
           {
             "tab-item": "Облачные решения",
+            "id": 0,
             "serviceList": [
               {
                 "title": "Облачный хостинг",
@@ -485,6 +494,7 @@
           },
           {
             "tab-item": "Rocket S",
+            "id": 1,
             "serviceList": [
               {
                 "title": "Онлайн калькулятор",
@@ -497,6 +507,7 @@
           },
           {
             "tab-item": "Veeam",
+            "id": 2,
             "serviceList": [
               {
                 "title": "Резервное копирование Veeam Backup & Replication (VM)",
@@ -556,6 +567,7 @@
           },
           {
             "tab-item": "Microsoft",
+            "id": 3,
             "serviceList": [
               {
                 "title": "Microsoft Exchange Standart SAL",
@@ -603,6 +615,7 @@
           },
           {
             "tab-item": "Хостинг",
+            "id": 4,
             "serviceList": [
               {
                 "title": "Запуск запланирован через:",
@@ -617,6 +630,7 @@
           },
           {
             "tab-item": "Электронная почта",
+            "id": 5,
             "serviceList": [
               {
                 "title": "Почта 10 ГБ",
@@ -658,6 +672,7 @@
           },
           {
             "tab-item": "Регистрация в БелГИЭ",
+            "id": 6,
             "serviceList": [
               {
                 "title": "Услуга по государственной регистрации сайта в БелГИЭ",
