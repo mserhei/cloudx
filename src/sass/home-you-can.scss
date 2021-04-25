@@ -14,12 +14,18 @@
 
     border-bottom: 1px solid #6a6a6a;
     border-right: 1px solid #6a6a6a;
+    border-bottom-right-radius: 5px;
     padding: 20px;
     width: calc((100% - 40px)/3);
     margin-right: 20px;
     margin-bottom: 20px;
+    transition: all .3s ease-in-out;
     &:nth-child(3n) {
       margin-right: 0px;
      }
+    &:hover {
+      border-bottom: 1px solid rgb(255,165,0);
+      border-right: 1px solid rgb(255,165,0);
+    }
   }
 }
