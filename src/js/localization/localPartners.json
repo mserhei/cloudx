@@ -1,0 +1,56 @@
+{
+  "ru": {
+    "title": "Партнерам",
+    "image": "../img/partners.png",
+    "indicators": [
+      {
+        "title": "Топливо",
+        "image": "fuel"
+      },
+      {
+        "title": "Энергия",
+        "image": "energy"
+      }
+    ],
+    "story": [
+      {
+        "text": "Мы уверены в том, что ВМЕСТЕ - быстрее, надежнее, выше!"
+      },
+      {
+        "text": "Есть идеи чем можем быть полезны друг другу? Ждем Ваши предложения в форме обратной связи или в письме на",
+        "href": "info@rockets.by"
+      },
+      {
+        "text": "С удовольствием обсудим возможности сотрудничества."
+      }
+    ],
+    "button": "Написать"
+  },
+  "en": {
+    "title": "For Partners",
+    "image": "../img/partners.png",
+    "indicators": [
+      {
+        "title": "Fuel",
+        "image": "fuel"
+      },
+      {
+        "title": "Energy",
+        "image": "energy"
+      }
+    ],
+    "story": [
+      {
+        "text": "We are confident that TOGATHER is faster, more reliable and higher!"
+      },
+      {
+        "text": "Have any ideas how we can be useful to each other? We are waiting for your proposals through the feedback form or via email to",
+        "href": "info@rockets.by"
+      },
+      {
+        "text": "We will be happy to discuss the possibilities of cooperation."
+      }
+    ],
+    "button": "Wright"
+  }
+}

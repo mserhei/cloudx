@@ -1,0 +1,71 @@
+.contacts {
+  margin-top: 50px;
+
+  &__wrapper {
+    @extend %flexCol;
+  }
+
+  &__departments {
+    @extend %flexRow;
+    justify-content: flex-start;
+
+    &_item {
+      margin-right: 100px;
+      text-align:center;
+      &:last-of-type{
+        margin-right: 0px;
+      }
+    }
+
+    &_title {
+      color: $mainWhite;
+      // border-bottom: 1px solid $mainWhite;
+    }
+
+    &_contact {
+      margin-top: 30px;
+      padding-bottom: 10px;
+    }
+
+    &_time {
+      border-top: 1px solid $mainWhite;
+      padding-top: 10px;
+    }
+  }
+
+  &__question {
+    margin-top: 120px;
+    @extend %flexCol;
+    align-items: flex-start;
+
+    &_title {
+      margin-bottom: 30px;
+      color: rgb(255,165,0);
+      -webkit-text-stroke-width: 0px;
+    }
+
+    &_list {
+      @extend %flexRow;
+    }
+
+    &_item {
+      margin-right: 100px;
+    }
+
+    &_subtitle {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $mainWhite;
+    }
+
+    &_mail {
+      padding-top: 10px;
+    }
+  }
+
+  &__adress {
+    margin-top: 70px;
+    @extend %flexCol;
+    align-items: flex-start;
+    line-height: 2;
+  }
+}

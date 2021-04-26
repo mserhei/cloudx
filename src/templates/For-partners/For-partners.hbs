@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <section id="for-partners" class="for-partners section">
+
+    <div class="for-partners__wrapper">
+      {{#each story}}
+        <p class="for-partners__text">{{text}}</p>
+        {{#if href}}
+          <a class="for-partners__link" href="mailto:{{href}}">{{href}}</a>
+        {{/if}}
+      {{/each}}
+    </div>
+
+  </section>
+</div>

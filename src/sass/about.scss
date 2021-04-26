@@ -1,0 +1,62 @@
+.about {
+
+  &__wrapper {
+    @extend %flexCol;
+  }
+
+  &__header {
+    &_title {
+      margin-top: 50px;
+    }
+
+    &_definition {
+      margin-top: 20px;
+    }
+  }
+
+  &__sources {
+    margin-top: 50px;
+
+    &_text {
+      margin-top: 20px;
+    }
+  }
+
+  &__good {
+    @extend %flexCol;
+    align-items: flex-start;
+    margin-top: 50px;
+
+    &_header {
+      @extend %flexRow;
+    }
+
+    &_image {
+      margin-right: 50px;
+      height: 50px;
+      width: 50px;
+      border: 1px solid $mainWhite;
+    }
+
+    &_list {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &_item {
+      width: calc((100% - 60px)/3);
+      margin-right: 20px;
+      &:nth-of-type(3n) {
+        margin-right: 0px;
+      }
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid grey;
+      border-radius: 5px;
+    }
+  }
+
+
+}

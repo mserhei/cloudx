@@ -5,19 +5,19 @@
       {
         "image": "/img/contacts1.svg",
         "title": "Контактный центр",
-        "tel": "7992",
+        "contact": "7992",
         "time": "Круглосуточно"
       },
       {
         "image": "/img/contacts2.svg",
         "title": "Отдел продаж",
-        "mail": "sales@rockets.by",
+        "contact": "sales@rockets.by",
         "time": "9:00−18:00"
       },
       {
         "image": "/img/contacts3.svg",
         "title": "Служба технической поддержки",
-        "mail": "support@rockets.by",
+        "contact": "support@rockets.by",
         "time": "Круглосуточно"
       }
     ],
@@ -51,7 +51,7 @@
       {
         "icon": "public",
         "title": "www.rockets.by",
-        "link": "www.rockets.by"
+        "link": "https://www.rockets.by"
       }
     ]
   },
@@ -61,19 +61,19 @@
       {
         "image": "/img/contacts1.svg",
         "title": "Contact Center",
-        "tel": "7992",
+        "contact": "7992",
         "time": "24/7"
       },
       {
         "image": "/img/contacts2.svg",
         "title": "Sales Department",
-        "mail": "sales@rockets.by",
+        "contact": "sales@rockets.by",
         "time": "9:00−18:00"
       },
       {
         "image": "/img/contacts3.svg",
         "title": "Technical support service",
-        "mail": "support@rockets.by",
+        "contact": "support@rockets.by",
         "time": "24/7"
       }
     ],

@@ -1,5 +1,38 @@
 <div class="wrapper">
   <section id="contacts" class="contacts section">
-    <div>contacts page</div>
+    <div class="contacts-wrapper">
+      <ul class="contacts__departments">
+        {{#each contacts-center}}
+          <li class="contacts__departments_item">
+            <h5 class="contacts__departments_title">{{title}}</h5>
+            <p class="contacts__departments_contact">{{contact}}</p>
+            <p class="contacts__departments_time">{{time}}</p>
+          </li>
+        {{/each}}
+      </ul>
+
+      <div class="contacts__question">
+        <h4 class="contacts__question_title">{{question}}</h4>
+        <ul class="contacts__question_list">
+          {{#each questions}}
+            <li class="contacts__question_item">
+              <p class="contacts__question_subtitle">{{title}}</p>
+              <p class="contacts__question_mail">{{mail}}</p>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="contacts__adress">
+        {{#each contacts}}
+          <a href="{{link}}">
+            <p>{{title}}</p>
+          </a>
+        {{/each}}
+
+      </div>
+    </div>
+
+
   </section>
 </div>

@@ -1,10 +1,7 @@
 import {load, save, remove} from '../utils/storage';
-import {homePage, contactsPage} from './pages';
+import {homePage, contactsPage, partnersPage, aboutPage} from './pages';
 
 let lang = load('Local') || 'ru';
-
-
-
 
 function changeLang (langFromUrl) {
   lang = langFromUrl;
@@ -30,6 +27,17 @@ let routs = [
     title: 'Contacts',
     path: `/contacts?lang=${lang}`,
     comp: contactsPage
+  },
+  {
+    title: 'Partners',
+    path: `/for-partners?lang=${lang}`,
+    comp: partnersPage
+  }
+  ,
+  {
+    title: 'About',
+    path: `/about-us?lang=${lang}`,
+    comp: aboutPage
   }
 ]
 

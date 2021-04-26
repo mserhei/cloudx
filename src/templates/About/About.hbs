@@ -1,0 +1,47 @@
+{{#each about-us}}
+<div class="wrapper">
+  <section id="about" class="about section">
+    <div class="about-wrapper">
+
+      <div class="about__header">
+        <h3 class="about__header_title">{{title}}</h3>
+        {{#each definitions}}
+          <p class="about__header_definition">{{definition}}</p>
+        {{/each}}
+      </div>
+
+      {{#each story}}
+      <div class="about__sources">
+        <h3 class="about__sources_title">{{story-title}}</h3>
+        <p class="about__sources_text">{{story-text}}</p>
+        <p class="about__sources_text">{{story-subtext}}</p>
+      </div>
+      {{/each}}
+
+      {{#each goods}}
+        <div class="about__good">
+          <div class="about__good_header">
+            <div class="about__good_image">
+              {{!-- <img src="{{image}}" alt=""> --}}
+            </div>
+            <h3 class="about__good_title">{{goods-title}}</h3>
+          </div>
+
+          <ul class="about__good_list">
+            {{#each goods-list}}
+              <li class="about__good_item">
+                {{text}}
+              </li>
+            {{/each}}
+          </ul>
+
+        </div>
+      {{/each}}
+
+
+
+
+    </div>
+  </section>
+</div>
+{{/each}}
