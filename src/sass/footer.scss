@@ -1,0 +1,66 @@
+.footer {
+  border-top: 1px solid grey;
+  margin-top: 50px;
+  padding: 50px;
+  &__wrapper {
+    @extend %flexRow;
+    justify-content: space-between;
+  }
+
+  &__socials {
+    @extend %flexRow;
+
+  }
+
+  &__social {
+    height: 60px;
+    width: 60px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    margin-right: 10px;
+    &:last-of-type {
+      margin-right: 0px;
+    }
+    transition: background-color .3s ease-in-out;
+    &:hover {
+      background-color: grey;
+    }
+    background-repeat: no-repeat;
+    background-image: contain;
+    background-position: center;
+
+    &_vk {
+      background-image: url('../img/vk.svg');
+    }
+    &_inst {
+      background-image: url('../img/inst.svg');
+    }
+    &_tw {
+      background-image: url('../img/tw.svg');
+    }
+    &_ok {
+      background-image: url('../img/ok.svg');
+    }
+    &_fb {
+      background-image: url('../img/fb.svg');
+    }
+  }
+
+  &__contact {
+    @extend %flexRow;
+
+    &_image {
+      margin-right: 10px;
+    }
+
+    &_phone {
+      margin-right: 40px;
+      @extend %flexRow;
+    }
+    &_email {
+      @extend %flexRow;
+    }
+  }
+
+
+}

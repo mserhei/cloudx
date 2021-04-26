@@ -1,0 +1,15 @@
+{{#each advantages}}
+  <div id="home-advantages" class="home-advantages">
+    <h3 class="section-title">{{title}}</h3>
+    <ul class="home-advantages__list">
+      {{#each list}}
+      <li class="home-advantages__item">
+        <div class="home-advantages__image">
+        </div>
+        <p class="home-advantages__advantage">{{benefit}}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+{{/each}}

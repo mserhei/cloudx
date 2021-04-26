@@ -53,35 +53,35 @@
         "list": [
           {
             "benefit": "Гарантированный уровень доступности 99,9%",
-            "image": "/img/advantage1.svg"
+            "image": "/img/4096.jpg"
           },
           {
             "benefit": "Подбор индивидуальных решений",
-            "image": "/img/advantage2.svg"
+            "image": "../../img/advantage2.svg"
           },
           {
             "benefit": "Три платформы виртуализации Huawei, VMware, RedHat",
-            "image": "/img/advantage3.svg"
+            "image": "../../img/advantage3.svg"
           },
           {
             "benefit": "Возможность оплаты по факту потребления",
-            "image": "/img/advantage4.svg"
+            "image": "../../img/advantage4.svg"
           },
           {
             "benefit": "Размещение ресурсов в ЦОДе класса Tier3",
-            "image": "/img/advantage5.svg"
+            "image": "../../img/advantage5.svg"
           },
           {
             "benefit": "Организация каналов связи",
-            "image": "/img/advantage6.svg"
+            "image": "../../img/advantage6.svg"
           },
           {
             "benefit": "Комплексное решение: VPN, SIP, Fttx",
-            "image": "/img/advantage7.svg"
+            "image": "../../img/advantage7.svg"
           },
           {
             "benefit": "Круглосуточная техподдержка",
-            "image": "/img/advantage8.svg"
+            "image": "../../img/advantage8.svg"
           }
         ]
       }

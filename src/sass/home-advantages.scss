@@ -1,0 +1,43 @@
+.home-advantages {
+  padding: 20px 0px;
+  margin-top: 50px;
+  @extend %flexCol;
+  align-items: flex-start;
+
+  &__list {
+    margin-top: 50px;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width:100%;
+  }
+
+  &__item {
+    width: calc((100% - 60px)/4);
+    margin-right: 20px;
+    &:nth-of-type(4n) {
+      margin-right: 0px;
+    }
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  &__image {
+    height: 40px;
+    width: 40px;
+    background-image: url(../img/advantage1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform .3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__advantage {
+    margin-top: 20px;
+  }
+
+
+
+}
