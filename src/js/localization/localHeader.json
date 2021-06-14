@@ -22,11 +22,6 @@
         "text": "ОНЛАЙН-КАЛЬКУЛЯТОР"
       },
       {
-        "href": "for-partners",
-        "id": 4,
-        "text": "ПАРТНЕРАМ"
-      },
-      {
         "href": "contacts",
         "id": 5,
         "text": "КОНТАКТЫ"
@@ -57,11 +52,6 @@
         "href": "online-calc",
         "id": 3,
         "text": "ONLINE CALCULATOR"
-      },
-      {
-        "href": "for-partners",
-        "id": 4,
-        "text": "FOR PARTNERS"
       },
       {
         "href": "contacts",

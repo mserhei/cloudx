@@ -1,7 +1,7 @@
 
 
 .home-you-can {
-  padding: 20px 0px;
+  padding: 20px 20px;
   margin-top: 50px;
 
 
@@ -17,13 +17,16 @@
 
     width: 350px;
     margin-right: 20px;
-    margin-bottom: 50px;
-
     @extend %flex-row-start;
     align-items: center;
     &:hover .home-you-can__image-wrapp {
       transform: scale(1.2);
       box-shadow: 0 0 10px $mainGrey;
+    }
+
+    margin-bottom: 30px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 50px;
     }
   }
 
@@ -31,17 +34,31 @@
     flex-shrink: 0;
     margin-right: 20px;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+
     background-repeat: no-repeat;
     background-size: cover;
     transition: transform 0.3s ease-in-out;
+    width: 40px;
+    height: 40px;
+    @media screen and (min-width: $tablet) {
+      width: 70px;
+      height: 70px;
+    }
+
+
   }
 
   &__image {
     height: 100%;
     width: 100%;
     transition: animation .3s ease-in-out;
+  }
+
+  &__description {
+    font-size: 14px;
+    @media screen and (min-width: $tablet) {
+      font-size: 16px;
+    }
   }
 
 

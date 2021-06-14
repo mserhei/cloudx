@@ -1,18 +1,32 @@
 .home-statistics {
-  padding: 20px 0px;
+  padding: 20px 20px;
   margin-top: 50px;
 
   &__list {
     margin-top: 50px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    @media screen and (min-width: $phone) {
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
   }
 
   &__item {
-    width: 40%;
-    margin-bottom: 30px;
+    width: 300px;
+    margin-bottom: 20px;
+    @media screen and (min-width: $phone) {
+      width: calc((100% - 100px)/2);
+      margin-bottom: 30px;
+      &:nth-child(2n+1) {
+              margin-right: 100px;
+      }
+
+    }
+
+
     &:hover .home-statistics__value {
       text-shadow: 0 0 10px $burn-from;
     }
@@ -24,9 +38,15 @@
   &__value {
     position: relative;
     font-weight: bold;
-    font-size: 64px;
     border-bottom: 2px solid $mainWhite;
     transition: text-shadow .1s ease-in-out 1s;
+    font-size: 32px;
+    @media screen and (min-width: $phone) {
+      font-size: 48px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 64px;
+    }
 
     &:after {
       content: "";

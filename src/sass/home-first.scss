@@ -1,5 +1,16 @@
 .home-first {
-  padding: 100px 0px 100px 0px;
+  padding: 20px;
+  @media screen and (min-width: $phone) {
+    padding: 40px 20px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: 80px 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 100px 20px;
+  }
+
+
 
 
   background-image: url('../img/background.svg');
@@ -10,23 +21,67 @@
 
   position: relative;
 
+  &__h1 {
+    font-size: 36px;
+    @media screen and (min-width: $phone) {
+      font-size: 48px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 80px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 100px;
+    }
+  }
+
 
   &__s {
     font-weight: bold;
-    font-size: 240px;
-    line-height: 290px;
+
+    line-height: 1;
     background: linear-gradient(45deg, rgba(90,0,194,1) 0%, rgba(165,111,227,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 72px;
+    @media screen and (min-width: $phone) {
+      font-size: 96px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 160px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 200px;
+    }
   }
 
   &__subtitle {
-    width: 650px;
+    margin-top: 30px;
+    font-weight: normal;
+    line-height: 1.4;
+    width: 60%;
+    font-size: 14px;
+    @media screen and (min-width: $phone) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+      margin-top: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 24px;
+    }
+
   }
 
   &__button {
     @extend %btn-burn;
-    margin-top: 60px;
+
+    margin-top: 40px;
+    padding: 12px 20px;
+    @media screen and (min-width: $tablet) {
+      margin-top: 60px;
+      padding: 20px 20px;
+    }
   }
 
   // &__image {

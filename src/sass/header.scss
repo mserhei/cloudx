@@ -2,24 +2,91 @@
   position: sticky;
   top: 0;
   z-index: 5;
-  backdrop-filter: blur(8px);
+  background-color: $mainBlack;
 }
 
 .header {
   @extend %flexRow;
+  height: 80px;
+  @media screen and (min-width: $tablet) {
+    height: 90px;
+  }
+
 
   justify-content: space-between;
-  padding: 20px 0px;
+  padding: 20px;
   border-bottom: 1px solid grey;
 
 
   &__nav {
-    @extend %flexRow;
+    @media screen and (max-width: $tablet - 1) {
+      overflow: hidden;
+      height:0px;
+      position: absolute;
+      top: 80px;
+      left: 0px;
 
-    &_item {
-      margin-right: 20px;
-      font-weight: bold;
+
+      background-color: rgba(39,39,39,1);
+      &.show-mobile {
+        overflow: visible;
+        height: calc(100vh - 80px);
+        padding: 20px;
+        width: 100%;
+      }
+
+
+      &_item {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
     }
+
+
+
+    @media screen and (min-width: $tablet) {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+
+      &_item {
+        margin-right: 20px;
+        font-weight: bold;
+      }
+    }
+
+
+
+
+
+
+  }
+
+  &__btn-mobile {
+    display: none;
+
+    @media screen and (max-width: $tablet) {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: none;
+      margin-left: 20px;
+
+      &-image {
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+
+
+
+
   }
 
   &__buttons {
