@@ -1,15 +1,21 @@
 .home-first {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 0px 100px 0px;
+
+
+  background-image: url('../img/background.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+
 
   position: relative;
+
 
   &__s {
     font-weight: bold;
     font-size: 240px;
     line-height: 290px;
-    background: rgb(255,165,0);
-    background: linear-gradient(45deg, rgba(255,165,0,1) 0%, rgba(90,47,231,1) 100%);
+    background: linear-gradient(45deg, rgba(90,0,194,1) 0%, rgba(165,111,227,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -19,21 +25,20 @@
   }
 
   &__button {
+    @extend %btn-burn;
     margin-top: 60px;
-    padding: 20px;
-    font-weight: bold;
   }
 
-  &__image {
-    position: absolute;
-    width: 50%;
-    height: 80%;
-    bottom: 50px;
-    right: 0;
-    background-image: url('../img/home-first.png');
-    background-size:cover;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
+  // &__image {
+  //   position: absolute;
+  //   width: 50%;
+  //   height: 80%;
+  //   bottom: 50px;
+  //   right: 0;
+  //   background-image: url('../img/home-first.png');
+  //   background-size:cover;
+  //   background-repeat: no-repeat;
+  //   z-index: 1;
+  // }
 
 }

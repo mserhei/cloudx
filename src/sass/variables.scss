@@ -4,9 +4,12 @@ $tablet: 768px;
 $phone: 480px;
 
 /* colors*/
+$black: #000000;
 $mainBlack: #272727;
+$mainGrey: #828282;
 $mainWhite: #F2F2F2;
-
+$burn-from: rgba(236,179,67,1);
+$burn-to: #ea7a38;
 
 
 
@@ -34,8 +37,7 @@ $main-grey: rgb(110, 119, 157);
 $bg-grey: #e5e5e5;
 $stroke-grey: #bdbdbd;
 $dark-grey: #bbbbbb;
-$accent-sec: rgba(255, 124, 37, 1);
-$accent: #53bdf1;
+
 $main-red: red;
 $main-red-light: rgba(255, 0, 0, 0.2);
 
@@ -58,6 +60,7 @@ $text-shade-light: 1px 1px 1px rgba(0, 0, 0, 0.8);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 $Inter: 'Inter', 'Open Sans', sans-serif;
+$Montserrat: 'Montserrat', sans-serif;
 
 $light: 300;
 $normal: 400;
@@ -69,5 +72,5 @@ $blackfont: 900;
 
 /* transition */
 
-$transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$slider: 1s cubic-bezier(0.4, 0, 0.2, 1);
+$transition1: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition2: 1s cubic-bezier(0.4, 0, 0.2, 1);

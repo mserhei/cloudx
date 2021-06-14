@@ -1,3 +1,5 @@
+import {drawHomeYouCanImages} from '../pages/home-you-can';
+
 import localHeader from '../localization/localHeader.json';
 import localHome from '../localization/localHome.json';
 import localContacts from '../localization/localContacts.json';
@@ -19,7 +21,12 @@ const footer = document.getElementById('footer');
 
 function homePage () {
   header.innerHTML = Header(localHeader[lang]);
+
+
   root.innerHTML = Home(localHome[lang]);
+  drawHomeYouCanImages();
+
+  
   footer.innerHTML = Footer();
 }
 

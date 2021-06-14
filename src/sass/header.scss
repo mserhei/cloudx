@@ -1,7 +1,7 @@
 #header {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   backdrop-filter: blur(8px);
 }
 
@@ -26,12 +26,8 @@
     @extend %flexRow;
 
     &_modal-button {
-      color: $mainWhite;
-      background-color: transparent;
-      border: 1px solid $mainWhite;
+      @extend %btn-burn;
       padding: 10px 20px;
-      font-weight: bold;
-
     }
   }
 

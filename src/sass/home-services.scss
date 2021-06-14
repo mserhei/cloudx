@@ -1,4 +1,6 @@
 .home-services {
+  z-index: 3;
+  position: relative;
   padding: 20px 0px;
   margin-top: 50px;
 
@@ -10,13 +12,21 @@
   }
 
   &__item {
+
     margin-right: 40px;
+    margin-bottom: 10px;
+
   }
 
   &__title {
+    cursor: pointer;
+    color: $mainGrey;
     transition: color .3s ease-in-out;
     &.active {
-      color: $mainWhite;
+      color: $burn-from;
+      background: linear-gradient(45deg, $burn-from 0%, $burn-to 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
   }
@@ -41,10 +51,11 @@
   }
 
   &__tab {
+    @extend %flex-col-start;
+    padding: 20px;
     width: calc((100% - 30px)/4);
     margin-bottom: 10px;
     margin-right: 10px;
-    padding: 20px;
     border-top: 1px solid #4a4a4a;
     border-right: 1px solid #4a4a4a;
     border-bottom: 1px solid #4a4a4a;
@@ -56,9 +67,50 @@
     &:hover {
       background-color: rgba(242,242,242, .1);
     }
+    &:hover .home-services__subtitle {
+      opacity: 1;
+    }
+    &:hover .home-services__description {
+      opacity: 1;
+    }
+  }
+
+  &__subtitle {
+    opacity: .7;
+    margin-bottom: 20px;
+    color: $mainWhite;
+    transition: opacity .3s ease-in-out;
   }
 
   &__description {
-    margin-top: 20px;
+    opacity: .7;
+    margin-bottom: 20px;
+    transition: opacity .3s ease-in-out;
+  }
+
+  &__button {
+    @extend %btn-burn;
+    margin-top: auto;
+    padding: 10px 20px;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+
+  & .font-planet.one{
+    position: absolute;
+    z-index: 0;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+  }
+
+  & .font-planet.two{
+    z-index: 0;
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
   }
 }

@@ -1,10 +1,10 @@
 {{#each services}}
   <div id="home-services" class="home-services">
-    <h3 class="section-title">{{title}}</h3>
+    <h4 class="section-title">{{title}}</h4>
     <ul class="home-services__list">
       {{#each tabs}}
       <li class="home-services__item  ">
-          <h4 class="home-services__title {{#if @first}}active{{/if}}" data-index="{{id}}" >{{tab-item}}</h4>
+          <h5 class="home-services__title {{#if @first}}active{{/if}}" data-index="{{id}}" >{{tab-item}}</h5>
       </li>
       {{/each}}
     </ul>
@@ -15,13 +15,15 @@
         <li class="home-services__tab">
           <h5 class="home-services__subtitle">{{title}}</h5>
           <p class="home-services__description">{{description}}</p>
+          <a class="home-services__button" href="#">{{@root.services.[0].more}}</a>
         </li>
         {{/each}}
       </ul>
     {{/each}}
     </div>
 
-
+  <img src="../../img/planet1.svg" alt="planet" class="font-planet one">
+  <img src="../../img/planet2.svg" alt="planet" class="font-planet two">
 
   </div>
 {{/each}}

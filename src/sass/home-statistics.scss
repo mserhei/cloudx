@@ -13,13 +13,20 @@
   &__item {
     width: 40%;
     margin-bottom: 30px;
+    &:hover .home-statistics__value {
+      text-shadow: 0 0 10px $burn-from;
+    }
+    &:hover .home-statistics__name {
+      text-shadow: 0 0 10px $burn-from;
+    }
   }
 
   &__value {
     position: relative;
     font-weight: bold;
-    font-size: 96px;
+    font-size: 64px;
     border-bottom: 2px solid $mainWhite;
+    transition: text-shadow .1s ease-in-out 1s;
 
     &:after {
       content: "";
@@ -28,9 +35,9 @@
       left: 0;
       width: 0;
       height: 2px;
-      background-color: rgb(255,165,0);
+      background-color: $burn-to;
       content: "";
-      transition: width 0.9s ease-out;
+      transition: width 1s ease-out;
     }
 
     &:hover:after {
@@ -40,5 +47,6 @@
 
   &__name {
     margin-top: 10px;
+    transition: text-shadow .1s ease-in-out 1s;
   }
 }

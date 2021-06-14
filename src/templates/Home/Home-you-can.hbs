@@ -1,9 +1,15 @@
 {{#each youCan}}
   <div id="home-you-can" class="home-you-can">
-    <h3 class="section-title">{{subTitle}}</h3>
+    <h4 class="section-title">{{subTitle}}</h4>
     <ul class="home-you-can__list">
       {{#each list}}
-      <li class="home-you-can__item">{{listitem}}</li>
+      <li class="home-you-can__item">
+          <div class="home-you-can__image-wrapp">
+            <img class="home-you-can__image" alt="image"/>
+          </div>
+
+          <div class="home-you-can__description">{{description}}</div>
+        </li>
       {{/each}}
     </ul>
   </div>

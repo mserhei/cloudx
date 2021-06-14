@@ -13,29 +13,35 @@
   }
 
   &__item {
-    width: calc((100% - 60px)/4);
+    @extend %flex-row-start;
+    align-items: center;
+    width: 350px;
     margin-right: 20px;
-    &:nth-of-type(4n) {
-      margin-right: 0px;
-    }
     margin-bottom: 20px;
     padding: 20px;
+    &:hover .home-advantages__image{
+      box-shadow: 0 0 15px $mainWhite;
+    }
   }
 
   &__image {
-    height: 40px;
-    width: 40px;
-    background-image: url(../img/advantage1.svg);
+    flex-shrink: 0;
+    margin-right: 20px;
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-radius: 50%;
+    background-image: url(../img/rocket0.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
     &:hover {
       transform: scale(1.1);
     }
   }
 
   &__advantage {
-    margin-top: 20px;
+    text-align: left;
   }
 
 
