@@ -5,19 +5,19 @@
       {
         "image": "/img/contacts1.svg",
         "title": "Контактный центр",
-        "contact": "7992",
+        "contact": "1000",
         "time": "Круглосуточно"
       },
       {
         "image": "/img/contacts2.svg",
         "title": "Отдел продаж",
-        "contact": "sales@rockets.by",
+        "contact": "sales@cloudx.by",
         "time": "9:00−18:00"
       },
       {
         "image": "/img/contacts3.svg",
         "title": "Служба технической поддержки",
-        "contact": "support@rockets.by",
+        "contact": "support@cloudx.by",
         "time": "Круглосуточно"
       }
     ],
@@ -25,15 +25,15 @@
     "questions": [
       {
         "title": "Прокомментирует для СМИ пресс-служба",
-        "mail": "press@rockets.by"
+        "mail": "press@cloudx.by"
       },
       {
         "title": "Рассмотрит ваше резюме HR-служба",
-        "mail": "personal@rockets.by"
+        "mail": "personal@cloudx.by"
       },
       {
         "title": "По любым другим вопросам",
-        "mail": "info@rockets.by"
+        "mail": "info@cloudx.by"
       }
     ],
     "button": "Написать",
@@ -50,8 +50,8 @@
       },
       {
         "icon": "public",
-        "title": "www.rockets.by",
-        "link": "https://www.rockets.by"
+        "title": "www.cloudx.by",
+        "link": "https://www.cloudx.by"
       }
     ]
   },
@@ -61,19 +61,19 @@
       {
         "image": "/img/contacts1.svg",
         "title": "Contact Center",
-        "contact": "7992",
+        "contact": "1000",
         "time": "24/7"
       },
       {
         "image": "/img/contacts2.svg",
         "title": "Sales Department",
-        "contact": "sales@rockets.by",
+        "contact": "sales@cloudx.by",
         "time": "9:00−18:00"
       },
       {
         "image": "/img/contacts3.svg",
         "title": "Technical support service",
-        "contact": "support@rockets.by",
+        "contact": "support@cloudx.by",
         "time": "24/7"
       }
     ],
@@ -81,15 +81,15 @@
     "questions": [
       {
         "title": "The press service will comment for the media",
-        "mail": "press@rockets.by"
+        "mail": "press@cloudx.by"
       },
       {
         "title": "HR department will review your resume",
-        "mail": "personal@rockets.by"
+        "mail": "personal@cloudx.by"
       },
       {
         "title": "For any other questions",
-        "mail": "info@rockets.by"
+        "mail": "info@cloudx.by"
       }
     ],
     "button": "Wright",
@@ -106,8 +106,8 @@
       },
       {
         "icon": "public",
-        "title": "www.rockets.by",
-        "link": "www.rockets.by"
+        "title": "www.cloudx.by",
+        "link": "www.cloudx.by"
       }
     ]
   }

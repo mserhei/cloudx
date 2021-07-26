@@ -8,23 +8,22 @@
     },
     "youCan": [
       {
-        "title": "Почему Rocket S?",
-        "subTitle": "С Rocket S вы сможете:",
+        "title": "Почему cloudX?",
+        "subTitle": "С cloudX вы сможете:",
         "list": [
-
           {
-            "image-path": "../../../img/advantage2.svg",
             "description": "снизить затраты на ИТ-инфраструктуру до 60%"
-
-           },
+          },
           {
             "description": "платить только за то, чем пользуетесь, по модели pay‑as‑you‑go"
           },
           {
             "description": "больше не беспокоиться об уязвимостях ваших серверов"
           },
-          { "description": "получить комплексное решение: IaaS и каналы связи" },
-          { "description": "бесплатно протестировать возможности Rocket S" }
+          {
+            "description": "получить комплексное решение: IaaS и каналы связи"
+          },
+          { "description": "бесплатно протестировать возможности cloudX" }
         ]
       }
     ],
@@ -151,7 +150,7 @@
             ]
           },
           {
-            "tab-item": "Rocket S",
+            "tab-item": "cloudX",
             "id": 1,
             "serviceList": [
               {
@@ -335,7 +334,7 @@
               {
                 "title": "Услуга по государственной регистрации сайта в БелГИЭ",
                 "image": "/img/service1.svg",
-                "description": "Возможность проверить сайт онлайн. Хостинг-провайдер rockets.by - услуги хостинга и регистрации доменов.",
+                "description": "Возможность проверить сайт онлайн. Хостинг-провайдер cloudx.by - услуги хостинга и регистрации доменов.",
                 "id": "id_rout_6",
                 "href": "/belgie"
               }
@@ -347,27 +346,27 @@
   },
   "en": {
     "hero": {
-      "title": "rocket",
-      "title-style": "S",
+      "title": "cloud",
+      "title-style": "X",
       "text": "A modern computing power and data storage systems rent service to create your own virtual infrastructure",
       "button": "GET ACCESS"
     },
     "youCan": [
       {
-        "title": "Why Rocket S?",
-        "subTitle": "With Rocket S you will manage to:",
+        "title": "Why cloudX?",
+        "subTitle": "With cloudX you will manage to:",
         "list": [
-          { "listitem": "reduce expances on IT-structure up to 60%" },
+          { "description": "reduce expances on IT-structure up to 60%" },
           {
-            "listitem": "pay only for that you use, according to pay‑as‑you‑go model"
+            "description": "pay only for that you use, according to pay‑as‑you‑go model"
           },
           {
-            "listitem": "not to warry anymore about vulnerabilities of your servers"
+            "description": "not to warry anymore about vulnerabilities of your servers"
           },
           {
-            "listitem": "obtain a complex solution: IaaS and conection channels"
+            "description": "obtain a complex solution: IaaS and conection channels"
           },
-          { "listitem": "test  Rocket S facilities for free" }
+          { "description": "test  cloudX facilities for free" }
         ],
         "order": [
           {
@@ -440,7 +439,7 @@
     "services": [
       {
         "title": "Мы предоставляем:",
-        "button": "Подробнее",
+        "more": "More...",
         "tabs": [
           {
             "tab-item": "Облачные решения",
@@ -497,7 +496,7 @@
             ]
           },
           {
-            "tab-item": "Rocket S",
+            "tab-item": "cloudX",
             "id": 1,
             "serviceList": [
               {
@@ -681,7 +680,7 @@
               {
                 "title": "Услуга по государственной регистрации сайта в БелГИЭ",
                 "image": "/img/service1.svg",
-                "description": "Возможность проверить сайт онлайн. Хостинг-провайдер rockets.by - услуги хостинга и регистрации доменов.",
+                "description": "Возможность проверить сайт онлайн. Хостинг-провайдер cloudx.by - услуги хостинга и регистрации доменов.",
                 "id": "id_rout_6",
                 "href": "/belgie"
               }

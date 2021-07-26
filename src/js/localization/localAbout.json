@@ -2,7 +2,7 @@
   "ru": {
     "about-us": [
       {
-        "title": "Rocket S",
+        "title": "cloudX",
         "subTitle": "Лучшие показатели производительности и быстродействия",
         "definitions": [
           {
@@ -17,7 +17,7 @@
           },
           {
             "story-title": "Инфраструктура",
-            "story-text": "Облако Rocket S создано с использованием трех платформ виртуализации на базе собственного оборудования Cisco и Huawei, размещенного в надежном ЦОДе класса Tier3.",
+            "story-text": "Облако cloudX создано с использованием трех платформ виртуализации на базе собственного оборудования Cisco и Huawei, размещенного в надежном ЦОДе класса Tier3.",
             "story-subtext": "Три платформы виртуализации – Huawei, Red Hat, VMware – позволяют каждому клиенту получить решение, наиболее соответствующее заданным требованиям к инфраструктуре."
           }
         ],
@@ -91,8 +91,8 @@
         ],
         "QandA": [
           {
-            "q": "Как подключить или протестировать услуги Rocket S?",
-            "a1": "Для получения доступа к услугам Rocket S",
+            "q": "Как подключить или протестировать услуги cloudX?",
+            "a1": "Для получения доступа к услугам cloudX",
             "link1": "оставьте заявку",
             "href1": "",
             "data1": "data-modal",
@@ -101,8 +101,8 @@
             "data2text": 1
           },
           {
-            "q": "Сколько стоит Rocket S?",
-            "a1": "Рассчитать стоимость Rocket S можно при помощи",
+            "q": "Сколько стоит cloudX?",
+            "a1": "Рассчитать стоимость cloudX можно при помощи",
             "link1": "online-калькулятора",
             "href1": "/online-calc?lang=ru",
             "data1": "id",
@@ -115,7 +115,7 @@
         "files": [
           {
             "path": "/files/terms-clouds.pdf",
-            "name": "Порядок предоставления услуг по тарифному плану «Rocket S»",
+            "name": "Порядок предоставления услуг по тарифному плану «cloudX»",
             "size": "334.2 КБ"
           },
           {
@@ -135,7 +135,7 @@
   "en": {
     "about-us": [
       {
-        "title": "Rocket S",
+        "title": "cloudX",
         "subTitle": "Best performance and speed rates",
         "definitions": [
           {
@@ -150,7 +150,7 @@
           },
           {
             "story-title": "Infrastructure",
-            "story-text": "Rocket S is created using three virtualization platforms based on Cisco and Huawei's own equipment, located in a reliable Tier3 data center.",
+            "story-text": "cloudX is created using three virtualization platforms based on Cisco and Huawei's own equipment, located in a reliable Tier3 data center.",
             "story-subtext": "Three virtualization platforms - Huawei, Red Hat, VMware - allow each customer to get the solution that best meets the given infrastructure requirements."
           }
         ],
@@ -224,8 +224,8 @@
         ],
         "QandA": [
           {
-            "q": "How to connect or test Rocket S services?",
-            "a1": "To get access to Rocket S services",
+            "q": "How to connect or test cloudX services?",
+            "a1": "To get access to cloudX services",
             "link1": "leave a request",
             "href1": "",
             "data1": "data-modal",
@@ -234,7 +234,7 @@
             "data2text": 1
           },
           {
-            "q": "How much do Rocket S services cost?",
+            "q": "How much do cloudX services cost?",
             "a1": "You can calculate the cost of services using",
             "link1": "online calculator",
             "href1": "/online-calc?lang=ru",
@@ -248,7 +248,7 @@
         "files": [
           {
             "path": "/files/terms-clouds.pdf",
-            "name": "The Procedure for the provision of services under the tariff plan \"Rocket S\"",
+            "name": "The Procedure for the provision of services under the tariff plan \"cloudX\"",
             "size": "334.2 КB"
           },
           {
